@@ -28,17 +28,17 @@ if(isset($_SESSION['acc_id']))
                       <h2>로그인</h2>
                   </div> -->
 
-                  
+
 
 <!-- 로그인 시작 { -->
 <h1 class="lg_title inner">로그인</h1>
 <div id="mb_login" class="mbskin inner clearfix">
-    
-    
-    
+
+
+
         <form name="flogin" action="" method="POST">
         <input type="hidden" name="url" value="http%3A%2F%2Fwww.grandplazahanoi.com%2Fkor">
-        
+
         <div>
           <h2 class="board_t">LOGIN</h2>
             <fieldset id="login_fs">
@@ -63,17 +63,17 @@ if(isset($_SESSION['acc_id']))
         </div>
 		</form>
 
-       
+
         <?php
            include('config.php');
-          
-           
+
+
            if($_SERVER["REQUEST_METHOD"] == "POST") {
-              // username and password sent from form 
-              
+              // username and password sent from form
+
               $username = mysqli_real_escape_string($conn,$_POST['username']);
-              $password = md5(mysqli_real_escape_string($conn,$_POST['password'])); 
-              
+              $password = md5(mysqli_real_escape_string($conn,$_POST['password']));
+
               $sql = "SELECT acc_id, role_name FROM Account WHERE acc_username = '$username' and acc_password = '$password'";
               $result = mysqli_query($conn,$sql);
 
@@ -81,20 +81,20 @@ if(isset($_SESSION['acc_id']))
               $count = mysqli_num_rows($result);
               $role_name = $row['role_name'];
               // If result matched $myusername and $mypassword, table row must be 1 row
-                
+
               if($count > 0) {
-                 
+
                  $_SESSION['acc_id'] = $row['acc_id'];
                  if($role_name == "GUESS")
-                    header("location: home.php");
+                    header("location: index.php");
                 else
-                    header("location: admin/index.php");
+                    header("location: ./admin/index.php");
               }else {
                  echo '<script>alert("Your Login Name or Password is invalid") </script>' ;
               }
            }
         ?>
-        
+
      <!--<div class="btn_confirm">
             <a href="http://www.grandplazahanoi.com/kor/">메인으로 돌아가기</a>
         </div>-->

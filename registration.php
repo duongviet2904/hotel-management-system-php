@@ -1,5 +1,5 @@
  <?php include('config.php'); ?>
-<?php ob_start();?>
+
 <?php session_start();?>
 
 <!doctype html>
@@ -26,17 +26,17 @@
                       <h2>로그인</h2>
                   </div> -->
 
-                  
+
 
 <!-- 로그인 시작 { -->
 <h1 class="lg_title inner">Registration</h1>
 <div id="mb_login" class="mbskin inner clearfix">
-    
-    
-    
+
+
+
         <form action="" method="post">
         <input type="hidden" name="url" value="http%3A%2F%2Fwww.grandplazahanoi.com%2Fkor">
-        
+
         <div>
             <fieldset id="login_fs">
                  <?php
@@ -136,7 +136,7 @@ if (isset($_POST['regis'])) {
                                         acc_password,
                                         role_name
                                     ) VALUES ('$cus_username', '$pass', 'GUESS');";
-     
+
         // mysqli_query($conn, $sql);
         // $result = mysqli_query($conn, 'select acc_id from Account where acc_username = "$cus_username"');
         $sql .= "set @accid = (select acc_id from Account where acc_username = '$cus_username');";
@@ -151,10 +151,10 @@ if (isset($_POST['regis'])) {
                                         status,
                                         acc_id
                                     ) VALUES ('$fname', '$lname', '$cus_dataOfBirth', '$cus_gender', '$cus_phoneNumber', '$cus_email', '$cus_address',1,@accid)";
-        
+
         // mysqli_query($conn, $sql2);
         mysqli_multi_query($conn, $sql);
-        
+
         // unset($_POST['cust_name']);
         // unset($_POST['cust_cname']);
         // unset($_POST['cust_email']);
@@ -168,9 +168,9 @@ if (isset($_POST['regis'])) {
     }
 }
 ?>
-       
 
-        
+
+
      <!--<div class="btn_confirm">
             <a href="http://www.grandplazahanoi.com/kor/">메인으로 돌아가기</a>
         </div>-->
