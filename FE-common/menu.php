@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <header id="header">
      <div class="header_top">
          <div class="inner">
@@ -35,8 +37,14 @@
              <div class="gnb">
                 <ul>
                                         
-                    <li><a href="login.php">LOGIN</a></li>
-                    <li><a href="registration.php">SIGN UP</a></li>
+                    <?php 
+                        if(isset($_SESSION['acc_id'])){
+                            echo '<li><a href="logout.php">LOGOUT</a></li>';
+                        }else{
+                            echo '<li><a href="login.php">LOGIN</a></li>
+                                <li><a href="registration.php">SIGN UP</a></li>';
+                        }
+                    ?>
                     <!--                    <li><a href="bbs/faq.php">FAQ</a></li>-->
                     <li><a href="reserve/reservation.php">예약확인</a></li>
 <!--                      <li><a href="bbs/qalist.php">1:1문의</a></li>-->

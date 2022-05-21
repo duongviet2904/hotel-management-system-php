@@ -1,3 +1,7 @@
+ <?php include('config.php'); ?>
+<?php ob_start();?>
+<?php session_start();?>
+
 <!doctype html>
 <html lang="ko">
 <head>
@@ -30,50 +34,65 @@
     
     
     
-        <form name="flogin" action="http://www.grandplazahanoi.com/kor/bbs/login_check.php" onsubmit="return flogin_submit(this);" method="post">
+        <form action="" method="post">
         <input type="hidden" name="url" value="http%3A%2F%2Fwww.grandplazahanoi.com%2Fkor">
         
         <div>
             <fieldset id="login_fs">
+                 <?php
+                                if($error_message != '') {
+                                    echo "<div class='error' style='padding: 10px;background:#f1f1f1;margin-bottom:20px;'>".$error_message."</div>";
+                                }
+                                if($success_message != '') {
+                                    echo "<div class='success' style='padding: 10px;background:#f1f1f1;margin-bottom:20px;'>".$success_message."</div>";
+                                }
+                                ?>
                 <div class="form-outline mb-4">
-                <label class="form-label" for="username">Username:</label>
-                <input type="text" id="username" class="form-control frm_input" />
+                <label class="form-label" for="cus_username">Username:</label>
+                <input type="text" id="cus_username" class="form-control frm_input" name="cus_username" value="<?php if(isset($_POST['cus_username'])){echo $_POST['cus_username'];} ?>"/>
               </div>
 
               <div class="form-outline mb-4">
-                <label class="form-label" for="password">Password:</label>
-                <input type="password" id="password" class="form-control frm_input" />
+                <label class="form-label" for="cus_password">Password:</label>
+                <input type="password" id="cus_password" class="form-control frm_input" name="cus_password" />
               </div>
               <div class="form-outline mb-4">
-                <label class="form-label" for="re-password">Re-enter your password:</label>
-                <input type="password" id="re-password" class="form-control frm_input" />
+                <label class="form-label" for="cus_re-password">Re-enter your password:</label>
+                <input type="password" id="cus_re-password" class="form-control frm_input" name="cus_re-password" />
               </div>
               <div class="form-outline mb-4">
-                <label class="form-label" for="fullname">Full name:</label>
-                <input type="text" id="fullname" class="form-control frm_input" />
+                <label class="form-label" for="cus_fname">First name:</label>
+                <input type="text" id="cus_fname" class="form-control frm_input" name="cus_fname" value="<?php if(isset($_POST['cus_fname'])){echo $_POST['cus_fname'];} ?>"/>
               </div>
               <div class="form-outline mb-4">
-                        <label class="form-label" for="dateOfBirth">Date of birth:</label>
-                        <input type="text" class="form-control calendar chk-date readonly frm_input" name="inDate_start" id="inDate_start" value="" >
+                <label class="form-label" for="cus_lname">Last name:</label>
+                <input type="text" id="cus_lname" class="form-control frm_input" name="cus_lname" value="<?php if(isset($_POST['cus_lname'])){echo $_POST['cus_lname'];} ?>"/>
+              </div>
+              <div class="form-outline mb-4">
+                        <label class="form-label" for="cus_dateOfBirth">Date of birth:</label>
+                        <input type="text" class="form-control calendar chk-date readonly frm_input" name="inDate_start" id="cus_dateOfBirth" name="cus_dateOfBirth" value="<?php if(isset($_POST['cus_dataOfBirth'])){echo $_POST['cus_dataOfBirth'];} ?>">
                       </div>
               <div style="width: 100%;">
-                <label class="form-label" for="gender">Gender:</label>
-                  <select class="select frm_input">
+                <label class="form-label" for="cus_gender">Gender:</label>
+                  <select class="select frm_input" name="cus_gender">
                     <option value="female">Female</option>
                     <option value="male">Male</option>
                     <option value="other">Other</option>
                   </select>
               </div>
               <div class="form-outline mb-4">
-                <label class="form-label" for="phoneNumber">Phone number:</label>
-                <input type="text" id="phoneNumber" class="form-control frm_input" />
+                <label class="form-label" for="cus_phoneNumber">Phone number:</label>
+                <input type="text" id="cus_phoneNumber" class="form-control frm_input" name="cus_phoneNumber" value="<?php if(isset($_POST['cus_phoneNumber'])){echo $_POST['cus_phoneNumber'];} ?>"/>
               </div>
               <div class="form-outline mb-4">
-                <label class="form-label" for="email">Email:</label>
-                <input type="text" id="email" class="form-control frm_input" />
+                <label class="form-label" for="cus_email">Email:</label>
+                <input type="email" id="cus_email" class="form-control frm_input" name="cus_email" value="<?php if(isset($_POST['cus_email'])){echo $_POST['cus_email'];} ?>"/>
               </div>
-              
-               <input type="submit" value="Sign up" class="btn_submit">
+              <div class="form-outline mb-4">
+                <label class="form-label" for="cus_address">Address:</label>
+                <input type="text" id="cus_address" class="form-control frm_input" name="cus_address" value="<?php if(isset($_POST['cus_address'])){echo $_POST['cus_address'];} ?>"/>
+              </div>
+               <input type="submit" value="Sign up" class="btn_submit" name="regis" id="regis">
                <!-- <input type="checkbox" name="auto_login" id="login_auto_login">
                 <label for="login_auto_login">자동로그인</label>-->
             </fieldset>
@@ -89,7 +108,66 @@
             </div>-->
         </div>
 		</form>
+<?php
 
+
+if (isset($_POST['regis'])) {
+
+    $valid = 1;
+    if($valid == 1) {
+
+        // $token = md5(time());
+        // $cust_datetime = date('Y-m-d h:i:s');
+        // $cust_timestamp = time();
+
+        $fname = $_POST['cus_fname'];
+        $lname = $_POST['cus_lname'];
+        $phpdate = strtotime( $_POST['cus_dataOfBirth']);
+        $cus_dataOfBirth = date('Y-m-d h:i:s', $phpdate);
+        $cus_gender = $_POST['cus_gender'];
+        $cus_phoneNumber = $_POST['cus_phoneNumber'];
+        $cus_email = $_POST['cus_email'];
+        $cus_address = $_POST['cus_address'];
+        $cus_username = $_POST['cus_username'];
+
+        $pass = md5($_POST['cus_password']);
+        $sql = "INSERT INTO Account (
+                                        acc_username,
+                                        acc_password,
+                                        role_name
+                                    ) VALUES ('$cus_username', '$pass', 'GUESS');";
+     
+        // mysqli_query($conn, $sql);
+        // $result = mysqli_query($conn, 'select acc_id from Account where acc_username = "$cus_username"');
+        $sql .= "set @accid = (select acc_id from Account where acc_username = '$cus_username');";
+        $sql .= "INSERT INTO Customer (
+                                        cus_fname,
+                                        cus_lname,
+                                        cus_birthday,
+                                        cus_gender,
+                                        cus_phone,
+                                        cus_email,
+                                        cus_address,
+                                        status,
+                                        acc_id
+                                    ) VALUES ('$fname', '$lname', '$cus_dataOfBirth', '$cus_gender', '$cus_phoneNumber', '$cus_email', '$cus_address',1,@accid)";
+        
+        // mysqli_query($conn, $sql2);
+        mysqli_multi_query($conn, $sql);
+        
+        // unset($_POST['cust_name']);
+        // unset($_POST['cust_cname']);
+        // unset($_POST['cust_email']);
+        // unset($_POST['cust_phone']);
+        // unset($_POST['cust_address']);
+        // unset($_POST['cust_city']);
+        // unset($_POST['cust_state']);
+        // unset($_POST['cust_zip']);
+        // $success_message = LANG_VALUE_152;
+        header("Location: index.php");
+    }
+}
+?>
        
 
         

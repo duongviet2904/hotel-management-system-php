@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(isset($_SESSION['acc_id']))
+    header("Location: index.php");
+?>
+
 <!doctype html>
 <html lang="ko">
 <head>
@@ -30,24 +36,23 @@
     
     
     
-        <form name="flogin" action="http://www.grandplazahanoi.com/kor/bbs/login_check.php" onsubmit="return flogin_submit(this);" method="post">
+        <form name="flogin" action="" method="POST">
         <input type="hidden" name="url" value="http%3A%2F%2Fwww.grandplazahanoi.com%2Fkor">
         
         <div>
-          <h2 class="board_t">회원로그인</h2>
+          <h2 class="board_t">LOGIN</h2>
             <fieldset id="login_fs">
-                <legend>회원로그인</legend>
-                <label for="login_id" class="login_id hidden">회원아이디<strong class="sound_only"> 필수</strong></label>
-                <input type="text" name="mb_id" id="login_id" required class="frm_input required" size="20" maxLength="20" placeholder="아이디">
-                <label for="login_pw" class="login_pw hidden">비밀번호<strong class="sound_only"> 필수</strong></label>
-                <input type="password" name="mb_password" id="login_pw" required class="frm_input required" size="20" maxLength="20" placeholder="비밀번호">
-                <input type="submit" value="로그인" class="btn_submit">
+                <label for="username" class="login_id hidden">Username<strong class="sound_only"> Không được bỏ trống</strong></label>
+                <input type="text" name="username" id="login_id" required class="frm_input required" size="20" maxLength="20" placeholder="Username">
+                <label for="password" class="login_pw hidden">Password<strong class="sound_only"> Không được bỏ trống</strong></label>
+                <input type="password" name="password" id="login_pw" required class="frm_input required" size="20" maxLength="20" placeholder="Password">
+                <input type="submit" value="LOGIN" class="btn_submit">
                <!-- <input type="checkbox" name="auto_login" id="login_auto_login">
                 <label for="login_auto_login">자동로그인</label>-->
             </fieldset>
              <aside class="log_common">
               <ul class="find">
-                <li class="clearfix">아직 계정이 없으신가요?           <a href="./register.php" class="bg-gray">회원 가입</a></li>
+                <li class="clearfix">Bạn chưa có tài khoản?<a href="registration.php" class="bg-gray">Đăng kí ngay</a></li>
                 <li class="clearfix">아이디, 비밀번호가 생각나지 않으세요?           <a href="http://www.grandplazahanoi.com/kor/bbs/password_lost.php" id="login_password_lost_x" class="w">아이디/비밀번호 찾기</a></li>
               </ul>
             </aside>
@@ -59,7 +64,36 @@
 		</form>
 
        
+        <?php
+           include('config.php');
+          
+           
+           if($_SERVER["REQUEST_METHOD"] == "POST") {
+              // username and password sent from form 
+              
+              $username = mysqli_real_escape_string($conn,$_POST['username']);
+              $password = md5(mysqli_real_escape_string($conn,$_POST['password'])); 
+              
+              $sql = "SELECT acc_id, role_name FROM Account WHERE acc_username = '$username' and acc_password = '$password'";
+              $result = mysqli_query($conn,$sql);
 
+              $row = mysqli_fetch_assoc($result);
+              $count = mysqli_num_rows($result);
+              $role_name = $row['role_name'];
+              // If result matched $myusername and $mypassword, table row must be 1 row
+                
+              if($count > 0) {
+                 
+                 $_SESSION['acc_id'] = $row['acc_id'];
+                 if($role_name == "GUESS")
+                    header("location: home.php");
+                else
+                    header("location: admin/index.php");
+              }else {
+                 echo '<script>alert("Your Login Name or Password is invalid") </script>' ;
+              }
+           }
+        ?>
         
      <!--<div class="btn_confirm">
             <a href="http://www.grandplazahanoi.com/kor/">메인으로 돌아가기</a>
