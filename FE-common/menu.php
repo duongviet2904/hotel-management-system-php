@@ -45,7 +45,7 @@
                                 <li><a href="registration.php">SIGN UP</a></li>';
                         }
                     ?>
-                    <!--                    <li><a href="bbs/faq.php">FAQ</a></li>-->
+
                     <li><a href="reserve/reservation.php">예약확인</a></li>
 <!--                      <li><a href="bbs/qalist.php">1:1문의</a></li>-->
 <!--                    <li><a href="bbs/current_connect.php">접속자 
