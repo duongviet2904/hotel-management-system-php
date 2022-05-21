@@ -27,7 +27,7 @@
                                     </div>
                                 </div>
                                 <div class="page-title-actions">
-                                    <button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom" class="btn-shadow mr-3 btn btn-dark">
+                                    <button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom" class="btn-shadow mr-3 btn btn-dark" onclick="myFunction()">
                                         <span class="btn-icon-wrapper pr-2 opacity-7">
                                                 <i class="fa fa-business-time fa-w-20"></i>
                                             </span>
@@ -39,14 +39,20 @@
                     <div class="row">
                             <div class="col-lg-12">
                                 <div class="main-card mb-3 card">
-                                    <div class="card-body"><h5 class="card-title">Simple table</h5>
+                                    <div class="card-body">
                                         <table class="mb-0 table">
                                             <thead>
                                             <tr>
-                                                <!-- <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th> -->
+                                                <th>STT</th>
+                                                <th>Họ đệm</th>
+                                                <th>Tên</th>
+                                                <th>Ngày sinh</th>
+                                                <th>Giới tính</th>
+                                                <th>SDT</th>
+                                                <th>Email</th>
+                                                <th>Địa chỉ</th>
+                                                <th>Tên đăng nhập</th>
+                                                <th>Action</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -59,7 +65,7 @@
                                                 // output data of each row
                                                 while($row = mysqli_fetch_assoc($result)) {
                                                     echo ' <tr>
-                                                        <th scope="row">$index</th>
+                                                        <th scope="row">'.$index.'</th>
                                                         <td>'.$row["cus_fname"].'</td>
                                                         <td>'.$row["cus_lname"].'</td>
                                                         <td>'.$row["cus_birthday"].'</td>
@@ -68,7 +74,10 @@
                                                         <td>'.$row["cus_email"].'</td>
                                                         <td>'.$row["cus_address"].'</td>
                                                         <td>'.$row["acc_username"].'</td>
-                                                        <td>'.$row["acc_password"].'</td>
+                                                        <td>
+                                                        <button type="button" class="btn btn-dark">Edit</button>
+                                                        <button type="button" class="btn btn-dark">Delete</button>
+                                                        </td>
                                                     </tr>';
                                                     $index++;
                                                 }
@@ -78,39 +87,9 @@
 
                                                 mysqli_close($conn);
                                                 ?>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Larry</td>
-                                                <td>the Bird</td>
-                                                <td>@twitter</td>
-                                            </tr>
+                                            
                                             </tbody>
                                         </table>
-                                    </div>
-                                </div>
-                            </div>
-
-                    </div>
-                    <div class="row">
-                            <div class="col-lg-12">
-                                <div class="main-card mb-3 card">
-                                    <div class="card-body"><h5 class="card-title">Room Status</h5>
-                                        <div class="row">
-                                            <div class="col-sm">1</div>
-                                            <div class="col-sm">1</div>
-                                            <div class="col-sm">1</div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm">1</div>
-                                            <div class="col-sm">1</div>
-                                            <div class="col-sm">1</div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -119,5 +98,12 @@
                 </div>
         </div>
     </div>
-<script type="text/javascript" src="./assets/scripts/main.js"></script></body>
+<script type="text/javascript" src="./assets/scripts/main.js"></script>
+<script>
+
+   function myFunction(){
+    window.location.href = "http://localhost:8080/HAUI/GrandPlaza/admin/add-customer.php";
+   } ;
+</script>
+</body>
 </html>

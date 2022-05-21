@@ -145,21 +145,21 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li <?php echo ($page == 'customer-management' || $page == 'add-customer') ? "class = 'mm-active'" : ""; ?>>
                                     <a href="#">
-                                        <i class="metismenu-icon pe-7s-id <?php echo ($page == 'customer-management') ? "mm-active" : ""; ?>"></i>
+                                        <i class="metismenu-icon pe-7s-id"></i>
                                         Quản lí khách hàng
                                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                     </a>
-                                    <ul <?php echo ($page == 'customer-management') ? "class = 'mm-show'" : ""; ?>>
+                                    <ul <?php echo ($page == 'customer-management' || $page == 'add-customer') ? "class = 'mm-show'" : ""; ?>>
                                         <li>
-                                            <a href="customer-management.php">
-                                                <i class="metismenu-icon <?php echo ($page == 'customer-management') ? "mm-active" : ""; ?>">
+                                            <a href="customer-management.php" <?php echo ($page == 'customer-management') ? "class = 'mm-active'" : ""; ?>>
+                                                <i class="metismenu-icon ">
                                                 </i>Danh sách khách hàng
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="components-accordions.html">
+                                            <a href="add-customer.php"  <?php echo ($page == 'add-customer') ? "class = 'mm-active'" : ""; ?>>
                                                 <i class="metismenu-icon">
                                                 </i>Thêm khách hàng
                                             </a>
