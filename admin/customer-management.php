@@ -1,4 +1,6 @@
 <?php include('../config.php')?>
+
+<?php session_start();?>
 <!doctype html>
 <html lang="en">
 
@@ -60,7 +62,7 @@
 
                                                 $sql = "SELECT * FROM Customer inner join Account on Customer.acc_id = Account.acc_id";
                                                 $result = mysqli_query($conn, $sql);
-                                                $index = 0;
+                                                $index = 1;
                                                 if (mysqli_num_rows($result) > 0) {
                                                 // output data of each row
                                                 while($row = mysqli_fetch_assoc($result)) {
@@ -75,8 +77,8 @@
                                                         <td>'.$row["cus_address"].'</td>
                                                         <td>'.$row["acc_username"].'</td>
                                                         <td>
-                                                        <button type="button" class="btn btn-dark">Edit</button>
-                                                        <button type="button" class="btn btn-dark">Delete</button>
+                                                        <button type="button" class="btn btn-dark"><a href="edit-customer.php?id='.$row["cus_id"].'" style="text-decoration:none; color: white">Edit</a></button>
+                                                        <button type="button" class="btn btn-dark"><a href="delete-customer.php?acc_id='.$row["acc_id"].'" style="text-decoration:none; color: white">Delete</a></button>
                                                         </td>
                                                     </tr>';
                                                     $index++;

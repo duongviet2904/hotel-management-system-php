@@ -1,6 +1,8 @@
  <?php include('config.php'); ?>
 
-<?php session_start();?>
+<?php 
+ob_start();
+session_start();?>
 
 <!doctype html>
 <html lang="ko">
@@ -70,7 +72,7 @@
               </div>
               <div class="form-outline mb-4">
                         <label class="form-label" for="cus_dateOfBirth">Date of birth:</label>
-                        <input type="text" class="form-control calendar chk-date readonly frm_input" name="inDate_start" id="cus_dateOfBirth" name="cus_dateOfBirth" value="<?php if(isset($_POST['cus_dataOfBirth'])){echo $_POST['cus_dataOfBirth'];} ?>">
+                        <input type="date" class="form-control frm_input"  id="cus_dateOfBirth" name="cus_dateOfBirth">
                       </div>
               <div style="width: 100%;">
                 <label class="form-label" for="cus_gender">Gender:</label>
@@ -122,15 +124,15 @@ if (isset($_POST['regis'])) {
 
         $fname = $_POST['cus_fname'];
         $lname = $_POST['cus_lname'];
-        $phpdate = strtotime( $_POST['cus_dataOfBirth']);
-        $cus_dataOfBirth = date('Y-m-d h:i:s', $phpdate);
+        $phpdate = strtotime( $_POST['cus_dateOfBirth']);
+        $cus_dateOfBirth = date('Y-m-d h:i:s', $phpdate);
         $cus_gender = $_POST['cus_gender'];
         $cus_phoneNumber = $_POST['cus_phoneNumber'];
         $cus_email = $_POST['cus_email'];
         $cus_address = $_POST['cus_address'];
         $cus_username = $_POST['cus_username'];
 
-        $pass = md5($_POST['cus_password']);
+        $pass = $_POST['cus_password'];
         $sql = "INSERT INTO Account (
                                         acc_username,
                                         acc_password,
@@ -150,8 +152,9 @@ if (isset($_POST['regis'])) {
                                         cus_address,
                                         status,
                                         acc_id
-                                    ) VALUES ('$fname', '$lname', '$cus_dataOfBirth', '$cus_gender', '$cus_phoneNumber', '$cus_email', '$cus_address',1,@accid)";
-
+                                    ) VALUES ('$fname', '$lname', '$cus_dateOfBirth', '$cus_gender', '$cus_phoneNumber', '$cus_email', '$cus_address',1,@accid)";
+// var_dump($sql);
+//                     die();
         // mysqli_query($conn, $sql2);
         mysqli_multi_query($conn, $sql);
 
@@ -164,7 +167,8 @@ if (isset($_POST['regis'])) {
         // unset($_POST['cust_state']);
         // unset($_POST['cust_zip']);
         // $success_message = LANG_VALUE_152;
-        header("Location: index.php");
+        $_SESSION['username'] = $cus_username;
+        header("Location: login.php?username='.$cus_username.'");
     }
 }
 ?>
