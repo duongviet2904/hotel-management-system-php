@@ -15,7 +15,7 @@
                 <a href="http://www.grandplazahanoi.com/kor">
                   <img src="http://www.grandplazahanoi.comtheme/gph/img/common/logo.png" alt="그랜드 플라자 하노이호텔">
 <!--                     <img src="theme/gph/img/common/logo.png" alt="베트남 하노이 호텔 로고 입니다">-->
-                </a>  
+                </a>
             </h1>
             <div class="langbox">
                 <!--<a class="">language</a>-->
@@ -33,24 +33,16 @@
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <!-- //Google 번역 -->
-             <!--   <ul class="depth_lang">
-                    <li>
-                        <a href="">KOREAN</a>
-                    </li>
-                    <li>
-                        <a href="">ENGLISH</a>
-                    </li>
-                </ul>-->
             </div>
              <div class="gnb">
                 <ul>
-                                        
+
                     <li><a href="http://www.grandplazahanoi.combbs/login.php">LOGIN</a></li>
                     <li><a href="http://www.grandplazahanoi.combbs/register.php">JOIN</a></li>
                     <!--                    <li><a href="http://www.grandplazahanoi.combbs/faq.php">FAQ</a></li>-->
                     <li><a href="reserve/reservation.php">예약확인</a></li>
 <!--                      <li><a href="http://www.grandplazahanoi.combbs/qalist.php">1:1문의</a></li>-->
-<!--                    <li><a href="http://www.grandplazahanoi.combbs/current_connect.php">접속자 
+<!--                    <li><a href="http://www.grandplazahanoi.combbs/current_connect.php">접속자
 3</a></li>-->
 <!--                    <li><a href="http://www.grandplazahanoi.combbs/new.php">새글</a></li>-->
                     <li class="topm"><a href="bbs/content.php?co_id=about">ABOUT US</a>
@@ -199,7 +191,7 @@
                 <li>
                     <a href="bbs/content.php?co_id=Wedding" title="Wedding">Wedding</a>
                     <ul class="dep_meun">
-                        <li><a href="bbs/content.php?co_id=Wedding" title="웨딩 홀">웨딩 홀</a></li> 
+                        <li><a href="bbs/content.php?co_id=Wedding" title="웨딩 홀">웨딩 홀</a></li>
                         <li><a href="bbs/write.php?bo_table=form" title="웨딩 컨설팅">웨딩 컨설팅</a></li>
                     </ul>
                 </li>
@@ -341,14 +333,14 @@
                       <h2>Deluxe Room</h2>
                   </div> -->
 
-                  
+
 
 <article id="ctt" class="ctt_Room">
     <div id="ctt_con">
-        <section id="contents">           
+        <section id="contents">
             <h1>Deluxe Room</h1>
             <div class="sub1_wrap">
-                <div class="sub1 inner">    
+                <div class="sub1 inner">
                       <div class="info_slider">
                         <div class="info_slider-main_wrap">
                             <div class="info_slider-main">
@@ -371,38 +363,38 @@
                                 <div class="slide"><img src="theme/gph/img/sub/d4.jpg" alt="룸 이미지 "><div class="cover"></div></div>
                                 <div class="slide"><img src="theme/gph/img/sub/d5.jpg" alt="룸 이미지 "><div class="cover"></div></div>
                             </div>
-                        </div>                      
+                        </div>
                     </div>
                     <div class="sub_infotxt">
                         <h3 class="subject">객실정보</h3>
                         <p class="subjt_txt">하노이에서 가장 넓은 규모의 일반 객실로 비지니스로 방문 하신 많은 분들이 쾌적한 객실 내부였다고 좋은 평가를 해주셨습니다. 2019년 시스코 최신 와이파이 장비 전층 교체에 따른 객실 내부에서의 비지니스 업무에 최적화 되어 있습니다.</p>
                         <div class="if_txt">
                             <div class="rm_txt">
-                                <dl>    
+                                <dl>
                                     <dt>면&nbsp;&nbsp;&nbsp;&nbsp;적</dt>
                                     <dd> 45㎡</dd>
                                 </dl>
-                                 <dl>    
+                                 <dl>
                                   <dt>위&nbsp;&nbsp;&nbsp;&nbsp;치</dt>
                                     <dd>6층 - 28층(전층)</dd>
                                 </dl>
-                                <dl>    
+                                <dl>
                                   <dt>침&nbsp;&nbsp;&nbsp;&nbsp;대</dt>
                                     <dd>더블 베드 (180x200cm) /트윈 베드(120x200cm)</dd>
                                 </dl>
-                               
-                              <dl>    
+
+                              <dl>
                                 <dt>룸&nbsp;구&nbsp;성</dt>
                                     <dd>침실, 욕실, 옷장, 티테이블</dd>
                                 </dl>
                             </div>
                             <div class="btn_sea">
                                 <a href="#" class="btn_defalt">도면보기</a>
-                            </div> 
-                        </div>                                                  
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div> 
+            </div>
             <div class="sub2_wrap">
                 <div class="inner">
                     <div class="sub_infotxt">
@@ -459,7 +451,7 @@
                                     <div class="rm_txt">
                                         <p><strong>T&nbsp;E&nbsp;L</strong> 84-243.555.1000 </p>
                                         <p><strong>F&nbsp;A&nbsp;X</strong>84 - 24 -3555-1111</p>
-                                        <p><strong>E-mail</strong>Reservation@grandplazahanoi.com</p>                                                                           
+                                        <p><strong>E-mail</strong>Reservation@grandplazahanoi.com</p>
                                     </div>
                                 </div>
                             </div>
