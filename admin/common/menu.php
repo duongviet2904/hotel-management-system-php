@@ -28,7 +28,7 @@
                                 </span>
                             </button>
                         </span>
-                    </div>    
+                    </div>
                     <div class="scrollbar-sidebar">
                         <div class="app-sidebar__inner">
                             <ul class="vertical-nav-menu">
@@ -147,14 +147,14 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class="metismenu-icon pe-7s-id"></i>
+                                        <i class="metismenu-icon pe-7s-id <?php echo ($page == 'customer-management') ? "mm-active" : ""; ?>"></i>
                                         Quản lí khách hàng
                                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                     </a>
-                                    <ul>
+                                    <ul <?php echo ($page == 'customer-management') ? "class = 'mm-show'" : ""; ?>>
                                         <li>
-                                            <a href="components-tabs.html">
-                                                <i class="metismenu-icon">
+                                            <a href="customer-management.php">
+                                                <i class="metismenu-icon <?php echo ($page == 'customer-management') ? "mm-active" : ""; ?>">
                                                 </i>Danh sách khách hàng
                                             </a>
                                         </li>
@@ -196,4 +196,4 @@
                             </ul>
                         </div>
                     </div>
-                </div>    
+                </div>
