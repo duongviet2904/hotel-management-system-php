@@ -3,14 +3,14 @@
 
 <head>
     <title>Regular Tables - Tables are the backbone of almost all web applications.</title>
-    <?php include('common/head-link.php'); ?>
+    <?php include('../common/head-link.php'); ?>
 </head>
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
-        <?php include('common/header.php'); ?>
-        <?php include('common/setting.php'); ?>
+        <?php include('../common/header.php'); ?>
+        <?php include('../common/setting.php'); ?>
         <div class="app-main">
-                <?php $page = 'service-management'; include('common/menu.php'); ?>
+                <?php $page = 'room-class-management'; include('../common/menu.php'); ?>
                 <div class="app-main__outer">
                     <div class="app-main__inner">
                         <div class="app-page-title">
@@ -20,8 +20,8 @@
                                         <i class="pe-7s-drawer icon-gradient bg-happy-itmeo">
                                         </i>
                                     </div>
-                                    <div>Danh sách dịch vụ
-                                        <div class="page-title-subheading">Quản lý dịch vụ
+                                    <div>Danh sách loại phòng
+                                        <div class="page-title-subheading">Quản lý loại phòng
                                         </div>
                                     </div>
                                 </div>
@@ -31,7 +31,7 @@
                                                 <i class="fa fa-business-time fa-w-20"></i>
                                             </span>
                                             
-                                            <a href="add-service.php" style="text-decoration: none; color: white">Thêm dịch vụ</a>
+                                            <a href="add-room-class.php" style="text-decoration: none; color: white">Thêm loại phòng</a>
                                     </button>
                                 </div>    
                             </div>
@@ -39,21 +39,20 @@
                     <div class="row">
                             <div class="col-lg-12">
                                 <div class="main-card mb-3 card">
-                                    <div class="card-body"><h5 class="card-title">Danh sách dịch vụ</h5>
+                                    <div class="card-body"><h5 class="card-title">Danh sách loại phòng</h5>
                                         <table class="mb-0 table">
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Service Name</th>
-                                                <th>Service Description</th>
-                                                <th>Service Price</th>
-                                                <th>Service Image</th>
-                                                <th>Status</th>
+                                                <th>Room Class Name</th>
+                                                <th>Room Class Description</th>
+                                                <th>Room Class Image</th>
+                                                <th>Room Class Status</th>
                                             </tr>
                                             </thead>
                                             <?php
-                                            include('../config.php');
-                                            $sql = "SELECT * FROM service";
+                                            include('../../config.php');
+                                            $sql = "SELECT * FROM room_class";
                                             $query = mysqli_query($conn, $sql);
                                             $i = 0;
                                             if($query){
@@ -61,15 +60,14 @@
                                                     $i++;
                                                     echo "<tr>";
                                                     echo "<td>$i</td>";
-                                                    echo "<td>". $item['service_name']."</td>";
-                                                    echo "<td>". $item['room_description']."</td>";
-                                                    echo "<td>". $item['service_price']."</td>";
-                                                    echo "<td>". $item['service_image']."</td>";
+                                                    echo "<td>". $item['room_class_name']."</td>";
+                                                    echo "<td>". $item['room_class_description']."</td>";
+                                                    echo "<td>". $item['room_class_image']."</td>";
                                                     echo "<td>". $item['status']."</td>";
                                                     //echo "<td>"."<input id='btnSua' type='button' value='Sửa' '>"."</td>";
                                                     
-                                                    echo " <td style='text-align: center;'> <a href='edit-service.php?id=".$item['service_id']."'><input id='btnSua' type='button' value='Sửa' '>";
-                                                    echo " <td style='text-align: center;'> <a href='delete-service.php?id=".$item['service_id']."'><input id='btnXoa' type='button' value='Xoá' '>";
+                                                    echo " <td style='text-align: center;'> <a href='edit-room-class.php?id=".$item['room_class_id']."'><input id='btnSua' type='button' value='Sửa' '>";
+                                                    echo " <td style='text-align: center;'> <a href='delete-room-class.php?id=".$item['room_class_id']."'><input id='btnXoa' type='button' value='Xoá' '>";
                                                     echo "</tr>";
                                                     
                                                 }
