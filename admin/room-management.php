@@ -43,44 +43,38 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Room Class Name</th>
-                                                <th>Room Class Description</th>
-                                                <th>Room Class Image</th>
-                                                <th>Room Class Status</th>
+                                                <th>Tên phòng</th>
+                                                <th>Mô tả phòng</th>
+                                                <th>Giá phòng</th>
+                                                <th>Hình ảnh</th>
+                                                <th>Trạng thái phòng</th>
+                                                <th>Loại phòng</th>
                                             </tr>
                                             </thead>
                                             <?php
                                             include('../config.php');
-                                            $sql = "SELECT * FROM room_class";
+                                            $sql = "SELECT * FROM room";
                                             $query = mysqli_query($conn, $sql);
                                             $i = 0;
                                             if($query){
                                                 foreach($query as $item){
                                                     $i++;
+                                                    echo "<tr>";
+                                                    echo "<td>$i</td>";
+                                                    echo "<td>".$item['room_name']."</td>";
+                                                    echo "<td>".$item['room_description']."</td>";
+                                                    echo "<td>".$item['room_price']."</td>";
+                                                    echo "<td>".$item['room_class_image']."</td>";
+                                                    echo "<td>".$item['status']."</td>";
+                                                    echo "<td>".$item['room_class_id']."</td>";
+                                                    echo " <td style='text-align: center;'> <a href='edit-room.php?id=".$item['room_id']."'><input id='btnSua' type='button' value='Sửa' '>";
+                                                    echo " <td style='text-align: center;'> <a href='delete-room.php?id=".$item['room_id']."'><input id='btnXoa' type='button' value='Xoá' '>";
+                                                    echo "</tr>";
                                                     
                                                 }
                                             }
                                             ?>
                                         </table>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                    </div>
-                    <div class="row">
-                            <div class="col-lg-12">
-                                <div class="main-card mb-3 card">
-                                    <div class="card-body"><h5 class="card-title">Room Status</h5>
-                                        <div class="row">
-                                            <div class="col-sm">1</div>
-                                            <div class="col-sm">1</div>
-                                            <div class="col-sm">1</div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm">1</div>
-                                            <div class="col-sm">1</div>
-                                            <div class="col-sm">1</div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

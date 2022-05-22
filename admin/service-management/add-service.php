@@ -1,4 +1,4 @@
-<?php include('../config.php')?>
+<?php include('../../config.php')?>
 <?php 
     ob_start();
     // if(!isset($_SESSION["acc_id"]))
@@ -9,14 +9,14 @@
 
 <head>
     <title>Regular Tables - Tables are the backbone of almost all web applications.</title>
-    <?php include('common/head-link.php'); ?>
+    <?php include('../common/head-link.php'); ?>
 </head>
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
-        <?php include('common/header.php'); ?>
-        <?php include('common/setting.php'); ?>
+        <?php include('../common/header.php'); ?>
+        <?php include('../common/setting.php'); ?>
         <div class="app-main">
-                <?php $page = 'add-room-class'; include('common/menu.php'); ?>
+                <?php $page = 'add-room-class'; include('../common/menu.php'); ?>
                 <div class="app-main__outer">
                     <div class="app-main__inner">
                         <div class="row">

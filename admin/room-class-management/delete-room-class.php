@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-include('../config.php');
+include('../../config.php');
 
 // if(isset($_SESSION['acc_id'])) {
     
@@ -14,3 +14,4 @@ include('../config.php');
     $query = mysqli_query($conn, $sql);
     header('Location: room-class-management.php');
 // }
+?>
