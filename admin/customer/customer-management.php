@@ -1,4 +1,4 @@
-<?php include('../config.php')?>
+<?php include('../../config.php')?>
 
 <?php session_start();?>
 <!doctype html>
@@ -6,14 +6,14 @@
 
 <head>
     <title>Regular Tables - Tables are the backbone of almost all web applications.</title>
-    <?php include('common/head-link.php'); ?>
+    <?php include('../common/head-link.php'); ?>
 </head>
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
-        <?php include('common/header.php'); ?>
-        <?php include('common/setting.php'); ?>
+        <?php include('../common/header.php'); ?>
+        <?php include('../common/setting.php'); ?>
         <div class="app-main">
-                <?php $page = 'customer-management'; include('common/menu.php'); ?>
+                <?php $page = 'customer-management'; include('../common/menu.php'); ?>
                 <div class="app-main__outer">
                     <div class="app-main__inner">
                         <div class="app-page-title">
@@ -100,11 +100,11 @@
                 </div>
         </div>
     </div>
-<script type="text/javascript" src="./assets/scripts/main.js"></script>
+<script type="text/javascript" src="../../assets/scripts/main.js"></script>
 <script>
 
    function myFunction(){
-    window.location.href = "http://localhost:8080/HAUI/GrandPlaza/admin/add-customer.php";
+    window.location.href = "http://localhost:8080/HAUI/GrandPlaza/admin/customer/add-customer.php";
    } ;
 </script>
 </body>

@@ -1,4 +1,4 @@
-<?php include('../config.php')?>
+<?php include('../../config.php')?>
 <?php 
     ob_start();
     // if(!isset($_SESSION["acc_id"]))
@@ -15,10 +15,10 @@
 </head>
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
-        <?php include('common/header.php'); ?>
-        <?php include('common/setting.php'); ?>
+        <?php include('../common/header.php'); ?>
+        <?php include('../common/setting.php'); ?>
         <div class="app-main">
-                <?php $page = 'add-customer'; include('common/menu.php'); ?>
+                <?php $page = 'add-customer'; include('../common/menu.php'); ?>
                 <div class="app-main__outer">
                     <div class="app-main__inner">
                         <div class="row">
@@ -139,7 +139,7 @@
                 </div>
         </div>
     </div>
-<script type="text/javascript" src="./assets/scripts/main.js"></script></body>
+<script type="text/javascript" src="../../assets/scripts/main.js"></script></body>
 </html>
 
 <?php ob_end_flush(); ?>
