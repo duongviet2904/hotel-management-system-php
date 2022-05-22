@@ -1,4 +1,4 @@
-<?php include('../config.php')?>
+<?php include('../../config.php')?>
 <?php 
     ob_start();
     // if(!isset($_SESSION["acc_id"]))
