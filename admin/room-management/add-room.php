@@ -1,4 +1,4 @@
-<?php include('../config.php') ?>
+<?php include('../../config.php') ?>
 <?php
 ob_start();
 
@@ -27,16 +27,16 @@ if (isset($_GET['id'])) {
 
 <head>
     <title>Regular Tables - Tables are the backbone of almost all web applications.</title>
-    <?php include('common/head-link.php'); ?>
+    <?php include('../common/head-link.php'); ?>
 </head>
 
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
-        <?php include('common/header.php'); ?>
-        <?php include('common/setting.php'); ?>
+        <?php include('../common/header.php'); ?>
+        <?php include('../common/setting.php'); ?>
         <div class="app-main">
-            <?php $page = 'edit-room';
-            include('common/menu.php'); ?>
+            <?php $page = 'add-room';
+            include('../common/menu.php'); ?>
             <div class="app-main__outer">
                 <div class="app-main__inner">
                     <div class="row">
@@ -45,14 +45,14 @@ if (isset($_GET['id'])) {
                                 <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
                                     <div class="main-card mb-3 card">
                                         <div class="card-body">
-                                            <h5 class="card-title">Chỉnh sửa phòng</h5>
+                                            <h5 class="card-title">Thêm phòng</h5>
                                             <form class="" action="" method="POST">
                                                 <div class="form-row">
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
-                                                            <label for="cus_fname" class="">Tên phòng</label>
+                                                            <label for="room-name" class="">Tên phòng</label>
                                                             <input name="room_name" id="exampleEmail11" placeholder="name placeholder" 
-                                                            type="text" class="form-control" value="<?php if ($room_id) echo $result['room_name']; ?>">
+                                                            type="text" class="form-control">
                                                         </div>
                                                     </div>
 
@@ -60,28 +60,28 @@ if (isset($_GET['id'])) {
                                                         <div class="position-relative form-group">
                                                             <label for="cus_lname" class="">Mô tả phòng</label>
                                                             <input name="room_description" id="examplePassword11" placeholder="description placeholder" 
-                                                            type="text" class="form-control" value="<?php if ($room_id) echo $result['room_description']; ?>">
+                                                            type="text" class="form-control" >
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
                                                             <label for="cus_lname" class="">Giá phòng</label>
                                                             <input name="room_price" id="examplePassword11" placeholder="place placeholder" 
-                                                            type="text" class="form-control" value="<?php if ($room_id) echo $result['room_price']; ?>">
+                                                            type="text" class="form-control" >
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
                                                             <label for="cus_lname" class="">Hình ảnh phòng</label>
-                                                            <input name="room_class_image" id="examplePassword11" placeholder="room class image placeholder" 
-                                                            type="text" class="form-control" value="<?php if ($room_id) echo $result['room_class_image']; ?>">
+                                                            <input name="room_image" id="examplePassword11" placeholder="room image placeholder" 
+                                                            type="text" class="form-control" >
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
                                                             <label for="cus_lname" class="">Trạng thái</label>
                                                             <input name="room_status" id="examplePassword11" placeholder="status placeholder" 
-                                                            type="text" class="form-control" value="<?php if ($room_id) echo $result['status']; ?>">
+                                                            type="text" class="form-control" >
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
@@ -92,12 +92,12 @@ if (isset($_GET['id'])) {
                                                         $query = mysqli_query($conn, $sql);
                                                         $i = 0;
                                                         if ($query) {
-                                                            echo "<select class=\"col-md-6\" name = \"room_class_id\">";
+                                                            echo "<select class=\"col-md-6\" name = \"room_class\">";
                                                             foreach ($query as $item) {
                                                                 $i++;
-                                                                $room_class_name = $item['room_class_name'];
-                                                                $room_class_id = $item['room_class_id'];
-                                                                echo "<option value =\$room_class_id\">" . $room_class_name . "</option>";
+                                                                $rc_name = $item['room_class_name'];
+                                                                $rc_id = $item['room_class_id'];
+                                                                echo "<option value =\"$rc_id\">" . $rc_name . "</option>";
                                                             }
                                                             echo '</select>';
                                                         }
@@ -107,7 +107,7 @@ if (isset($_GET['id'])) {
                                                 </div>
                                         </div>
                                         
-                                        <button class="mt-2 btn btn-primary" type="submit">Update</button>
+                                        <button class="mt-2 btn btn-primary" type="submit">Add</button>
                                         </form>
 
                                         <?php
@@ -121,11 +121,11 @@ if (isset($_GET['id'])) {
                                             $room_name = $_POST['room_name'];
                                             // var_dump($rc_name);
                                             // die();
-                                            $room_image = $_POST['room_class_image'];
+                                            $room_image = $_POST['room_image'];
                                             $room_description = $_POST['room_description'];
                                             $room_price = $_POST['room_price'];
-                                            $room_class_image = $_POST['room_class_image'];
-                                            $room_class_id = $_POST['room_class_id'];
+                                            $room_image = $_POST['room_image'];
+                                            $room_class_id = $_POST['room_class'];
                                             $room_status = $_POST['room_status'];
 
                                             // $pass = $_POST['acc_password'];
@@ -135,15 +135,18 @@ if (isset($_GET['id'])) {
                                             //     $sql3 = "update Account set acc_password = '$pass' where acc_id = ".$result['acc_id'].";";
                                             // }
                                             // mysqli_query($conn, $sql);
-                                            $sql3 = "update room set room_name='$room_name', 
-                                                        room_class_image='$room_image', room_description = '$room_description', 
-                                                        status = '$room_status', room_price = $room_price, 
-                                                        room_class_id = $room_class_id, 
-                                                        where room_id = " . $room_id . ";";
-
-                                            var_dump($sql3);
-                                            die();
-                                            mysqli_query($conn, $sql3);
+                                            $sql = "INSERT INTO room (
+                                                                        room_name,
+                                                                        room_description,
+                                                                        room_price,
+                                                                        room_class_image,
+                                                                        status,
+                                                                        room_class_id
+                                                                    ) VALUES ('$room_name','$room_description','$room_price',
+                                                                    '$room_image','$room_status','$room_class_id');";
+                                            // var_dump($sql);
+                                            // die();
+                                            mysqli_query($conn, $sql);
                                             // unset($_POST['cust_name']);
                                             // unset($_POST['cust_cname']);
                                             // unset($_POST['cust_email']);

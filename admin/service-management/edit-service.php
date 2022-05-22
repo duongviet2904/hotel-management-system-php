@@ -42,20 +42,20 @@
                                             <form class="" action="" method="POST">
                                                 <div class="form-row">
                                                     <div class="col-md-12">
-                                                        <div class="position-relative form-group"><label for="cus_fname" class="">Tên dịch vụ</label><input name="ser_name" id="exampleEmail11" placeholder="name placeholder" type="text" 
+                                                        <div class="position-relative form-group"><label for="ser_name" class="">Tên dịch vụ</label><input name="ser_name" id="exampleEmail11" placeholder="name placeholder" type="text" 
                                                                                                                                                                 class="form-control" value="<?php if ($ser_id) echo $result['service_name']; ?>"></div>
                                                     </div>
                                                     
                                                     <div class="col-md-12">
-                                                        <div class="position-relative form-group"><label for="cus_lname" class="">Mô tả</label><input name="ser_description" id="examplePassword11" placeholder="description placeholder" type="text"
+                                                        <div class="position-relative form-group"><label for="ser_description" class="">Mô tả</label><input name="ser_description" id="examplePassword11" placeholder="description placeholder" type="text"
                                                                                                                                                                 class="form-control" value="<?php if ($ser_id) echo $result['room_description']; ?>"></div>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <div class="position-relative form-group"><label for="cus_lname" class="">Giá </label><input name="ser_price" id="examplePassword11" placeholder="price placeholder" type="text"
+                                                        <div class="position-relative form-group"><label for="ser_price" class="">Giá </label><input name="ser_price" id="examplePassword11" placeholder="price placeholder" type="text"
                                                                                                                                                                 class="form-control" value="<?php if ($ser_id) echo $result['service_price']; ?>"></div>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <div class="position-relative form-group"><label for="cus_lname" class="">Hình ảnh </label><input name="ser_image" id="examplePassword11" placeholder="image placeholder" type="text"
+                                                        <div class="position-relative form-group"><label for="ser_image" class="">Hình ảnh </label><input name="ser_image" id="examplePassword11" placeholder="image placeholder" type="text"
                                                                                                                                                                 class="form-control" value="<?php if ($ser_id) echo $result['service_image']; ?>"></div>
                                                     </div>
                                                     
@@ -64,34 +64,7 @@
                                                                                                                                                                 class="form-control" value="<?php if ($ser_id) echo $result['status']; ?>"></div>
                                                     </div>
                                                 </div>
-                                                <!-- <?php 
-                                                    if (isset($_SESSION['username'])) {
-                                                        $user_name = $_SESSION['username'];
-                                                        $sql2 = "SELECT * FROM Customer c inner join Account a on c.acc_id = a.acc_id WHERE acc_username = '$user_name'";
-                                                        $query2 = mysqli_query($conn, $sql2);
-                                                    
-                                                        $result2 = array();
-                                                        $active = 0;
-                                                        if (mysqli_num_rows($query2) > 0) {
-                                                            $row2 = mysqli_fetch_assoc($query2);
-                                                            $result2 = $row2;
-                                                        }
-                                                        if($row2['role_name'] == 'ADMIN'){
-                                                            echo '<div class="form-row">
-                                                                    <div class="col-md-12">
-                                                                        <div class="position-relative form-group"><label for="role_name" class="">Vai trò</label>
-                                                                        <select class="mb-2 form-control" name="role_name" >
-                                                                            <option value="ADMIN">Admin</option>
-                                                                            <option value="GUESS">Guess</option>
-                                                                            <option value="CASHIER">Cashier</option>
-                                                                        </select>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>';
-                                                                $active = 1;
-                                                        }
-                                                    } 
-                                                ?> -->
+                                                
                                                 
                                                 <button class="mt-2 btn btn-primary" type="submit">Update</button>
                                             </form>
