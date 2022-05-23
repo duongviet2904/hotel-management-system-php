@@ -134,7 +134,7 @@
 							<li class=""><a href="bbs/content.php?co_id=Room7" target="_self" class="">Phòng Royal Suite </a></li> -->
 							<?php
 							include('config.php');
-							$sql = "SELECT * FROM room_class";
+							$sql = "SELECT * FROM Room_Class";
 							$query = mysqli_query($conn, $sql);
 							foreach ($query as $item) {
 								echo "<li class=\"\"><a href=\"bbs/content.php?co_id=" . $item['room_class_id'] . "\" target=\"_self\"> " . $item['room_class_id'] .  "</a></li>";
@@ -524,7 +524,7 @@
 										<input type="hidden" name="g_price_total" id="g_price_total" value="0">
 										<?php 
 										include('config.php');
-										$sql2 = "SELECT * FROM room";
+										$sql2 = "SELECT * FROM Room";
 										$query = mysqli_query($conn, $sql2);
 										foreach($query as $room) {
 											echo "
