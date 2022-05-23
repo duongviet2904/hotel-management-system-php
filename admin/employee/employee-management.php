@@ -5,15 +5,14 @@
 <html lang="en">
 
 <head>
-    <title>Regular Tables - Tables are the backbone of almost all web applications.</title>
+    <title>Admin| Employee List</title>
     <?php include('../common/head-link.php'); ?>
 </head>
 <body>
-    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header closed-sidebar">
         <?php include('../common/header.php'); ?>
-        <?php include('../common/setting.php'); ?>
         <div class="app-main">
-                <?php $page = 'customer-management'; include('../common/menu.php'); ?>
+                <?php $page = 'employee-management'; include('../common/menu.php'); ?>
                 <div class="app-main__outer">
                     <div class="app-main__inner">
                         <div class="app-page-title">
@@ -23,8 +22,8 @@
                                         <i class="pe-7s-drawer icon-gradient bg-happy-itmeo">
                                         </i>
                                     </div>
-                                    <div>Danh sách Khách Hàng
-                                        <div class="page-title-subheading">Quản lí khách hàng
+                                    <div>Danh sách nhân viên
+                                        <div class="page-title-subheading">Quản lí nhân viên
                                         </div>
                                     </div>
                                 </div>
@@ -33,7 +32,7 @@
                                         <span class="btn-icon-wrapper pr-2 opacity-7">
                                                 <i class="fa fa-business-time fa-w-20"></i>
                                             </span>
-                                            Thêm khách hàng
+                                            <a href="add-employee.php" style="text-decoration: none; color: white;">Thêm nhân viên</a>
                                     </button>
                                 </div>
                             </div>
@@ -54,13 +53,14 @@
                                                 <th>Email</th>
                                                 <th>Địa chỉ</th>
                                                 <th>Tên đăng nhập</th>
+                                                <th>Vai trò</th>
                                                 <th>Action</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
 
-                                                $sql = "SELECT * FROM Customer inner join Account on Customer.acc_id = Account.acc_id";
+                                                $sql = "SELECT * FROM Employee inner join Account on Employee.acc_id = Account.acc_id";
                                                 $result = mysqli_query($conn, $sql);
                                                 $index = 1;
                                                 if (mysqli_num_rows($result) > 0) {
@@ -68,17 +68,18 @@
                                                 while($row = mysqli_fetch_assoc($result)) {
                                                     echo ' <tr>
                                                         <th scope="row">'.$index.'</th>
-                                                        <td>'.$row["cus_fname"].'</td>
-                                                        <td>'.$row["cus_lname"].'</td>
-                                                        <td>'.$row["cus_birthday"].'</td>
-                                                        <td>'.$row["cus_gender"].'</td>
-                                                        <td>'.$row["cus_phone"].'</td>
-                                                        <td>'.$row["cus_email"].'</td>
-                                                        <td>'.$row["cus_address"].'</td>
+                                                        <td>'.$row["em_fname"].'</td>
+                                                        <td>'.$row["em_lname"].'</td>
+                                                        <td>'.$row["em_birthday"].'</td>
+                                                        <td>'.$row["em_gender"].'</td>
+                                                        <td>'.$row["em_phone"].'</td>
+                                                        <td>'.$row["em_email"].'</td>
+                                                        <td>'.$row["em_address"].'</td>
+                                                        <td>'.$row["acc_username"].'</td>
                                                         <td>'.$row["acc_username"].'</td>
                                                         <td>
-                                                        <button type="button" class="btn btn-dark"><a href="edit-customer.php?id='.$row["cus_id"].'" style="text-decoration:none; color: white">Edit</a></button>
-                                                        <button type="button" class="btn btn-dark"><a href="delete-customer.php?acc_id='.$row["acc_id"].'" style="text-decoration:none; color: white">Delete</a></button>
+                                                        <button type="button" class="btn btn-dark"><a href="edit-employee.php?id='.$row["em_id"].'" style="text-decoration:none; color: white">Edit</a></button>
+                                                        <button type="button" class="btn btn-dark"><a href="delete-employee.php?acc_id='.$row["acc_id"].'" style="text-decoration:none; color: white">Delete</a></button>
                                                         </td>
                                                     </tr>';
                                                     $index++;
@@ -103,9 +104,6 @@
 <script type="text/javascript" src="../assets/scripts/main.js"></script>
 <script>
 
-   function myFunction(){
-    window.location.href = "http://localhost:8080/HAUI/GrandPlaza/admin/customer/add-customer.php";
-   } ;
 </script>
 </body>
 </html>

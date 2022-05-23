@@ -68,9 +68,9 @@
                                                     <div class="col-md-6">
                                                         <div class="position-relative form-group"><label for="cus_gender" class="">Giới tính</label>
                                                         <select class="mb-2 form-control" name="cus_gender" >
-                                                            <option value="male" <?php if ($cus_id && $result['cus_gender'] == 'male') echo  'default';?>>Male</option>
-                                                            <option value="female" <?php if ($cus_id && $result['cus_gender'] == 'female') echo  'default';?>>Female</option>
-                                                            <option value="other" <?php if ($cus_id && $result['cus_gender'] == 'other') echo  'default';?>>Other</option>
+                                                            <option value="male" <?php if ($cus_id && $result['cus_gender'] == 'male') echo  'selected';?>>Male</option>
+                                                            <option value="female" <?php if ($cus_id && $result['cus_gender'] == 'female') echo  'selected';?>>Female</option>
+                                                            <option value="other" <?php if ($cus_id && $result['cus_gender'] == 'other') echo  'selected';?>>Other</option>
                                                         </select>
                                                     </div>
                                                     </div>
@@ -104,7 +104,7 @@
                                                                         <div class="position-relative form-group"><label for="role_name" class="">Vai trò</label>
                                                                         <select class="mb-2 form-control" name="role_name" >
                                                                             <option value="ADMIN">Admin</option>
-                                                                            <option value="GUESS" checked>Guess</option>
+                                                                            <option value="GUESS" selected>Guess</option>
                                                                             <option value="CASHIER">Cashier</option>
                                                                         </select>
                                                                         </div>

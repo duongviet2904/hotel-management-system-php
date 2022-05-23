@@ -12,7 +12,7 @@
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header closed-sidebar">
         <?php include('../common/header.php'); ?>
-        <?php include('../common/setting.php'); ?>
+        <?php // include('../common/setting.php'); ?>
         <div class="app-main">
             <?php $page = 'customer-management';
             include('../common/menu.php'); ?>
@@ -63,6 +63,7 @@
                                                 <th>Mã phòng</th>
                                                 <th>Tên phòng</th>
                                                 <th>Dịch vụ</th>
+                                                <th>Tiền cọc</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -70,7 +71,7 @@
                                             <?php
 
 
-                                            $sql = "SELECT re_id, re_date_in, re_date_out, create_date, Reservation.status, Customer.cus_id, cus_fname, cus_lname, cus_birthday,
+                                            $sql = "SELECT re_id, re_date_in, re_date_out, create_date, isPaid, deposited,checkIn, Reservation.status, Customer.cus_id, cus_fname, cus_lname, cus_birthday,
                                              cus_gender, cus_phone, cus_email, cus_address FROM Reservation inner join Customer on Reservation.cus_id = Customer.cus_id";
                                             //  var_dump($sql);die();
                                             $result = mysqli_query($conn, $sql);
@@ -112,20 +113,38 @@
                                                                 while ($row2 = mysqli_fetch_assoc($result2)) {
                                                                     echo $row2["service_name"]. '</br>';
                                                             };
+                                                            
                                                             if($row['status'] == 1){
-                                                                echo '
-                                                                </td>
-                                                                <td rowspan="' . $num . '">
-                                                                    <button type="button" class="btn btn-success"><a href="edit-customer.php?id=' . $row["cus_id"] . '" style="text-decoration:none; color: white">Check in</a></button></br>
-                                                                    <button type="button" class="btn btn-info"><a href="edit-customer.php?id=' . $row["cus_id"] . '" style="text-decoration:none; color: white">Deposit</a></button></br>
-                                                                    <button type="button" class="btn btn-primary"><a href="edit-customer.php?id=' . $row["cus_id"] . '" style="text-decoration:none; color: white">Pay</a></button></br>
-                                                                    <button type="button" class="btn btn-warning"><a href="edit-reservation.php?re_id=' . $row["re_id"] . '&cus_id='. $row['cus_id'].'" style="text-decoration:none; color: white">Edit</a></button></br>
-                                                                    <button type="button" class="btn btn-danger"><a href="delete-reservation.php?re_id=' . $row["re_id"] . '" style="text-decoration:none; color: white">Delete</a></button>
+                                                                if(!$row['deposited']){
+                                                                    
+                                                                    echo '
+                                                                    </td><td rowspan="' . $num . '"><button type="button" class="btn btn-info"><a href="edit-customer.php?id=' . $row["cus_id"] . '" style="text-decoration:none; color: white">Deposit</a></button></br></td>';
+                                                                }else{
+                                                                    echo '</td><td rowspan="' . $num . '">' .number_format( $row["deposited"] ). '</td>';
+                                                                }
+                                                                if($row['isPaid'] == 0){
+                                                                    echo '
+                                                                    <td rowspan="' . $num . '">
+                                                                        <button type="button" class="btn btn-success"><a href="edit-customer.php?id=' . $row["cus_id"] . '" style="text-decoration:none; color: white">Check in</a></button></br>
+                                                                        <button type="button" class="btn btn-primary"><a href="pay-reservation.php?re_id=' . $row["re_id"] . '" style="text-decoration:none; color: white">Pay</a></button></br>
+                                                                        <button type="button" class="btn btn-warning"><a href="edit-reservation.php?re_id=' . $row["re_id"] . '&cus_id='. $row['cus_id'].'" style="text-decoration:none; color: white">Edit</a></button></br>
+                                                                        <button type="button" class="btn btn-danger"><a href="delete-reservation.php?re_id=' . $row["re_id"] . '" style="text-decoration:none; color: white">Delete</a></button>
+                                                                        </td>
+                                                                    </tr>';
+                                                                }else{
+                                                                    echo '
                                                                     </td>
-                                                                </tr>';
+                                                                    <td rowspan="' . $num . '">
+                                                                        Đã thanh toán
+                                                                        </td>
+                                                                    </tr>';
+                                                                }
                                                             }else{
                                                                 echo '
                                                                 </td>
+                                                                <td rowspan="' . $num . '">
+                                                                ' . number_format($row["deposited"]) . '
+                                                                    </td>
                                                                 <td rowspan="' . $num . '">
                                                                     Đã Xoá
                                                                     </td>
