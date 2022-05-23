@@ -104,7 +104,7 @@
                                                                         <div class="position-relative form-group"><label for="role_name" class="">Vai trò</label>
                                                                         <select class="mb-2 form-control" name="role_name" >
                                                                             <option value="ADMIN">Admin</option>
-                                                                            <option value="GUESS">Guess</option>
+                                                                            <option value="GUESS" checked>Guess</option>
                                                                             <option value="CASHIER">Cashier</option>
                                                                         </select>
                                                                         </div>

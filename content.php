@@ -24,7 +24,7 @@
 <script>
 	function googleTranslateElementInit() {
 		new google.translate.TranslateElement({
-			pageLanguage: 'ko',
+			pageLanguage: 'vi',
 			includedLanguages: 'ko,zh-CN,zh-TW,ja,vi,th,tl,km,my,mn,ru,en,fr,ar',
 			layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
 			autoDisplay: false

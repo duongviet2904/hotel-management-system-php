@@ -1,35 +1,46 @@
-<?php include('../../config.php')?>
-<?php 
-    ob_start();
-    session_start(); 
-    if(!isset($_SESSION["username"]))
-        header("location: ../login.php");
+<?php ob_start(); ?>
+<?php
+session_start();
 ?>
 
-<?php  ?> 
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 
 <head>
-    <title>Regular Tables - Tables are the backbone of almost all web applications.</title>
-    <?php include('../common/head-link.php'); ?>
+    <title>GrandPlaza|Đặt phòng</title>
+    <?php include("FE-common/header.php") ?>
+    <!--<link rel="stylesheet" href="/css/sub.css?v=1">-->
 </head>
+
 <body>
-    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header closed-sidebar">
-        <?php include('../common/header.php'); ?>
-        <?php include('../common/setting.php'); ?>
-        <div class="app-main">
-                <?php $page = 'add-reservation'; include('../common/menu.php'); ?>
-                <div class="app-main__outer">
-                    <div class="app-main__inner">
-                        <div class="row">
-                                <div class="col-lg-12">
-                                <div class="tab-content">
-                                <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
-                                    <div class="main-card mb-3 card">
-                                        <div class="card-body"><h5 class="card-title">Thêm đơn đặt phòng</h5>
-                                            <form class="" action="" method="POST">
-                                                <div class="form-row">
+
+    <!-- phần đầu { -->
+    <?php include("FE-common/menu.php") ?>
+
+    <!-- } hết phần đầu -->
+
+
+    <!-- phần nội dung { -->
+    <div id="wrapper">
+        <div id="container">
+            <section class="sub">
+                <section id="sub_page">
+                    <!-- <div class="sub_tit">
+                      <h2>Đăng nhập</h2>
+                  </div> -->
+
+
+
+                    <!--  đăng nhập { -->
+                    <h1 class="lg_title inner">Đăng Đặt phòng</h1>
+                    <div id="mb_login" class="mbskin inner clearfix">
+
+
+
+                        <form name="flogin" action="" method="POST">
+                            <!-- <input type="hidden" name="url" value="http%3A%2F%2Fwww.grandplazahanoi.com%2Fkor"> -->
+
+                            <div class="form-row">
                                                     <div class="col-md-6">
                                                         <div class="position-relative form-group"><label for="cus_fname" class="">Họ đệm</label><input name="cus_fname" value="<?php if(isset($_POST['cus_fname'])){echo $_POST['cus_fname'];} ?>" id="exampleEmail11" placeholder="with a placeholder" type="text" class="form-control"></div>
                                                     </div>
@@ -89,7 +100,7 @@
                                                                 //  $_SESSION['date_out'] = $re_date_out;
                                                                 //  $_SESSION['date_in'] = $re_date_in;
                                                                 $sql2 = "SELECT * FROM Room where Room.room_id not in (select ro.room_id from Room ro inner join Reservation_Room rr on ro.room_id = rr.room_id 
-                                                                inner join Reservation re on rr.re_id = re.re_id where rr.status = 1 and (re_date_in < '$re_date_in' and re_date_in < '$re_date_out') or (re_date_out > '$re_date_in' and re_date_out > '$re_date_out'))
+                                                                inner join Reservation re on rr.re_id = re.re_id where (re_date_in < '$re_date_in' and re_date_in < '$re_date_out') or (re_date_out > '$re_date_in' and re_date_out > '$re_date_out'))
                                                                 ";
                                                                 // var_dump($sql2);
                                                                 // die();
@@ -108,8 +119,7 @@
                                                             } else {
                                                             echo "0 results";
                                                             }
-                                                            echo '</div>';
-                                                            }
+                                                            echo '</div>';}
                                                             ?>
                                                         </div>
                                                     </div>
@@ -141,11 +151,11 @@
                                                     </div>
                                                 </div>       
                                             </div>
-                                                
-                                                <button class="mt-2 btn btn-primary" type="submit">Add</button>
-                                            </form>
-                                            
-                                            <?php
+                                            <input type="submit" value="Reserve" class="btn_submit">
+                        </form>
+
+                        <?php
+                                                include('config.php');
                                                  if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                                                         // $token = time());
@@ -177,31 +187,31 @@
                                                         // // mysqli_query($conn, $sql);
                                                         // $result = mysqli_query($conn, 'select acc_id from Account where acc_username = "$cus_username"');
                                                         // $sql .= "set @accid = (select acc_id from Account where acc_username = '$cus_username');";
-                                                        if(!empty($_POST['checkList'])){
-                                                            $sql = "INSERT INTO Customer (
-                                                                cus_fname,
-                                                                cus_lname,
-                                                                cus_birthday,
-                                                                cus_gender,
-                                                                cus_phone,
-                                                                cus_email,
-                                                                cus_address,
-                                                                status
-                                                            ) VALUES ('$fname', '$lname', '$cus_dateOfBirth', '$cus_gender', '$cus_phone', '$cus_email', '$cus_address',1);";
-                                                            $sql .= "set @cusid = (select cus_id from Customer where cus_fname = '$fname' and cus_lname='$lname' and cus_birthday = '$cus_dateOfBirth' 
-                                                                and cus_gender='$cus_gender' and cus_phone = '$cus_phone' and cus_email = '$cus_email' and cus_address = '$cus_address');";
-                                                            $sql .= "INSERT INTO Reservation(re_date_in, re_date_out, create_date, status, cus_id) 
-                                                                VALUES ('$re_date_in', '$re_date_out', '$create_date', 1, @cusid);";
-                                                            $sql .= "set @reid = (select re_id from Reservation where cus_id = @cusid);";
-                                                                $checked_count = count($_POST['checkList']);
-                                                                foreach ($_POST['checkList'] as $selected) {
-                                                                    $sql .= "insert into Reservation_Room(re_id, room_id, status) values  (@reid, $selected, 1);";
-                                                                }
-                                                            if (!empty($_POST['checkList2'])) {
-                                                                $checked_count = count($_POST['checkList2']);
-                                                                foreach ($_POST['checkList2'] as $selected) {
-                                                                    $sql .= "insert into Reservation_Service(re_id, service_id, status) values  (@reid, $selected, 1);";
-                                                                }
+                                                        $sql = "INSERT INTO Customer (
+                                                                                        cus_fname,
+                                                                                        cus_lname,
+                                                                                        cus_birthday,
+                                                                                        cus_gender,
+                                                                                        cus_phone,
+                                                                                        cus_email,
+                                                                                        cus_address,
+                                                                                        status
+                                                                                    ) VALUES ('$fname', '$lname', '$cus_dateOfBirth', '$cus_gender', '$cus_phone', '$cus_email', '$cus_address',1);";
+                                                        $sql .= "set @cusid = (select cus_id from Customer where cus_fname = '$fname' and cus_lname='$lname' and cus_birthday = '$cus_dateOfBirth' 
+                                                            and cus_gender='$cus_gender' and cus_phone = '$cus_phone' and cus_email = '$cus_email' and cus_address = '$cus_address');";
+                                                        $sql .= "INSERT INTO Reservation(re_date_in, re_date_out, create_date, status, cus_id) 
+                                                            VALUES ('$re_date_in', '$re_date_out', '$create_date', 1, @cusid);";
+                                                        $sql .= "set @reid = (select re_id from Reservation where cus_id = @cusid);";
+                                                        if (!empty($_POST['checkList'])) {
+                                                            $checked_count = count($_POST['checkList']);
+                                                            foreach ($_POST['checkList'] as $selected) {
+                                                                $sql .= "insert into Reservation_Room(re_id, room_id, status) values  (@reid, $selected, 1);";
+                                                            }
+                                                        }
+                                                        if (!empty($_POST['checkList2'])) {
+                                                            $checked_count = count($_POST['checkList2']);
+                                                            foreach ($_POST['checkList2'] as $selected) {
+                                                                $sql .= "insert into Reservation_Service(re_id, service_id, status) values  (@reid, $selected, 1);";
                                                             }
                                                         }
 
@@ -222,20 +232,125 @@
                                                     
                                                 }
                                                 ?>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
+                        <!--<div class="btn_confirm">
+            <a href="http://www.grandplazahanoi.com/kor/">Quay lại trang chủ</a>
+        </div>-->
 
                     </div>
-                </div>
+
+                    <script>
+                        $(function() {
+                            $("#login_auto_login").click(function() {
+                                if (this.checked) {
+                                    this.checked = confirm("Nếu bạn sử dụng đăng nhập tự động, bạn không cần nhập ID thành viên và mật khẩu của mình vào lần sau. \ N \ nVui lòng không sử dụng nó ở những nơi công cộng vì thông tin cá nhân có thể bị lộ. \ N \ nBạn có muốn sử dụng đăng nhập tự động không??");
+                                }
+                            });
+                        });
+
+                        function flogin_submit(f) {
+                            return true;
+                        }
+                    </script>
+                    <!-- } hết đăng nhập -->
+
         </div>
     </div>
-<script type="text/javascript" src="../assets/scripts/main.js"></script>
+
+    <!-- } hết nội dung -->
+
+
+    <!-- phần cuối { -->
+    <footer id="footer">
+        <div class="footer_top">
+            <div class="inner">
+                <ul class="under">
+                    <li><a href="/kor/bbs/content.php?co_id=Room5">Tháp Charmvit</a></li>
+                    <li><a href="/kor/bbs/content.php?co_id=Golf">Phoenix Golf Resort</a></li>
+                    <li><a href="/kor/bbs/content.php?co_id=Arirang">Arirang</a></li>
+                    <li><a href="/kor/bbs/content.php?co_id=Fuji">Fuji</a></li>
+                    <li><a href="/kor/bbs/content.php?co_id=Hoasen"> HoaSen </a></li>
+                    <li><a href="/kor/bbs/content.php?co_id=Facilities"> Born Spa</a></li>
+                </ul>
+                <div class="footer_sns">
+                    <a href="https://www.facebook.com/GrandPlazaHanoiHotel.Co.Ltd/" target="_blank"><img src="/kor/theme/gph/img/common/face.png" alt="facebook"></a>
+                    <a href="https://www.instagram.com/grandplazahanoi_official/?hl=ko" target="_blank"><img src="/kor/theme/gph/img/common/insta.png" alt="instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="inner">
+                <div class="f_logo">
+                    <a href="http://gph.oktomato.net"><img src="/kor/theme/gph/img/common/f_logo.png" alt="gnuboard5"></a>
+                </div>
+                <div class="info">
+                    <div class="footer-policy">
+                        <ul>
+                            <li><a href="/kor/bbs/content.php?co_id=about">Về Grand Plaza</a></li>
+                            <li><a href="/kor/bbs/content.php?co_id=privacy">Chính sách bảo mật</a></li>
+                            <li><a href="/kor/bbs/content.php?co_id=provision">Điều khoản dịch vụ</a></li>
+                            <li><a href="/kor/bbs/content.php?co_id=ethics">Ý kiến khách hàng</a></li>
+                            <!-- <li><a href="/kor/bbs/board.php?bo_table=customer">Ý kiến khách hàng</a></li> -->
+                            <li><a href="/kor/bbs/content.php?co_id=sitemap">Sơ đồ website</a></li>
+                            <!-- <li><a href="#">Tuyển dụng</a></li> -->
+                            <li><a href="/kor/bbs/content.php?co_id=contactus">Thông tin liên hệ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="adress">
+                        <p>KHÁCH SẠN GRAND PLAZA HÀ NỘI SỐ 117 TRÀN DUY HƯNG, CẦU GIẤY, HÀ NỘI, VIỆT NAM</p>
+                        <p>COPYRIGHT&copy; 2019 GRAND PLAZA HANOI HOTEL. ALLRIGHTS RESERVED.</p>
+                    </div>
+                    <div class="campany">
+                        <span><b class="ename">SỐ ĐIỆN THOẠI</b> +84-24-3555-1000</span>
+                        <span><b class="ename">EMAIL</b> reservation@grandplazahanoi.com</span>
+                        <!--<span class="f_site">
+                        <button type="button">Family Site</button>
+                        <div class="customSelect">
+                            <ul>
+                                <li><a href="">1</a></li>
+                                <li><a href="">2</a></li>
+                                <li><a href="">3</a></li>
+                            </ul>
+                            <a href="javascript:void(0);" class="custom_close">Thoát</a>
+                        </div>
+                    </span>-->
+                    </div>
+                </div>
+                <div class="award f">
+                    <img src="/kor/theme/gph/img/common/award.png" alt="footer logo">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- } hết phần cuối -->
+
+    <script>
+        $(function() {
+            // thay đổi kích thước phông chữ nếu tồn tại cookie
+            font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
+        });
+    </script>
+
+
+
+    <!-- Đã khắc phục sự cố chế độ xem bên bị chặn bởi chế độ xem bên dưới trong danh sách bảng thông báo trong ie6,7 -->
+    <!--[if lte IE 7]>
+<script>
+$(function() {
+    var $sv_use = $(".sv_use");
+    var count = $sv_use.length;
+
+    $sv_use.each(function() {
+        $(this).css("z-index", count);
+        $(this).css("position", "relative");
+        count = count - 1;
+    });
+});
+</script>
+<![endif]-->
 
 </body>
-</html>
 
-<?php ob_end_flush(); ?>
+</html>

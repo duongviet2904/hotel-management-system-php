@@ -49,11 +49,12 @@
                                                 <th>Hình ảnh</th>
                                                 <th>Trạng thái phòng</th>
                                                 <th>Loại phòng</th>
+                                                <th>Action</th>
                                             </tr>
                                             </thead>
                                             <?php
                                             include('../../config.php');
-                                            $sql = "SELECT * FROM room INNER JOIN room_class ON room.room_class_id = room_class.room_class_id";
+                                            $sql = "SELECT * FROM Room INNER JOIN Room_Class ON Room.room_class_id = Room_Class.room_class_id";
                                             $query = mysqli_query($conn, $sql);
                                             $i = 0;
                                             if($query){
@@ -68,7 +69,7 @@
                                                     echo "<td>".$item['status']."</td>";
                                                     echo "<td>".$item['room_class_name']."</td>";
                                                     echo " <td style='text-align: center;'> <a href='edit-room.php?id=".$item['room_id']."'><input id='btnSua' type='button' value='Sửa' '>";
-                                                    echo " <td style='text-align: center;'> <a href='delete-room.php?id=".$item['room_id']."'><input id='btnXoa' type='button' value='Xoá' '>";
+                                                    echo " <a href='delete-room.php?id=".$item['room_id']."'><input id='btnXoa' type='button' value='Xoá' '></td>";
                                                     echo "</tr>";
                                                     
                                                 }
