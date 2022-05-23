@@ -1,25 +1,25 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<title>Deluxe Room | 그랜드 플라자 하노이호텔</title>
+<title>Phòng Deluxe | Khách sạn Grand Plaza Hà Nội</title>
 <?php include("FE-common/header.php")?>
 </head>
 <body>
 
-<!-- 상단 시작 { -->
+<!-- phần đầu { -->
 
 <header id="header">
      <div class="header_top">
          <div class="inner">
             <h1 class="logo">
                 <a href="http://www.grandplazahanoi.com/kor">
-                  <img src="http://www.grandplazahanoi.comtheme/gph/img/common/logo.png" alt="그랜드 플라자 하노이호텔">
-<!--                     <img src="theme/gph/img/common/logo.png" alt="베트남 하노이 호텔 로고 입니다">-->
+                  <img src="http://www.grandplazahanoi.comtheme/gph/img/common/logo.png" alt="grand plaza hanoi hotel">
+<!--                     <img src="theme/gph/img/common/logo.png" alt="hotel logo">-->
                 </a>
             </h1>
             <div class="langbox">
                 <!--<a class="">language</a>-->
-                <!-- Google 번역 -->
+                <!-- Google dịch -->
 <div id="google_translate_element" class="hd_lang"></div>
 <script>
 	function googleTranslateElementInit() {
@@ -32,54 +32,54 @@
 	}
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<!-- //Google 번역 -->
+<!-- //Google dịch -->
             </div>
              <div class="gnb">
                 <ul>
 
-                    <li><a href="http://www.grandplazahanoi.combbs/login.php">LOGIN</a></li>
-                    <li><a href="http://www.grandplazahanoi.combbs/register.php">JOIN</a></li>
+                    <li><a href="http://www.grandplazahanoi.combbs/login.php">Đăng nhập</a></li>
+                    <li><a href="http://www.grandplazahanoi.combbs/register.php">Tham gia</a></li>
                     <!--                    <li><a href="http://www.grandplazahanoi.combbs/faq.php">FAQ</a></li>-->
-                    <li><a href="reserve/reservation.php">예약확인</a></li>
-<!--                      <li><a href="http://www.grandplazahanoi.combbs/qalist.php">1:1문의</a></li>-->
-<!--                    <li><a href="http://www.grandplazahanoi.combbs/current_connect.php">접속자
+                    <li><a href="reserve/reservation.php">Xác nhận đặt phòng</a></li>
+<!--                      <li><a href="http://www.grandplazahanoi.combbs/qalist.php">Câu hỏi 1:1</a></li>-->
+<!--                    <li><a href="http://www.grandplazahanoi.combbs/current_connect.php">Lượt truy cập
 3</a></li>-->
-<!--                    <li><a href="http://www.grandplazahanoi.combbs/new.php">새글</a></li>-->
-                    <li class="topm"><a href="bbs/content.php?co_id=about">ABOUT US</a>
+<!--                    <li><a href="http://www.grandplazahanoi.combbs/new.php">Bài báo</a></li>-->
+                    <li class="topm"><a href="bbs/content.php?co_id=about">Về Grand Plaza</a>
                         <div>
-                            <a href="bbs/content.php?co_id=about">About Us</a>
-                            <a href="bbs/board.php?bo_table=notice">뉴스</a>
-                            <a href="bbs/content.php?co_id=history">연혁</a>
-                            <a href="bbs/board.php?bo_table=customer">봉사</a>
-                            <a href="bbs/content.php?co_id=tourist">주변관광지</a>
-                            <a href="bbs/content.php?co_id=contactus">오시는길</a>
-                            <a href="bbs/board.php?bo_table=customer2">수상</a>
+                            <a href="bbs/content.php?co_id=about">Về Grand Plaza</a>
+                            <a href="bbs/board.php?bo_table=notice">Tin tức</a>
+                            <a href="bbs/content.php?co_id=history">Quá trình phát triển</a>
+                            <a href="bbs/board.php?bo_table=customer">Dịch vụ</a>
+                            <a href="bbs/content.php?co_id=tourist">Các điểm du lịch lân cận</a>
+                            <a href="bbs/content.php?co_id=contactus">Địa chỉ</a>
+                            <a href="bbs/board.php?bo_table=customer2">Giải thưởng</a>
                         </div>
                     </li>
 
                 </ul>
              </div>
-             <!--모바일 메뉴 버튼-->
+             <!--Nút menu điện thoại-->
              <button class="menu_btn" type="button"></button>
-             <!--//모바일 메뉴 버튼-->
+             <!--//Nút menu điện thoại-->
         </div>
     </div>
 
    <div class="top_nav">
        <div class="inner">
-        <h2 class="hidden">메인메뉴</h2>
+        <h2 class="hidden">Menu chính</h2>
             <ul class="depth">
                                 <li class="" style="z-index:999">
-                    <a href="goods/goods.php?go_table=basic&gc_id=1" target="_self" class="gnb_1da">예약</a>
+                    <a href="goods/goods.php?go_table=basic&gc_id=1" target="_self" class="gnb_1da">Đặt phòng</a>
                     <ul class="depth2">
-                        <li class=""><a href="goods/goods.php?go_table=basic&gc_id=1" target="_self" class="">객실예약</a></li>
-                                            <li class=""><a href="reserve/reservation.php" target="_self" class="">예약확인</a></li>
+                        <li class=""><a href="goods/goods.php?go_table=basic&gc_id=1" target="_self" class="">Đặt phòng</a></li>
+                                            <li class=""><a href="reserve/reservation.php" target="_self" class="">Xác nhận đặt phòng</a></li>
                     </ul>
                 </li>
                                 <li class="" style="z-index:998">
-                    <a href="bbs/content.php?co_id=Room" target="_self" class="gnb_1da">객실</a>
+                    <a href="bbs/content.php?co_id=Room" target="_self" class="gnb_1da">Các loại phòng</a>
                     <ul class="depth2">
-                        <li class=""><a href="bbs/content.php?co_id=Room" target="_self" class="">Deluxe Room</a></li>
+                        <li class=""><a href="bbs/content.php?co_id=Room" target="_self" class="">Phòng Deluxe</a></li>
                                             <li class=""><a href="bbs/content.php?co_id=Room2" target="_self" class="">Parlour Suite Room</a></li>
                                             <li class=""><a href="bbs/content.php?co_id=Room3" target="_self" class="">Executive Suite Room</a></li>
                                             <li class=""><a href="bbs/content.php?co_id=Room4" target="_self" class="">Plaza Suite Room</a></li>
@@ -89,15 +89,15 @@
                     </ul>
                 </li>
                                 <li class="" style="z-index:997">
-                    <a href="bbs/board.php?bo_table=room_pm" target="_self" class="gnb_1da">프로모션</a>
+                    <a href="bbs/board.php?bo_table=room_pm" target="_self" class="gnb_1da">Quảng cáo<</a>
                     <ul class="depth2">
-                        <li class=""><a href="bbs/board.php?bo_table=room_pm" target="_self" class="">프로모션</a></li>
+                        <li class=""><a href="bbs/board.php?bo_table=room_pm" target="_self" class="">Quảng cáo<</a></li>
                     </ul>
                 </li>
                                 <li class="" style="z-index:996">
-                    <a href="bbs/content.php?co_id=Dining" target="_self" class="gnb_1da">다이닝</a>
+                    <a href="bbs/content.php?co_id=Dining" target="_self" class="gnb_1da">Ẩm thực</a>
                     <ul class="depth2">
-                        <li class=""><a href="bbs/content.php?co_id=Dining" target="_self" class="">Dining</a></li>
+                        <li class=""><a href="bbs/content.php?co_id=Dining" target="_self" class="">Ẩm thực</a></li>
                                             <li class=""><a href="bbs/content.php?co_id=LeJardin" target="_self" class="">LeJardin</a></li>
                                             <li class=""><a href="bbs/content.php?co_id=Grand" target="_self" class="">Phoenix Coffee & Dessert</a></li>
                                             <li class=""><a href="bbs/content.php?co_id=Fuji" target="_self" class="">Fuji</a></li>
@@ -107,33 +107,33 @@
                     </ul>
                 </li>
                                 <li class="" style="z-index:995">
-                    <a href="bbs/content.php?co_id=Facilities" target="_self" class="gnb_1da">부대시설</a>
+                    <a href="bbs/content.php?co_id=Facilities" target="_self" class="gnb_1da">Dịch vụ tiện ích</a>
                     <ul class="depth2">
-                        <li class=""><a href="bbs/content.php?co_id=Facilities" target="_self" class="">Von Spa</a></li>
-                                            <li class=""><a href="bbs/content.php?co_id=Fitness" target="_self" class="">Fitness Club</a></li>
-                                            <li class=""><a href="bbs/content.php?co_id=Pool" target="_self" class="">The Pool</a></li>
-                                            <li class=""><a href="bbs/content.php?co_id=Golf" target="_self" class="">Golf Academy</a></li>
+                        <li class=""><a href="bbs/content.php?co_id=Facilities" target="_self" class="">Von spa</a></li>
+                                            <li class=""><a href="bbs/content.php?co_id=Fitness" target="_self" class="">Câu lạc bộ thể hình</a></li>
+                                            <li class=""><a href="bbs/content.php?co_id=Pool" target="_self" class="">Bể bơi</a></li>
+                                            <li class=""><a href="bbs/content.php?co_id=Golf" target="_self" class="">Học viện Golf</a></li>
                                             <li class=""><a href="bbs/content.php?co_id=Plaza" target="_self" class="">Vegas Plaza</a></li>
                     </ul>
                 </li>
                                 <li class="" style="z-index:994">
-                    <a href="bbs/content.php?co_id=Wedding" target="_self" class="gnb_1da">웨딩</a>
+                    <a href="bbs/content.php?co_id=Wedding" target="_self" class="gnb_1da">Tiệc cưới</a>
                     <ul class="depth2">
-                        <li class=""><a href="bbs/content.php?co_id=Wedding" target="_self" class="">웨딩 홀</a></li>
-                                            <li class=""><a href="bbs/write.php?bo_table=form" target="_self" class="">웨딩 컨설팅</a></li>
+                        <li class=""><a href="bbs/content.php?co_id=Wedding" target="_self" class="">Sảnh tiệc cưới</a></li>
+                                            <li class=""><a href="bbs/write.php?bo_table=form" target="_self" class="">Tư vấn hôn lễ</a></li>
                     </ul>
                 </li>
                                 <li class="" style="z-index:993">
-                    <a href="bbs/content.php?co_id=Convention" target="_self" class="gnb_1da">연회&컨벤션</a>
+                    <a href="bbs/content.php?co_id=Convention" target="_self" class="gnb_1da">Tiệc và hội nghị</a>
                     <ul class="depth2">
-                        <li class=""><a href="bbs/content.php?co_id=Convention" target="_self" class="">밀레니엄 홀</a></li>
-                                            <li class=""><a href="bbs/content.php?co_id=Convention2" target="_self" class="">크리스털 홀</a></li>
-                                            <li class=""><a href="bbs/content.php?co_id=Convention3" target="_self" class="">윈져 홀</a></li>
-                                            <li class=""><a href="bbs/content.php?co_id=Convention4" target="_self" class="">사파이어 홀</a></li>
-                                            <li class=""><a href="bbs/content.php?co_id=Convention5" target="_self" class="">아테네 홀</a></li>
-                                            <li class=""><a href="bbs/content.php?co_id=Convention6" target="_self" class="">몽블랑 홀</a></li>
-                                            <li class=""><a href="bbs/content.php?co_id=Convention7" target="_self" class="">비즈니스 센터</a></li>
-                                            <li class=""><a href="bbs/write.php?bo_table=convs_form" target="_self" class="">연회&컨벤션 컨설팅</a></li>
+                        <li class=""><a href="bbs/content.php?co_id=Convention" target="_self" class="">Sảnh Millennium</a></li>
+                                            <li class=""><a href="bbs/content.php?co_id=Convention2" target="_self" class="">Sảnh Crystal</a></li>
+                                            <li class=""><a href="bbs/content.php?co_id=Convention3" target="_self" class="">Sảnh Windsor</a></li>
+                                            <li class=""><a href="bbs/content.php?co_id=Convention4" target="_self" class="">Sảnh Sapphire</a></li>
+                                            <li class=""><a href="bbs/content.php?co_id=Convention5" target="_self" class="">Sảnh Athens</a></li>
+                                            <li class=""><a href="bbs/content.php?co_id=Convention6" target="_self" class="">Sảnh Mont Blanc</a></li>
+                                            <li class=""><a href="bbs/content.php?co_id=Convention7" target="_self" class="">Tổ dịch vụ văn phòng</a></li>
+                                            <li class=""><a href="bbs/write.php?bo_table=convs_form" target="_self" class="">Tư vấn tiệc và hội nghị</a></li>
                     </ul>
                 </li>
                             </ul>
@@ -143,34 +143,34 @@
 <div class="allmenu">
             <ul id="lnb_m">
                 <li>
-                    <a href="goods/goods.php?go_table=basic&gc_id=1" title="Reservation">Reservation</a>
+                    <a href="goods/goods.php?go_table=basic&gc_id=1" title="Reservation">Đặt phòng</a>
                     <ul class="dep_meun">
-                        <li><a href="goods/goods.php?go_table=basic&gc_id=1" title="객실예약">객실예약</a></li>
-                        <li><a href="reserve/reservation.php" title="예약확인">예약확인</a></li>
+                        <li><a href="goods/goods.php?go_table=basic&gc_id=1" title="room reservation">Đặt phòng</a></li>
+                        <li><a href="reserve/reservation.php" title="reservation confirmation">Xác nhận đặt phòng</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="bbs/content.php?co_id=Room" title="Deluxe Room" title="rooms">rooms</a>
+                    <a href="bbs/content.php?co_id=Room" title="Deluxe Room" title="rooms">Các loại phòng</a>
                     <ul class="dep_meun">
-                        <li><a href="bbs/content.php?co_id=Room" title="Deluxe Room">Deluxe Room</a></li>
-                        <li><a href="bbs/content.php?co_id=Room2" title="Parlour Suite Room">Parlour Suite Room</a></li>
-                        <li><a href="bbs/content.php?co_id=Room3" title="Executive Suite Room">Executive Suite Room</a></li>
-                        <li><a href="bbs/content.php?co_id=Room4" title="Plaza Suite Room">Plaza Suite Room</a></li>
-                        <li><a href="bbs/content.php?co_id=Room5" title="Charmvit Suite Room">Charmvit Suite Room</a></li>
-                        <li><a href="bbs/content.php?co_id=Room6" title="Presidential Suite Room">Presidential Suite Room</a></li>
-                        <li><a href="bbs/content.php?co_id=Room7" title="Charmvit Suite Room">Charmvit Suite Room</a></li>
+                        <li><a href="bbs/content.php?co_id=Room" title="Deluxe Room">Phòng Deluxe</a></li>
+                        <li><a href="bbs/content.php?co_id=Room2" title="Parlour Suite Room">Phòng Parlour Suite</a></li>
+                        <li><a href="bbs/content.php?co_id=Room3" title="Executive Suite Room">Phòng Executive Suite</a></li>
+                        <li><a href="bbs/content.php?co_id=Room4" title="Plaza Suite Room">Phòng Plaza Suite</a></li>
+                        <li><a href="bbs/content.php?co_id=Room5" title="Charmvit Suite Room">Phòng Charmvit Suite</a></li>
+                        <li><a href="bbs/content.php?co_id=Room6" title="Presidential Suite Room">Phòng Presidential Suite</a></li>
+                        <li><a href="bbs/content.php?co_id=Room7" title="Charmvit Suite Room">Phòng Charmvit Suite</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="bbs/board.php?bo_table=room_pm" title="promotion">promotion</a>
+                    <a href="bbs/board.php?bo_table=room_pm" title="promotion">Quảng cáo</a>
                     <ul class="dep_meun">
-                        <li><a href="bbs/board.php?bo_table=room_pm" title="프로모션">프로모션</a></li>
+                        <li><a href="bbs/board.php?bo_table=room_pm" title="promotion">Quảng cáo<</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="bbs/content.php?co_id=Dining" title="Dining">Dining</a>
+                    <a href="bbs/content.php?co_id=Dining" title="Dining">Ẩm thực</a>
                     <ul class="dep_meun">
-                         <li><a href="bbs/content.php?co_id=Dining" title="Grand Coffee">Dining</a></li>
+                         <li><a href="bbs/content.php?co_id=Dining" title="Grand Coffee">Ẩm thực</a></li>
                         <li><a href="bbs/content.php?co_id=LeJardin" title="LeJardin">LeJardin</a></li>
                         <li><a href="bbs/content.php?co_id=Grand" title="Grand Coffee">Grand Coffee</a></li>
                         <li><a href="bbs/content.php?co_id=Fuji" title="Fuji">Fuji</a></li>
@@ -180,59 +180,59 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="bbs/content.php?co_id=Facilities" title="Fitness & Spa">Fitness & Spa</a>
+                    <a href="bbs/content.php?co_id=Facilities" title="Fitness & Spa">Thể hình & Spa</a>
                     <ul class="dep_meun">
                         <li><a href="bbs/content.php?co_id=Facilities" title="Born Spa">Born Spa</a></li>
-                        <li><a href="bbs/content.php?co_id=Fitness" title="Fitness Club">Fitness Club</a></li>
-                        <li><a href="bbs/content.php?co_id=Golf" title="LeJaGolf Academy">Golf Academy</a></li>
+                        <li><a href="bbs/content.php?co_id=Fitness" title="Fitness Club">Câu lạc bộ thể hình</a></li>
+                        <li><a href="bbs/content.php?co_id=Golf" title="LeJaGolf Academy">Học viện golf</a></li>
                         <li><a href="#" title="Vegas Plaza">Vegas Plaza</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="bbs/content.php?co_id=Wedding" title="Wedding">Wedding</a>
+                    <a href="bbs/content.php?co_id=Wedding" title="Wedding">Tiệc cưới</a>
                     <ul class="dep_meun">
-                        <li><a href="bbs/content.php?co_id=Wedding" title="웨딩 홀">웨딩 홀</a></li>
-                        <li><a href="bbs/write.php?bo_table=form" title="웨딩 컨설팅">웨딩 컨설팅</a></li>
+                        <li><a href="bbs/content.php?co_id=Wedding" title="wedding hall">Sảnh tiệc cưới</a></li>
+                        <li><a href="bbs/write.php?bo_table=form" title="wedding consulting">Tư vấn hôn lẽ</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="bbs/content.php?co_id=Convention" title="Convention">Convention</a>
+                    <a href="bbs/content.php?co_id=Convention" title="Convention">Hội nghị</a>
                     <ul class="dep_meun">
-                        <li><a href="bbs/content.php?co_id=Convention" title="밀레니엄 홀">밀레니엄 홀</a></li>
-                        <li><a href="bbs/content.php?co_id=Convention2" title="크리스털 홀">크리스털  홀</a></li>
-                        <li><a href="bbs/content.php?co_id=Convention3" title="원져 홀">원져 홀</a></li>
-                        <li><a href="bbs/content.php?co_id=Convention4" title="사파이어 홀">사파이어 홀</a></li>
-                        <li><a href="bbs/content.php?co_id=Convention5" title="아테네 홀">아테네 홀</a></li>
-                        <li><a href="bbs/content.php?co_id=Convention6" title="몽블랑 홀">몽블랑 홀</a></li>
-                        <li><a href="bbs/content.php?co_id=Convention7" title="비즈니스 센터">비즈니스 센터</a></li>
-                        <li><a href="bbs/write.php?bo_table=convs_form" title="연회&컨벤션 컨설팅">연회&컨벤션 컨설팅</a></li>
+                        <li><a href="bbs/content.php?co_id=Convention" title="Millennium hall">Sảnh Millennium</a></li>
+                        <li><a href="bbs/content.php?co_id=Convention2" title="Crystal hall">Sảnh Crystal</a></li>
+                        <li><a href="bbs/content.php?co_id=Convention3" title="Windsor hall">Sảnh Windsor</a></li>
+                        <li><a href="bbs/content.php?co_id=Convention4" title="Sapphire hall">Sảnh Sapphire</a></li>
+                        <li><a href="bbs/content.php?co_id=Convention5" title="Athens hall">Sảnh Athens</a></li>
+                        <li><a href="bbs/content.php?co_id=Convention6" title="Mont Blanc hall">Sảnh Mont Blanc</a></li>
+                        <li><a href="bbs/content.php?co_id=Convention7" title="business center">Tổ dịch vụ văn phòng</a></li>
+                        <li><a href="bbs/write.php?bo_table=convs_form" title="banquet and convention consulting">Tư vấn tiệc và hội nghị</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#" title="Wedding">ABOUT US</a>
+                    <a href="#" title="Wedding">Về Grand Plaza</a>
                     <ul class="dep_meun">
-                        <li><a href="bbs/content.php?co_id=about">About Us</a></li>
-                        <li><a href="bbs/board.php?bo_table=notice">뉴스</a></li>
-                        <li><a href="bbs/content.php?co_id=history">연혁</a></li>
-                        <li><a href="bbs/board.php?bo_table=customer">봉사</a></li>
-                        <li><a href="bbs/content.php?co_id=tourist">주변관광지</a></li>
-                        <li><a href="bbs/content.php?co_id=contactus">오시는길</a></li>
-                        <li> <a href="bbs/board.php?bo_table=customer2">수상</a></li>
+                        <li><a href="bbs/content.php?co_id=about">Về Grand Plaza</a></li>
+                        <li><a href="bbs/board.php?bo_table=notice">Tin tức</a></li>
+                        <li><a href="bbs/content.php?co_id=history">Quá trình phát triển</a></li>
+                        <li><a href="bbs/board.php?bo_table=customer">Dịch vụ</a></li>
+                        <li><a href="bbs/content.php?co_id=tourist">Các điểm du lịch lân cận</a></li>
+                        <li><a href="bbs/content.php?co_id=contactus">Địa chỉ</a></li>
+                        <li> <a href="bbs/board.php?bo_table=customer2">Giải thưởng</a></li>
                     </ul>
                 </li>
             </ul>
             <div class="bottom">
                 <ul class="clearfix">
-                    <li><a href="bbs/login.php">LOGIN</a></li>
-                    <li><a href="bbs/register.php">JOIN</a></li>
-                    <li><a href="reserve/reservation.php">예약확인</a></li>
-                    <li class="lag"><a href="#">LANGUAGE</a>
+                    <li><a href="bbs/login.php">Đăng nhập</a></li>
+                    <li><a href="bbs/register.php">Tham gia</a></li>
+                    <li><a href="reserve/reservation.php">Xác nhận đặt phòng</a></li>
+                    <li class="lag"><a href="#">Ngôn ngữ</a>
                        <ul class="depth_lang">
                             <li>
-                                <a href="">KOREAN</a>
+                                <a href="">Tiếng Việt</a>
                             </li>
                             <li>
-                                <a href="">ENGLISH</a>
+                                <a href="">English</a>
                             </li>
                         </ul>
                     </li>
@@ -241,20 +241,20 @@
         </div>
         <div class="allmenu_bg"></div>
 </header>
-<!-- } 상단 끝 -->
+<!-- } hết phần đầu -->
 
 
-<!-- 콘텐츠 시작 { -->
+<!-- phần nội dung { -->
 <div id="wrapper">
     <div id="container">
                   <section class="sub">
                         <div id="" class="sub_visual bg-Room">
-                  <div class="sub_visual-txt"><strong>객실</strong></div>
+                  <div class="sub_visual-txt"><strong>Các loại phòng</strong></div>
                     <!-- <span class="after"></span> -->
                 <!-- <div class="location">
                     <span class="home">HOME</span>
-                    <span>객실</span>
-                    <span>Deluxe Room</span>
+                    <span>Các loại phòng</span>
+                    <span>Phòng Deluxe</span>
                 </div> -->
 
 
@@ -273,55 +273,55 @@
                         </a></li>
                     <li class="loc loc_1">
                         <!-- 1depth -->
-                        <a href="#">객실</a>
+                        <a href="#">Các loại phòng</a>
                         <ul class="loc_depth2">
                                                         <li class="">
-                                <a href="goods/goods.php?go_table=basic&gc_id=1" target="_self" class="">예약</a>
+                                <a href="goods/goods.php?go_table=basic&gc_id=1" target="_self" class="">Đặt phòng</a>
                             </li>
                                                         <li class="">
-                                <a href="bbs/content.php?co_id=Room" target="_self" class="">객실</a>
+                                <a href="bbs/content.php?co_id=Room" target="_self" class="">Các loại phòng</a>
                             </li>
                                                         <li class="">
-                                <a href="bbs/board.php?bo_table=room_pm" target="_self" class="">프로모션</a>
+                                <a href="bbs/board.php?bo_table=room_pm" target="_self" class="">Quảng cáo<</a>
                             </li>
                                                         <li class="">
-                                <a href="bbs/content.php?co_id=Dining" target="_self" class="">다이닝</a>
+                                <a href="bbs/content.php?co_id=Dining" target="_self" class="">Ẩm thực</a>
                             </li>
                                                         <li class="">
-                                <a href="bbs/content.php?co_id=Facilities" target="_self" class="">부대시설</a>
+                                <a href="bbs/content.php?co_id=Facilities" target="_self" class="">Dịch vụ tiện ích</a>
                             </li>
                                                         <li class="">
-                                <a href="bbs/content.php?co_id=Wedding" target="_self" class="">웨딩</a>
+                                <a href="bbs/content.php?co_id=Wedding" target="_self" class="">Tiệc cưới</a>
                             </li>
                                                         <li class="">
-                                <a href="bbs/content.php?co_id=Convention" target="_self" class="">연회&컨벤션</a>
+                                <a href="bbs/content.php?co_id=Convention" target="_self" class="">Tiệc và hội nghị</a>
                             </li>
                                                     </ul>
                     </li>
                     <li class="loc loc_2">
                         <!-- 2depth -->
-                        <a href="#">Deluxe Room</a>
+                        <a href="#">Phòng Deluxe</a>
                         <ul class="loc_depth2">
                                                             <li class="on" style="z-index:999">
-                                    <a href="bbs/content.php?co_id=Room" target="_self" class="">Deluxe Room</a>
+                                    <a href="bbs/content.php?co_id=Room" target="_self" class="">Phòng Deluxe</a>
                                 </li>
                                                             <li class="" style="z-index:998">
-                                    <a href="bbs/content.php?co_id=Room2" target="_self" class="">Parlour Suite Room</a>
+                                    <a href="bbs/content.php?co_id=Room2" target="_self" class="">Phòng Parlour Suite</a>
                                 </li>
                                                             <li class="" style="z-index:997">
-                                    <a href="bbs/content.php?co_id=Room3" target="_self" class="">Executive Suite Room</a>
+                                    <a href="bbs/content.php?co_id=Room3" target="_self" class="">Phòng Executive Suite</a>
                                 </li>
                                                             <li class="" style="z-index:996">
-                                    <a href="bbs/content.php?co_id=Room4" target="_self" class="">Plaza Suite Room</a>
+                                    <a href="bbs/content.php?co_id=Room4" target="_self" class="">Phòng Plaza Suite</a>
                                 </li>
                                                             <li class="" style="z-index:995">
-                                    <a href="bbs/content.php?co_id=Room5" target="_self" class="">Charmvit Suite Room</a>
+                                    <a href="bbs/content.php?co_id=Room5" target="_self" class="">Phòng Charmvit Suite</a>
                                 </li>
                                                             <li class="" style="z-index:994">
-                                    <a href="bbs/content.php?co_id=Room6" target="_self" class="">Presidential Suite Room</a>
+                                    <a href="bbs/content.php?co_id=Room6" target="_self" class="">Phòng Presidential Suite</a>
                                 </li>
                                                             <li class="" style="z-index:993">
-                                    <a href="bbs/content.php?co_id=Room7" target="_self" class="">Royal Suite Room</a>
+                                    <a href="bbs/content.php?co_id=Room7" target="_self" class="">Phòng Royal Suite</a>
                                 </li>
                                                     </ul>
                     </li>
@@ -330,7 +330,7 @@
               </section>
                         <section id="sub_page" >
                   <!-- <div class="sub_tit">
-                      <h2>Deluxe Room</h2>
+                      <h2>Phòng Deluxe</h2>
                   </div> -->
 
 
@@ -338,17 +338,17 @@
 <article id="ctt" class="ctt_Room">
     <div id="ctt_con">
         <section id="contents">
-            <h1>Deluxe Room</h1>
+            <h1>Phòng Deluxe</h1>
             <div class="sub1_wrap">
                 <div class="sub1 inner">
                       <div class="info_slider">
                         <div class="info_slider-main_wrap">
                             <div class="info_slider-main">
-                                <div class="slide"><img src="theme/gph/img/sub/d1.jpg" alt="룸 이미지 "></div>
-                                <div class="slide"><img src="theme/gph/img/sub/d2.jpg" alt="룸 이미지 "></div>
-                                <div class="slide"><img src="theme/gph/img/sub/d3.jpg" alt="룸 이미지 "></div>
-                                <div class="slide"><img src="theme/gph/img/sub/d4.jpg" alt="룸 이미지 "></div>
-                                <div class="slide"><img src="theme/gph/img/sub/d5.jpg" alt="룸 이미지 "></div>
+                                <div class="slide"><img src="theme/gph/img/sub/d1.jpg" alt="room image "></div>
+                                <div class="slide"><img src="theme/gph/img/sub/d2.jpg" alt="room image "></div>
+                                <div class="slide"><img src="theme/gph/img/sub/d3.jpg" alt="room image "></div>
+                                <div class="slide"><img src="theme/gph/img/sub/d4.jpg" alt="room image "></div>
+                                <div class="slide"><img src="theme/gph/img/sub/d5.jpg" alt="room image "></div>
                             </div>
                             <div class="sw_controll">
                                 <a class="slick-arrow sw-prev"></a>
@@ -357,39 +357,39 @@
                         </div>
                         <div class="info_slider-thmb_wrap">
                             <div class="info_slider-thmb">
-                                <div class="slide"><img src="theme/gph/img/sub/d1.jpg" alt="룸 이미지 "><div class="cover"></div></div>
-                                <div class="slide"><img src="theme/gph/img/sub/d2.jpg" alt="룸 이미지 "><div class="cover"></div></div>
-                                <div class="slide"><img src="theme/gph/img/sub/d3.jpg" alt="룸 이미지 "><div class="cover"></div></div>
-                                <div class="slide"><img src="theme/gph/img/sub/d4.jpg" alt="룸 이미지 "><div class="cover"></div></div>
-                                <div class="slide"><img src="theme/gph/img/sub/d5.jpg" alt="룸 이미지 "><div class="cover"></div></div>
+                                <div class="slide"><img src="theme/gph/img/sub/d1.jpg" alt="room image "><div class="cover"></div></div>
+                                <div class="slide"><img src="theme/gph/img/sub/d2.jpg" alt="room image "><div class="cover"></div></div>
+                                <div class="slide"><img src="theme/gph/img/sub/d3.jpg" alt="room image "><div class="cover"></div></div>
+                                <div class="slide"><img src="theme/gph/img/sub/d4.jpg" alt="room image "><div class="cover"></div></div>
+                                <div class="slide"><img src="theme/gph/img/sub/d5.jpg" alt="room image "><div class="cover"></div></div>
                             </div>
                         </div>
                     </div>
                     <div class="sub_infotxt">
-                        <h3 class="subject">객실정보</h3>
-                        <p class="subjt_txt">하노이에서 가장 넓은 규모의 일반 객실로 비지니스로 방문 하신 많은 분들이 쾌적한 객실 내부였다고 좋은 평가를 해주셨습니다. 2019년 시스코 최신 와이파이 장비 전층 교체에 따른 객실 내부에서의 비지니스 업무에 최적화 되어 있습니다.</p>
+                        <h3 class="subject">Thông tin phòng</h3>
+                        <p class="subjt_txt">Đây là phòng chung lớn nhất tại Hà Nội, được nhiều doanh nhân đánh giá là tốt và thoải mái. Vào năm 2019, thiết bị Wi-Fi mới nhất của Cisco đã được thay thế trên tất cả các tầng và nó được tối ưu hóa cho công việc kinh doanh bên trong phòng.</p>
                         <div class="if_txt">
                             <div class="rm_txt">
                                 <dl>
-                                    <dt>면&nbsp;&nbsp;&nbsp;&nbsp;적</dt>
+                                    <dt>Diện&nbsp;&nbsp;&nbsp;&nbsp;tích</dt>
                                     <dd> 45㎡</dd>
                                 </dl>
                                  <dl>
-                                  <dt>위&nbsp;&nbsp;&nbsp;&nbsp;치</dt>
-                                    <dd>6층 - 28층(전층)</dd>
+                                  <dt>Vị&nbsp;&nbsp;&nbsp;&nbsp;trí</dt>
+                                    <dd>6 tầng - 28 tầng (tổng tầng)</dd>
                                 </dl>
                                 <dl>
-                                  <dt>침&nbsp;&nbsp;&nbsp;&nbsp;대</dt>
-                                    <dd>더블 베드 (180x200cm) /트윈 베드(120x200cm)</dd>
+                                  <dt>Giường&nbsp;&nbsp;&nbsp;&nbsp;</dt>
+                                    <dd>Giường đôi (180x200cm)/Hai giường đơn(120x200cm)</dd>
                                 </dl>
 
                               <dl>
-                                <dt>룸&nbsp;구&nbsp;성</dt>
-                                    <dd>침실, 욕실, 옷장, 티테이블</dd>
+                                <dt>Cấu&nbsp;trúc&nbsp;phòng</dt>
+                                    <dd>Phòng ngủ, phòng tắm, tủ quần áo, bàn</dd>
                                 </dl>
                             </div>
                             <div class="btn_sea">
-                                <a href="#" class="btn_defalt">도면보기</a>
+                                <a href="#" class="btn_defalt">Xem thiết kế</a>
                             </div>
                         </div>
                     </div>
@@ -398,22 +398,22 @@
             <div class="sub2_wrap">
                 <div class="inner">
                     <div class="sub_infotxt">
-                        <h3 class="subject">편의 서비스</h3>
+                        <h3 class="subject">Dịch vụ tiện lợi</h3>
                       <ul class="service">
-                            <li class="f1">Swimming Pool</li>
-                            <li class="f2">리무진 버스</li>
-                            <li class="f3">Non-smoking Rooms</li>
+                            <li class="f1">Bể bơi</li>
+                            <li class="f2">Xe limousine</li>
+                            <li class="f3">Phòng cấm thuốc</li>
                             <li class="f4">Spa</li>
                             <li class="f5">Bar</li>
-                            <li class="f6">Good Breakfast</li>
-                            <li class="f7">피트니스 클럽 이용 안내</li>
-                            <li class="f8">초고속 무선 인터넷</li>
-                            <li class="f9">룸 서비스</li>
-                            <li class="f10">통역 서비스</li>
-                            <li class="f11">비즈니스 센터</li>
-                            <li class="f12">인도어 골프</li></ul></div>
+                            <li class="f6">Bữa sáng</li>
+                            <li class="f7">Hướng dẫn sử dụng câu lạc bộ thể hình</li>
+                            <li class="f8">Internet không dây tốc độ cao</li>
+                            <li class="f9">Dịch vụ phòng</li>
+                            <li class="f10">Dịch vụ phiên dịch</li>
+                            <li class="f11">Tổ dịch vụ văn phòng</li>
+                            <li class="f12">Golf trong nhà</li></ul></div>
                     <div class="sub_infotxt">
-                        <h3 class="subject">이용안내</h3>
+                        <h3 class="subject">Hướng dẫn sử dụng</h3>
                         <div class="guide">
                             <div class="f_left">
                               <table class="dfltable">
@@ -425,29 +425,29 @@
                                 </colgroup>
                                 <thead>
                                   <tr>
-                                    <th>체크인/체크아웃</th>
-                                    <th>조식 이용</th>
-                                    <th>객실 이용</th>
-                                    <th>예약변경 및 취소 규정</th>
+                                    <th>Check-in/Check-out</th>
+                                    <th>Dùng bữa sáng</th>
+                                    <th>Sử dụng phòng</th>
+                                    <th>Chính sách hủy và thay đổi đặt phòng</th>
                                   </tr>
                                 </thead>
                                 <tbody>
                                   <tr>
-                                    <td><p>체크인 : 14시</p>
-                                      <p>체크아웃 : 12시</p></td>
-                                    <td><p>이용시간 : 6~9시30분</p>
-                                      <p>레스토랑 : 르자딘(Le Jardin)</p></td>
-                                    <td><p>이용기준인원(최대인원): 2인(엑스트라 베드 추가시 3인)</p></td>
-                                    <td><p>체크인 10일~7일 전 : 총 예약 금액의 30%</p>
-                                      <p>체크인 6일~3일 전 : 총 예약 금액의 50%</p>
-                                      <p>체크인 2일 전~당일(No Show 포함) :총 예약 금액의 100%</p></td>
+                                    <td><p>Check-in: 14 giờ</p>
+                                      <p>Check-out: 12 giờ</p></td>
+                                    <td><p>Giờ sử dụng : 6~9h30</p>
+                                      <p>Nhà hàng: Le Jardin</p></td>
+                                    <td><p>Số lượng người tiêu chuẩn (số người tối đa): 2 người (3 người nếu có giường phụ)</p></td>
+                                    <td><p>Check-in trước 10~7 ngày: 30% tổng số tiền đặt trước</p>
+                                      <p>Check-in trước 6~3 ngày: 50% tổng số tiền đặt trước</p>
+                                      <p>Check-in trước 2 ngày~trong ngày (Không có chương trình bao gồm): 100% tổng số tiền đặt trước</p></td>
                                   </tr>
                                 </tbody>
                               </table>
                             </div>
                             <div class="f_right">
                                 <div class="take">
-                                    <h3>객실 예약 및 문의</h3>
+                                    <h3>Đặt phòng và yêu cầu</h3>
                                     <div class="rm_txt">
                                         <p><strong>T&nbsp;E&nbsp;L</strong> 84-243.555.1000 </p>
                                         <p><strong>F&nbsp;A&nbsp;X</strong>84 - 24 -3555-1111</p>
@@ -457,12 +457,12 @@
                             </div>
                         </div>
                         <div class="btn_basic">
-                            <a href="theme/gph/img/down/room-service-menu.pdf" target="_blank" class="btn_defalt">룸 서비스 메뉴</a>
-                            <a href="goods/goods.php?go_table=basic&amp;gc_id=1" class="btn_defalt">예약하기</a>
+                            <a href="theme/gph/img/down/room-service-menu.pdf" target="_blank" class="btn_defalt">Danh sách dịch vụ phòng</a>
+                            <a href="goods/goods.php?go_table=basic&amp;gc_id=1" class="btn_defalt">Đặt phòng</a>
                         </div>
                     </div>
                     <div>
-                        <h1 class="mnone">Other Rooms</h1>
+                        <h1 class="mnone">Các phòng khác</h1>
                         <div class="sub_info_s">
                             <div class="c_slider">
                                 <div class="list">
@@ -473,7 +473,7 @@
                                         </a>
                                     </div>
                                     <div class="info_txt">
-                                        <span class="info_title">Deluxe Room</span>
+                                        <span class="info_title">Phòng Deluxe</span>
                                         <!--<span class="info_date">$180 / night</span>-->
                                     </div>
                                 </div>
@@ -485,7 +485,7 @@
                                         </a>
                                     </div>
  <div class="info_txt">
-                                        <span class="info_title">Parlor Suites Room</span>
+                                        <span class="info_title">Phòng Parlor Suites</span>
                                         <!--<span class="info_date">$180 / night</span>-->
                                     </div>
                                 </div>
@@ -497,7 +497,7 @@
                                         </a>
                                     </div>
                                     <div class="info_txt">
-                                        <span class="info_title">Executive Suites Room</span>
+                                        <span class="info_title">Phòng Executive Suites</span>
                                         <!--<span class="info_date">$240 / night</span>-->
                                     </div>
                                 </div>
@@ -509,7 +509,7 @@
                                         </a>
                                     </div>
                                     <div class="info_txt">
-                                        <span class="info_title">Plaza Suites Room</span>
+                                        <span class="info_title">Phòng Plaza Suites</span>
                                         <!--<span class="info_date">$240 / night</span>-->
                                     </div>
                                 </div>
@@ -521,7 +521,7 @@
                                         </a>
                                     </div>
                                     <div class="info_txt">
-                                        <span class="info_title">Charmvit Suites Room</span>
+                                        <span class="info_title">Phòng Charmvit Suites</span>
                                         <!--<span class="info_date">$1900 / night</span>-->
                                     </div>
                                 </div>
@@ -533,7 +533,7 @@
                                         </a>
                                     </div>
                                     <div class="info_txt">
-                                        <span class="info_title">Presidential Suite Room</span>
+                                        <span class="info_title">Phòng Presidential Suite</span>
                                         <!--<span class="info_date">$1900 / night</span>-->
                                     </div>
                                 </div>
@@ -545,7 +545,7 @@
                                         </a>
                                     </div>
                                     <div class="info_txt">
-                                        <span class="info_title">Royal Suite Room</span>
+                                        <span class="info_title">Phòng Royal Suite</span>
                                         <!--<span class="info_date">$180 / night</span>-->
                                     </div>
                                 </div>
@@ -560,53 +560,53 @@
     </div>
 </div>
 
-<!-- } 콘텐츠 끝 -->
+<!-- } hết nội dung -->
 
 
-<!-- 하단 시작 { -->
+<!-- phần cuối { -->
 <footer id="footer">
     <div class="footer_top">
         <div class="inner">
             <ul class="under">
-                <li><a href="bbs/content.php?co_id=Room5">Charmvit Tower</a></li>
+                <li><a href="bbs/content.php?co_id=Room5">Tháp Charmvit</a></li>
                 <li><a href="bbs/content.php?co_id=Golf">Phoenix Golf Resort</a></li>
                 <li><a href="bbs/content.php?co_id=Arirang">Arirang</a></li>
                 <li><a href="bbs/content.php?co_id=Fuji">Fuji</a></li>
                 <li><a href="bbs/content.php?co_id=Hoasen"> HoaSen </a></li>
-                <li><a href="bbs/content.php?co_id=Facilities"> Born Spa</a></li>
+                <li><a href="bbs/content.php?co_id=Facilities">Born Spa</a></li>
             </ul>
             <div class="footer_sns">
-                <a href="https://www.facebook.com/GrandPlazaHanoiHotel.Co.Ltd/" target="_blank"><img src="theme/gph/img/common/face.png" alt="페이스북"></a>
-                <a href="https://www.instagram.com/grandplazahanoi_official/?hl=ko"  target="_blank"><img src="theme/gph/img/common/insta.png" alt="인스타"></a>
+                <a href="https://www.facebook.com/GrandPlazaHanoiHotel.Co.Ltd/" target="_blank"><img src="theme/gph/img/common/face.png" alt="facebook"></a>
+                <a href="https://www.instagram.com/grandplazahanoi_official/?hl=ko"  target="_blank"><img src="theme/gph/img/common/insta.png" alt="instagram"></a>
             </div>
         </div>
     </div>
     <div class="footer_bottom">
         <div class="inner">
             <div class="f_logo">
-                <a href="http://gph.oktomato.net"><img src="theme/gph/img/common/f_logo.png" alt="그누보드5"></a>
+                <a href="http://gph.oktomato.net"><img src="theme/gph/img/common/f_logo.png" alt="gnuboard5"></a>
             </div>
             <div class="info">
                 <div class="footer-policy">
                     <ul>
-                        <li><a href="bbs/content.php?co_id=about">ABOUT US</a></li>
-                        <li><a href="bbs/content.php?co_id=privacy">개인정보처리방침</a></li>
-                        <li><a href="bbs/content.php?co_id=provision">이용약관</a></li>
-                        <li><a href="bbs/content.php?co_id=ethics">VOICE OF CUSTOMER</a></li>
-                        <!-- <li><a href="bbs/board.php?bo_table=customer">VOICE OF CUSTOMER</a></li> -->
-                        <li><a href="bbs/content.php?co_id=sitemap">SITEMAP</a></li>
-                        <!-- <li><a href="#">채용</a></li> -->
-                        <li><a href="bbs/content.php?co_id=contactus">CONTACT US</a></li>
+                        <li><a href="bbs/content.php?co_id=about">Về Grand Plaza</a></li>
+                        <li><a href="bbs/content.php?co_id=privacy">Chính sách bảo mật</a></li>
+                        <li><a href="bbs/content.php?co_id=provision">Điều khoản dịch vụ</a></li>
+                        <li><a href="bbs/content.php?co_id=ethics">Ý kiến khách hàng</a></li>
+                        <!-- <li><a href="bbs/board.php?bo_table=customer">Ý kiến khách hàng</a></li> -->
+                        <li><a href="bbs/content.php?co_id=sitemap">Sơ đồ website</a></li>
+                        <!-- <li><a href="#">Tuyển dụng</a></li> -->
+                        <li><a href="bbs/content.php?co_id=contactus">Thông tin liên hệ</a></li>
                     </ul>
                 </div>
 
                 <div class="adress">
-                   <p>GRAND PLAZA HANOI HOTEL 117 TRAN DUY HUNG STREET, CAU GIAY DISTRICT, HANOI, VIETNAM</p>
+                   <p>KHÁCH SẠN GRAND PLAZA HÀ NỘI SỐ 117 TRÀN DUY HƯNG, CẦU GIẤY, HÀ NỘI, VIỆT NAM</p>
                     <p>COPYRIGHT&copy; 2019 GRAND PLAZA HANOI HOTEL. ALLRIGHTS RESERVED.</p>
                 </div>
                 <div class="campany">
-                    <span><b class="ename">CALL US</b> +84-24-3555-1000</span>
-                    <span><b class="ename">EMAIL US</b> reservation@grandplazahanoi.com</span>
+                    <span><b class="ename">SỐ ĐIỆN THOẠI</b> +84-24-3555-1000</span>
+                    <span><b class="ename">EMAIL</b> reservation@grandplazahanoi.com</span>
                     <!--<span class="f_site">
                         <button type="button">Family Site</button>
                         <div class="customSelect">
@@ -615,31 +615,31 @@
                                 <li><a href="">2</a></li>
                                 <li><a href="">3</a></li>
                             </ul>
-                            <a href="javascript:void(0);" class="custom_close">닫기</a>
+                            <a href="javascript:void(0);" class="custom_close">Thoát</a>
                         </div>
                     </span>-->
                 </div>
             </div>
              <div class="award f">
-                <img src="theme/gph/img/common/award.png" alt="푸터로고">
+                <img src="theme/gph/img/common/award.png" alt="footer logo">
             </div>
         </div>
     </div>
 </footer>
 
 
-<!-- } 하단 끝 -->
+<!-- } hết phần cuối -->
 
 <script>
 $(function() {
-    // 폰트 리사이즈 쿠키있으면 실행
+    // thay đổi kích thước phông chữ nếu tồn tại cookie
     font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
 });
 </script>
 
 
 
-<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+<!-- Đã khắc phục sự cố chế độ xem bên bị chặn bởi chế độ xem bên dưới trong danh sách bảng thông báo trong ie6,7 -->
 <!--[if lte IE 7]>
 <script>
 $(function() {

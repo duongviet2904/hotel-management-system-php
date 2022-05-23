@@ -13,24 +13,24 @@ session_start();?>
 </head>
 <body>
 
-<!-- 상단 시작 { -->
+<!-- phần đầu { -->
 <?php include("FE-common/menu.php") ?>
 
-<!-- } 상단 끝 -->
+<!-- } hết phần đầu -->
 
 
-<!-- 콘텐츠 시작 { -->
+<!-- phần nội dung { -->
 <div id="wrapper">
     <div id="container">
                   <section class="sub">
                         <section id="sub_page" >
                   <!-- <div class="sub_tit">
-                      <h2>로그인</h2>
+                      <h2>Đăng nhập</h2>
                   </div> -->
 
 
 
-<!-- 로그인 시작 { -->
+<!-- đăng nhập { -->
 <h1 class="lg_title inner">Registration</h1>
 <div id="mb_login" class="mbskin inner clearfix">
 
@@ -96,17 +96,17 @@ session_start();?>
               </div>
                <input type="submit" value="Sign up" class="btn_submit" name="regis" id="regis">
                <!-- <input type="checkbox" name="auto_login" id="login_auto_login">
-                <label for="login_auto_login">자동로그인</label>-->
+                <label for="login_auto_login">Tự động đăng nhập</label>-->
             </fieldset>
              <aside class="log_common">
               <ul class="find">
-                <!-- <li class="clearfix">아직 계정이 없으신가요?           <a href="./register.php" class="bg-gray">회원 가입</a></li> -->
-                <li class="clearfix">아이디, 비밀번호가 생각나지 않으세요?           <a href="http://www.grandplazahanoi.com/kor/bbs/password_lost.php" id="login_password_lost_x" class="w">아이디/비밀번호 찾기</a></li>
+                <!-- <li class="clearfix">Bạn chưa có tài khoản?           <a href="./register.php" class="bg-gray">Đăng kí ngay</a></li> -->
+                <li class="clearfix">Quên ID hoặc mật khẩu của bạn?           <a href="http://www.grandplazahanoi.com/kor/bbs/password_lost.php" id="login_password_lost_x" class="w">Tìm ID / Mật khẩu</a></li>
               </ul>
             </aside>
              <!--<div>
-                <a href="http://www.grandplazahanoi.com/kor/bbs/password_lost.php" target="_blank" id="login_password_lost" class="btn02">아이디 비밀번호 찾기</a>
-                <a href="./register.php" class="btn01">회원 가입</a>
+                <a href="http://www.grandplazahanoi.com/kor/bbs/password_lost.php" target="_blank" id="login_password_lost" class="btn02">Tìm ID / Mật khẩu</a>
+                <a href="./register.php" class="btn01">Đăng ký</a>
             </div>-->
         </div>
 		</form>
@@ -176,7 +176,7 @@ if (isset($_POST['regis'])) {
 
 
      <!--<div class="btn_confirm">
-            <a href="http://www.grandplazahanoi.com/kor/">메인으로 돌아가기</a>
+            <a href="http://www.grandplazahanoi.com/kor/">Quay lại trang chủ</a>
         </div>-->
 
 </div>
@@ -185,7 +185,7 @@ if (isset($_POST['regis'])) {
 $(function(){
     $("#login_auto_login").click(function(){
         if (this.checked) {
-            this.checked = confirm("자동로그인을 사용하시면 다음부터 회원아이디와 비밀번호를 입력하실 필요가 없습니다.\n\n공공장소에서는 개인정보가 유출될 수 있으니 사용을 자제하여 주십시오.\n\n자동로그인을 사용하시겠습니까?");
+            this.checked = confirm("Nếu bạn sử dụng đăng nhập tự động, bạn không cần nhập ID thành viên và mật khẩu của mình vào lần sau. \ N \ nVui lòng không sử dụng nó ở những nơi công cộng vì thông tin cá nhân có thể bị lộ. \ N \ nBạn có muốn sử dụng đăng nhập tự động không?");
         }
     });
 });
@@ -195,20 +195,20 @@ function flogin_submit(f)
     return true;
 }
 </script>
-<!-- } 로그인 끝 -->
+<!-- } hết đăng nhập -->
 
     </div>
 </div>
 
-<!-- } 콘텐츠 끝 -->
+<!-- } hết nội dung -->
 
 
-<!-- 하단 시작 { -->
+<!-- phần cuối { -->
 <footer id="footer">
     <div class="footer_top">
         <div class="inner">
             <ul class="under">
-                <li><a href="/kor/bbs/content.php?co_id=Room5">Charmvit Tower</a></li>
+                <li><a href="/kor/bbs/content.php?co_id=Room5">Tháp Charmvit</a></li>
                 <li><a href="/kor/bbs/content.php?co_id=Golf">Phoenix Golf Resort</a></li>
                 <li><a href="/kor/bbs/content.php?co_id=Arirang">Arirang</a></li>
                 <li><a href="/kor/bbs/content.php?co_id=Fuji">Fuji</a></li>
@@ -216,37 +216,37 @@ function flogin_submit(f)
                 <li><a href="/kor/bbs/content.php?co_id=Facilities"> Born Spa</a></li>
             </ul>
             <div class="footer_sns">
-                <a href="https://www.facebook.com/GrandPlazaHanoiHotel.Co.Ltd/" target="_blank"><img src="/kor/theme/gph/img/common/face.png" alt="페이스북"></a>
-                <a href="https://www.instagram.com/grandplazahanoi_official/?hl=ko"  target="_blank"><img src="/kor/theme/gph/img/common/insta.png" alt="인스타"></a>
+                <a href="https://www.facebook.com/GrandPlazaHanoiHotel.Co.Ltd/" target="_blank"><img src="/kor/theme/gph/img/common/face.png" alt="facebook"></a>
+                <a href="https://www.instagram.com/grandplazahanoi_official/?hl=ko"  target="_blank"><img src="/kor/theme/gph/img/common/insta.png" alt="instagram"></a>
             </div>
         </div>
     </div>
     <div class="footer_bottom">
         <div class="inner">
             <div class="f_logo">
-                <a href="http://gph.oktomato.net"><img src="/kor/theme/gph/img/common/f_logo.png" alt="그누보드5"></a>
+                <a href="http://gph.oktomato.net"><img src="/kor/theme/gph/img/common/f_logo.png" alt="gnuboard5"></a>
             </div>
             <div class="info">
                 <div class="footer-policy">
                     <ul>
-                        <li><a href="/kor/bbs/content.php?co_id=about">ABOUT US</a></li>
-                        <li><a href="/kor/bbs/content.php?co_id=privacy">개인정보처리방침</a></li>
-                        <li><a href="/kor/bbs/content.php?co_id=provision">이용약관</a></li>
-                        <li><a href="/kor/bbs/content.php?co_id=ethics">VOICE OF CUSTOMER</a></li>
-                        <!-- <li><a href="/kor/bbs/board.php?bo_table=customer">VOICE OF CUSTOMER</a></li> -->
-                        <li><a href="/kor/bbs/content.php?co_id=sitemap">SITEMAP</a></li>
-                        <!-- <li><a href="#">채용</a></li> -->
-                        <li><a href="/kor/bbs/content.php?co_id=contactus">CONTACT US</a></li>
+                        <li><a href="/kor/bbs/content.php?co_id=about">Về Grand Plaza</a></li>
+                        <li><a href="/kor/bbs/content.php?co_id=privacy">Chính sách bảo mật</a></li>
+                        <li><a href="/kor/bbs/content.php?co_id=provision">Điều khoản dịch vụ</a></li>
+                        <li><a href="/kor/bbs/content.php?co_id=ethics">Ý kiến khách hàng</a></li>
+                        <!-- <li><a href="/kor/bbs/board.php?bo_table=customer">Ý kiến khách hàng</a></li> -->
+                        <li><a href="/kor/bbs/content.php?co_id=sitemap">Sơ đồ website</a></li>
+                        <!-- <li><a href="#">Tuyển dụng</a></li> -->
+                        <li><a href="/kor/bbs/content.php?co_id=contactus">Thông tin liên hệ</a></li>
                     </ul>
                 </div>
 
                 <div class="adress">
-                   <p>GRAND PLAZA HANOI HOTEL 117 TRAN DUY HUNG STREET, CAU GIAY DISTRICT, HANOI, VIETNAM</p>
+                   <p>KHÁCH SẠN GRAND PLAZA HÀ NỘI SỐ 117 TRÀN DUY HƯNG, CẦU GIẤY, HÀ NỘI, VIỆT NAM</p>
                     <p>COPYRIGHT&copy; 2019 GRAND PLAZA HANOI HOTEL. ALLRIGHTS RESERVED.</p>
                 </div>
                 <div class="campany">
-                    <span><b class="ename">CALL US</b> +84-24-3555-1000</span>
-                    <span><b class="ename">EMAIL US</b> reservation@grandplazahanoi.com</span>
+                    <span><b class="ename">SỐ ĐIỆN THOẠI</b> +84-24-3555-1000</span>
+                    <span><b class="ename">EMAIL</b> reservation@grandplazahanoi.com</span>
                     <!--<span class="f_site">
                         <button type="button">Family Site</button>
                         <div class="customSelect">
@@ -255,31 +255,31 @@ function flogin_submit(f)
                                 <li><a href="">2</a></li>
                                 <li><a href="">3</a></li>
                             </ul>
-                            <a href="javascript:void(0);" class="custom_close">닫기</a>
+                            <a href="javascript:void(0);" class="custom_close">Thoát</a>
                         </div>
                     </span>-->
                 </div>
             </div>
              <div class="award f">
-                <img src="/kor/theme/gph/img/common/award.png" alt="푸터로고">
+                <img src="/kor/theme/gph/img/common/award.png" alt="footer logo">
             </div>
         </div>
     </div>
 </footer>
 
 
-<!-- } 하단 끝 -->
+<!-- } hết phần cuối -->
 
 <script>
 $(function() {
-    // 폰트 리사이즈 쿠키있으면 실행
+    // thay đổi kích thước phông chữ nếu tồn tại cookie
     font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
 });
 </script>
 
 
 
-<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+<!-- Đã khắc phục sự cố chế độ xem bên bị chặn bởi chế độ xem bên dưới trong danh sách bảng thông báo trong ie6,7 -->
 <!--[if lte IE 7]>
 <script>
 $(function() {

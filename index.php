@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ko">
 <head>
-    <title>GrandPlaza|Home</title>
+    <title>GrandPlaza|Trang chủ</title>
     <?php include("FE-common/header.php") ?>
 <!--<link rel="stylesheet" href="theme/gph/css/default.css?ver=161020">-->
 <!--[if lte IE 8]>
@@ -13,19 +13,19 @@
 </head>
 <body>
 
-<!-- 상단 시작 { -->
+<!-- phần đầu { -->
 <?php include("FE-common/menu.php") ?>
 
-<!-- } 상단 끝 -->
+<!-- } hết phần đầu -->
 
 
-<!-- 콘텐츠 시작 { -->
+<!-- phần nội dung { -->
 <div id="wrapper">
     <div id="container">
         <section id="main">
         <div class="main_visual_wrap">
             <div class="m_visual_txt">
-                <p><img src="theme/gph/img/main/visual_txt.png" alt="텍스트"></p>
+                <p><img src="theme/gph/img/main/visual_txt.png" alt="text"></p>
             </div>
             <div class="main_visual">
 							<div>
@@ -38,12 +38,12 @@
 
 			               <!-- <div>
                     <div class="img-box">
-                        <img src="theme/gph//img/main/main_visual1.jpeg" alt="비주얼영역 배경이미지01" />
+                        <img src="theme/gph//img/main/main_visual1.jpeg" alt="visual area background image 01" />
                     </div>
                </div>
                <div>
                     <div class="img-box">
-                            <img src="theme/gph//img/main/main_visual2.jpeg" alt="비주얼영역 배경이미지02" />
+                            <img src="theme/gph//img/main/main_visual2.jpeg" alt="visual area background image 02" />
                     </div>
                 </div> -->
             </div>
@@ -52,7 +52,7 @@
             <div class="quick">
                 <div class="inner">
                     <div class="search_hotel">
-                        <p>Book Your <span>ROOMS</span></p>
+                        <p>Đặt <span>phòng</span></p>
                     </div>
                     <form name="fsearch" method="get" action="goods/goods.php?go_table=basic&gc_id=1">
 					<input type="hidden" name="go_table" value="basic">
@@ -71,7 +71,7 @@
 						</div>
 						<div class="person_list">
 							<span class="input-form border">
-								<strong class="inptitle">ROOMS</strong>
+								<strong class="inptitle">PHÒNG</strong>
 								<!-- <input type="text" class="chk-person readonly" name="g_name"> -->
 								<select name="g_room_num" id="g_room_num">
 																	<option value="1" >1</option>
@@ -81,7 +81,7 @@
 								</select>
 							</span>
 							<span class="input-form">
-								<strong class="inptitle">ADULTS</strong>
+								<strong class="inptitle">NGƯỜI LỚN</strong>
 								<!-- <input type="text" class="chk-person readonly" name="adults_num"> -->
 								<select name="adults_num" id="adults_num">
 																	<option value="1" >1</option>
@@ -91,7 +91,7 @@
 								</select>
 							</span>
 							<span class="input-form">
-								<strong class="inptitle">CHILDREN</strong>
+								<strong class="inptitle">TRẺ EM</strong>
 								<!-- <input type="text" class="chk-person readonly" name="child_num"> -->
 								<select name="child_num" id="child_num">
 																	<option value="0"  selected="selected">0</option>
@@ -103,7 +103,7 @@
 						</div>
 						<div class="eat_list">
 							<span class="input-form">
-								<strong class="inptitle">Breakfast</strong>
+								<strong class="inptitle">Bữa sáng</strong>
 								<!-- <input type="text" class="chk-person readonly" name="g_breakfast"> -->
 								<select name="g_breakfast" id="g_breakfast">
 									<option value="Y" >Y</option>
@@ -113,7 +113,7 @@
 							</span>
 						</div>
 					</div>
-					<button type="submit" class="reserv_btn">Search</button>
+					<button type="submit" class="reserv_btn">Tìm kiếm</button>
 					</form>
                 </div>
             </div>
@@ -128,7 +128,7 @@
                                       <div class="scale_img">
                                         <img src="theme/gph//img/main/dining02.jpeg" alt="dining" />
                                     </div>
-                                      <p class="sca_txt">Dining</p>
+                                      <p class="sca_txt">Ẩm thực</p>
                                     </a>
                                </div>
                             </li>
@@ -138,7 +138,7 @@
                                         <div class="scale_img">
                                         <img src="theme/gph//img/main/wedding03.jpeg" alt="wedding" />
                                       </div>
-                                        <p class="sca_txt">Wedding</p>
+                                        <p class="sca_txt">Tiệc cưới</p>
                                     </a>
                                 </div>
                             </li>
@@ -148,7 +148,7 @@
                                       <div class="scale_img">
                                         <img src="theme/gph/img/main/convention04.jpeg" alt="convention" />
                                       </div>
-                                        <p class="sca_txt">Convention</p>
+                                        <p class="sca_txt">Hội nghị</p>
                                     </a>
                                 </div>
                             </li>
@@ -159,40 +159,40 @@
                             <div class="in">
                                 <img src="theme/gph/img/main/mid_s1.jpeg" alt="중간슬라이드"/>
                                 <div class="text_info">
-                                    <p>Royal Suite Room</p>
+                                    <p>Phòng Royal Suite</p>
                                     <ul>
-                                        <li><p>Bed type King/Twin</p></li>
-                                        <li><p>Capacity 2 persons </p></li>
-                                        <li><p>View City </p></li>
-                                        <li><p>Room size 60~65m2 </p></li>
+                                        <li><p>Giường đôi/Hai giường đơn</p></li>
+                                        <li><p>Sức chứa 2 người </p></li>
+                                        <li><p>Tầm nhìn thành phố </p></li>
+                                        <li><p>Kích cỡ phòng 60~65m2 </p></li>
                                     </ul>
-                                    <a href="#" class="more_btn">more</a>
+                                    <a href="#" class="more_btn">Xem thêm</a>
                                 </div>
                             </div>
                             <div class="in">
                                 <img src="theme/gph/img/main/mid_s1.jpeg" alt="중간슬라이드"/>
                                 <div class="text_info">
-                                    <p>Royal Suite Room</p>
+                                    <p>Phòng Royal Suite</p>
                                     <ul>
-                                        <li><p>Bed type King/Twin</p></li>
-                                        <li><p>Capacity 2 persons </p></li>
-                                        <li><p>View City </p></li>
-                                        <li><p>Room size 60~65m2 </p></li>
+                                        <li><p>Giường đôi/Hai giường đơn</p></li>
+                                        <li><p>Sức chứa 2 người </p></li>
+                                        <li><p>Tầm nhìn thành phố </p></li>
+                                        <li><p>Kích cỡ phòng 60~65m2 </p></li>
                                     </ul>
-                                    <a href="#" class="more_btn">more</a>
+                                    <a href="#" class="more_btn">Xem thêm</a>
                                 </div>
                             </div>
                             <div class="in">
                                 <img src="theme/gph/img/main/mid_s1.jpeg" alt="중간슬라이드"/>
                                 <div class="text_info">
-                                    <p>Royal Suite Room</p>
+                                    <p>Phòng Royal Suite </p>
                                     <ul>
-                                        <li><p>Bed type King/Twin</p></li>
-                                        <li><p>Capacity 2 persons </p></li>
-                                        <li><p>View City </p></li>
-                                        <li><p>Room size 60~65m2 </p></li>
+                                        <li><p>Giường đôi/Hai giường đơn</p></li>
+                                        <li><p>Sức chứa 2 người </p></li>
+                                        <li><p>Tầm nhìn thành phố </p></li>
+                                        <li><p>Kích cỡ phòng 60~65m2 </p></li>
                                     </ul>
-                                    <a href="#" class="more_btn">more</a>
+                                    <a href="#" class="more_btn">Xem thêm</a>
                                 </div>
                             </div>
                         </div>
@@ -203,12 +203,12 @@
         <div class="section2">
             <div class="inner">
                 <div class="div_cont">
-                    <h3 class="title">Promotion</h3>
+                    <h3 class="title">Quảng cáo</h3>
                 </div>
                 <div class="pro_list">
 					
 <div class="list_box">
-<!-- 프로모션 최신글 시작 { -->
+<!-- Quảng cáo mới nhất { -->
 		<div class="list">
 		<div class="img">
 			<a href="bbs/board.php?bo_table=room_pm&amp;wr_id=1">
@@ -217,10 +217,10 @@
 			</a>
 		</div>
 		<div class="txt">
-			<h5 class="title">Deluxe Room</h5>
-		   <p class="m_sub_tit">오전 조식 룸서비스 가능</p>
-		   <p class="date">예약기간: 2019.06.06~2019.07.08</p>
-			 <p class="date">투숙기간: 2019.06.06~2019.07.08</p>
+			<h5 class="title">Phòng Deluxe</h5>
+		   <p class="m_sub_tit">Có phục vụ bữa sáng tại phòng</p>
+		   <p class="date">Thời gian đặt phòng: 2019.06.06~2019.07.08</p>
+			 <p class="date">Thời gian ở lại: 2019.06.06~2019.07.08</p>
 		</div>
 	</div>
 
@@ -291,9 +291,9 @@
 						</a>
                     </div>
                     <div class="stage_txt">
-                        <p class="name">SPECIAL PROMOTION!</p>
-                        <p class="btit">For those who plan their stay with no rush, if you…</p>
-                            <a href="#" class="more_btn">more</a>
+                        <p class="name">QUẢNG CÁO ĐẶC BIỆT!</p>
+                        <p class="btit">Đối với những người lên kế hoạch cho kỳ nghỉ của họ không vội vàng, nếu bạn…</p>
+                            <a href="#" class="more_btn">Xem thêm</a>
                     </div>
                 </div>
 
@@ -305,12 +305,9 @@
 						</a>
                     </div>
                     <div class="stage_txt">
-                        <p class="name">The Place To Meet!</p>
-                        <p class="btit">Grand Plaza
- Hanoi Hotel
- For more 
-information…</p>
-                            <a href="#" class="more_btn">more</a>
+                        <p class="name">Địa điểm gặp mặt!</p>
+                        <p class="btit">Khách sạn Grand Plaza Hà Nội Để biết thêm thông tin…</p>
+                            <a href="#" class="more_btn">Xem thêm</a>
                     </div>
                 </div>
 
@@ -356,11 +353,11 @@ information…</p>
         <div class="section4">
             <div class="inner">
                 <div class="not_left">
-                    <h4 class="normal">News & Event</h4>
-                    <a href="bbs/board.php?bo_table=notice" class="btn_more">더보기</a>
+                    <h4 class="normal">Tin tức và sự kiện</h4>
+                    <a href="bbs/board.php?bo_table=notice" class="btn_more">Xem thêm</a>
 					
 <ul class="notice_li">
-<!-- 뉴스 최신글 시작 { -->
+<!-- tin tức mới nhất { -->
 		<li>
 		<a href="bbs/board.php?bo_table=notice&amp;wr_id=29">
 			<div class="img">
@@ -369,9 +366,8 @@ information…</p>
 			<!-- <img src="theme/gph/img/main/notice1.jpeg" alt=""/> -->
 			</div>
 			<div class="txt">
-				<h5>참빛그룹, 베트남 첫 경마장 사업 허가 취득</h5>
-				<p class="sub_txt">한국의 참빛그룹이 베트남의 첫 경마장 사업 허가를 받았다. 
-이대봉 참빛그룹 회장은 14…</p>
+				<h5>Tập đoàn Chambit mua giấy phép kinh doanh trường đua đầu tiên của Việt Nam</h5>
+				<p class="sub_txt">Tập đoàn Chambit của Hàn Quốc nhận giấy phép kinh doanh trường đua đầu tiên tại Việt Nam. Chủ tịch Tập đoàn Chambit Lee Dae-bong 14 tuổi…</p>
 				<p class="date_t">2020-02-17</p>
 			</div>
 		</a>
@@ -386,8 +382,8 @@ information…</p>
 			<!-- <img src="theme/gph/img/main/notice1.jpeg" alt=""/> -->
 			</div>
 			<div class="txt">
-				<h5>이대봉 참빛그룹 회장, 베트남 전쟁열사 자녀에…</h5>
-				<p class="sub_txt">이대봉 참빛그룹 회장(뒷줄 왼쪽에서 두 번째)은 지난 11일 베트남 공안부에서 베트남 전쟁…</p>
+				<h5>Chủ tịch Tập đoàn Chambit Lee Dae-bong, gửi tới các liệt sĩ Việt Nam…</h5>
+				<p class="sub_txt">Chủ tịch Tập đoàn Chambit Lee Dae-bong (thứ hai từ trái qua ở hàng sau) đã tổ chức Chiến tranh Việt Nam ...</p>
 				<p class="date_t">2020-02-17</p>
 			</div>
 		</a>
@@ -419,8 +415,8 @@ information…</p>
                     </ul> -->
                 </div>
                 <div class="not_right">
-                    <h4 class="normal">Location</h4>
-                    <a href="bbs/content.php?co_id=contactus" class="btn_more">더보기</a>
+                    <h4 class="normal">Vị trí</h4>
+                    <a href="bbs/content.php?co_id=contactus" class="btn_more">Xem thêm</a>
                     <div class="loction">
                        <a href="bbs/content.php?co_id=contactus"> <img src="theme/gph/img/main/location.jpeg" alt=""/></a>
                     </div>
@@ -432,15 +428,15 @@ information…</p>
     </div>
 </div>
 
-<!-- } 콘텐츠 끝 -->
+<!-- } hết nội dung -->
 
 
-<!-- 하단 시작 { -->
+<!-- phần cuối { -->
 <footer id="footer">
     <div class="footer_top">
         <div class="inner">
             <ul class="under">
-                <li><a href="bbs/content.php?co_id=Room5">Charmvit Tower</a></li>
+                <li><a href="bbs/content.php?co_id=Room5">Tháp Charmvit</a></li>
                 <li><a href="bbs/content.php?co_id=Golf">Phoenix Golf Resort</a></li>
                 <li><a href="bbs/content.php?co_id=Arirang">Arirang</a></li>
                 <li><a href="bbs/content.php?co_id=Fuji">Fuji</a></li>
@@ -448,37 +444,37 @@ information…</p>
                 <li><a href="bbs/content.php?co_id=Facilities"> Born Spa</a></li>
             </ul>
             <div class="footer_sns">
-                <a href="https:/www.facebook.com/GrandPlazaHanoiHotel.Co.Ltd/" target="_blank"><img src="theme/gph/img/common/face.png" alt="페이스북"></a>
-                <a href="https:/www.instagram.com/grandplazahanoi_official/?hl=ko"  target="_blank"><img src="theme/gph/img/common/insta.png" alt="인스타"></a>
+                <a href="https:/www.facebook.com/GrandPlazaHanoiHotel.Co.Ltd/" target="_blank"><img src="theme/gph/img/common/face.png" alt="facebook"></a>
+                <a href="https:/www.instagram.com/grandplazahanoi_official/?hl=ko"  target="_blank"><img src="theme/gph/img/common/insta.png" alt="instagram"></a>
             </div>
         </div>
     </div>
     <div class="footer_bottom">
         <div class="inner">
             <div class="f_logo">
-                <a href="http:/gph.oktomato.net"><img src="theme/gph/img/common/f_logo.png" alt="그누보드5"></a>
+                <a href="http:/gph.oktomato.net"><img src="theme/gph/img/common/f_logo.png" alt="gnuboard5"></a>
             </div>
             <div class="info">
                 <div class="footer-policy">
                     <ul>
-                        <li><a href="bbs/content.php?co_id=about">ABOUT US</a></li>
-                        <li><a href="bbs/content.php?co_id=privacy">개인정보처리방침</a></li>
-                        <li><a href="bbs/content.php?co_id=provision">이용약관</a></li>
-                        <li><a href="bbs/content.php?co_id=ethics">VOICE OF CUSTOMER</a></li>
-                        <!-- <li><a href="bbs/board.php?bo_table=customer">VOICE OF CUSTOMER</a></li> -->
-                        <li><a href="bbs/content.php?co_id=sitemap">SITEMAP</a></li>
-                        <!-- <li><a href="#">채용</a></li> -->
-                        <li><a href="bbs/content.php?co_id=contactus">CONTACT US</a></li>
+                        <li><a href="bbs/content.php?co_id=about">Về Grand Plaza</a></li>
+                        <li><a href="bbs/content.php?co_id=privacy">Chính sách bảo mật</a></li>
+                        <li><a href="bbs/content.php?co_id=provision">Điều khoản dịch vụ</a></li>
+                        <li><a href="bbs/content.php?co_id=ethics">Ý kiến khách hàng</a></li>
+                        <!-- <li><a href="bbs/board.php?bo_table=customer">Ý kiến khách hàng</a></li> -->
+                        <li><a href="bbs/content.php?co_id=sitemap">Sơ đồ website</a></li>
+                        <!-- <li><a href="#">Tuyển dụng</a></li> -->
+                        <li><a href="bbs/content.php?co_id=contactus">Thông tin liên hệ</a></li>
                     </ul>
                 </div>
 
                 <div class="adress">
-                   <p>GRAND PLAZA HANOI HOTEL 117 TRAN DUY HUNG STREET, CAU GIAY DISTRICT, HANOI, VIETNAM</p>
+                   <p>KHÁCH SẠN GRAND PLAZA HÀ NỘI SỐ 117 TRÀN DUY HƯNG, CẦU GIẤY, HÀ NỘI, VIỆT NAM</p>
                     <p>COPYRIGHT&copy; 2019 GRAND PLAZA HANOI HOTEL. ALLRIGHTS RESERVED.</p>
                 </div>
                 <div class="campany">
-                    <span><b class="ename">CALL US</b> +84-24-3555-1000</span>
-                    <span><b class="ename">EMAIL US</b> reservation@grandplazahanoi.com</span>
+                    <span><b class="ename">SỐ ĐIỆN THOẠI</b> +84-24-3555-1000</span>
+                    <span><b class="ename">EMAIL</b> reservation@grandplazahanoi.com</span>
                     <!--<span class="f_site">
                         <button type="button">Family Site</button>
                         <div class="customSelect">
@@ -487,31 +483,31 @@ information…</p>
                                 <li><a href="">2</a></li>
                                 <li><a href="">3</a></li>
                             </ul>
-                            <a href="javascript:void(0);" class="custom_close">닫기</a>
+                            <a href="javascript:void(0);" class="custom_close">Thoát</a>
                         </div>
                     </span>-->
                 </div>
             </div>
              <div class="award f">
-                <img src="theme/gph/img/common/award.png" alt="푸터로고">
+                <img src="theme/gph/img/common/award.png" alt="footer logo">
             </div>
         </div>
     </div>
 </footer>
 
 
-<!-- } 하단 끝 -->
+<!-- } hết phần cuối -->
 
 <script>
 $(function() {
-    // 폰트 리사이즈 쿠키있으면 실행
+    // thay đổi kích thước phông chữ nếu tồn tại cookie
     font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
 });
 </script>
 
 
 
-<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+<!--Đã khắc phục sự cố chế độ xem bên bị chặn bởi chế độ xem bên dưới trong danh sách bảng thông báo trong ie6,7 -->
 <!--[if lte IE 7]>
 <script>
 $(function() {

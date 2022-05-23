@@ -3,14 +3,14 @@
 
 <head>
     <title>Regular Tables - Tables are the backbone of almost all web applications.</title>
-    <?php include('common/head-link.php'); ?>
+    <?php include('../common/head-link.php'); ?>
 </head>
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
-        <?php include('common/header.php'); ?>
-        <?php include('common/setting.php'); ?>
+        <?php include('../common/header.php'); ?>
+        <?php include('../common/setting.php'); ?>
         <div class="app-main">
-                <?php $page = 'room-management'; include('common/menu.php'); ?>
+                <?php $page = 'room-management'; include('../common/menu.php'); ?>
                 <div class="app-main__outer">
                     <div class="app-main__inner">
                         <div class="app-page-title">
@@ -30,7 +30,7 @@
                                         <span class="btn-icon-wrapper pr-2 opacity-7">
                                                 <i class="fa fa-business-time fa-w-20"></i>
                                             </span>
-                                            Thêm phòng
+                                            <a href="add-room.php" style="text-decoration: none; color: white">Thêm phòng</a>
                                     </button>
                                 </div>    
                             </div>
@@ -52,8 +52,8 @@
                                             </tr>
                                             </thead>
                                             <?php
-                                            include('../config.php');
-                                            $sql = "SELECT * FROM room";
+                                            include('../../config.php');
+                                            $sql = "SELECT * FROM room INNER JOIN room_class ON room.room_class_id = room_class.room_class_id";
                                             $query = mysqli_query($conn, $sql);
                                             $i = 0;
                                             if($query){
@@ -66,7 +66,7 @@
                                                     echo "<td>".$item['room_price']."</td>";
                                                     echo "<td>".$item['room_class_image']."</td>";
                                                     echo "<td>".$item['status']."</td>";
-                                                    echo "<td>".$item['room_class_id']."</td>";
+                                                    echo "<td>".$item['room_class_name']."</td>";
                                                     echo " <td style='text-align: center;'> <a href='edit-room.php?id=".$item['room_id']."'><input id='btnSua' type='button' value='Sửa' '>";
                                                     echo " <td style='text-align: center;'> <a href='delete-room.php?id=".$item['room_id']."'><input id='btnXoa' type='button' value='Xoá' '>";
                                                     echo "</tr>";
