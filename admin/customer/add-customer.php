@@ -11,7 +11,7 @@
 
 <head>
     <title>Regular Tables - Tables are the backbone of almost all web applications.</title>
-    <?php include('common/head-link.php'); ?>
+    <?php include('../common/head-link.php'); ?>
 </head>
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
@@ -139,7 +139,7 @@
                 </div>
         </div>
     </div>
-<script type="text/javascript" src="../../assets/scripts/main.js"></script></body>
+<script type="text/javascript" src="../assets/scripts/main.js"></script></body>
 </html>
 
 <?php ob_end_flush(); ?>

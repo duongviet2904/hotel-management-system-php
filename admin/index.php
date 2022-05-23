@@ -5,9 +5,10 @@
     
     <title>Analytics Dashboard - This is an example dashboard created using build-in elements and components.</title>
     <?php include('common/head-link.php'); ?>
+    <link href="./main.css" rel="stylesheet">
 </head>
 <body>
-    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header closed-sidebar">
 
         <?php include('common/header.php'); ?>
         <?php include('common/setting.php'); ?>

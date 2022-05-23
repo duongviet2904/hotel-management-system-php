@@ -48,13 +48,16 @@
                                                 <th>Room Class Description</th>
                                                 <th>Room Class Image</th>
                                                 <th>Room Class Status</th>
+                                                <th>Action</th>
                                             </tr>
                                             </thead>
                                             <?php
                                             include('../../config.php');
-                                            $sql = "SELECT * FROM room_class";
+                                            $sql = "SELECT * FROM Room_Class";
                                             $query = mysqli_query($conn, $sql);
                                             $i = 0;
+                                            // var_dump($sql);
+                                            // die();
                                             if($query){
                                                 foreach($query as $item){
                                                     $i++;
@@ -66,8 +69,9 @@
                                                     echo "<td>". $item['status']."</td>";
                                                     //echo "<td>"."<input id='btnSua' type='button' value='Sửa' '>"."</td>";
                                                     
-                                                    echo " <td style='text-align: center;'> <a href='edit-room-class.php?id=".$item['room_class_id']."'><input id='btnSua' type='button' value='Sửa' '>";
-                                                    echo " <td style='text-align: center;'> <a href='delete-room-class.php?id=".$item['room_class_id']."'><input id='btnXoa' type='button' value='Xoá' '>";
+                                                    echo " <td style='text-align: center;'> <a href='edit-room-class.php?id=".$item['room_class_id']."'><input id='btnSua' type='button' value='Sửa' '> 
+                                                    <a href='delete-room-class.php?id=".$item['room_class_id']."'><input id='btnXoa' type='button' value='Xoá' '>
+                                                    ";
                                                     echo "</tr>";
                                                     
                                                 }
@@ -100,5 +104,5 @@
                 </div>
         </div>
     </div>
-<script type="text/javascript" src="./assets/scripts/main.js"></script></body>
+<script type="text/javascript" src="../assets/scripts/main.js"></script></body>
 </html>
