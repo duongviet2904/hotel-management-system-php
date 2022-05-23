@@ -70,7 +70,9 @@
                                             <?php
 
 
-                                            $sql = "SELECT * FROM Reservation inner join Customer on Reservation.cus_id = Customer.cus_id";
+                                            $sql = "SELECT re_id, re_date_in, re_date_out, create_date, Reservation.status, Customer.cus_id, cus_fname, cus_lname, cus_birthday,
+                                             cus_gender, cus_phone, cus_email, cus_address FROM Reservation inner join Customer on Reservation.cus_id = Customer.cus_id";
+                                            //  var_dump($sql);die();
                                             $result = mysqli_query($conn, $sql);
                                             $index = 1;
 
@@ -110,16 +112,25 @@
                                                                 while ($row2 = mysqli_fetch_assoc($result2)) {
                                                                     echo $row2["service_name"]. '</br>';
                                                             };
-                                                            echo '
-                                                            </td>
-                                                            <td rowspan="' . $num . '">
-                                                                <button type="button" class="btn btn-success"><a href="edit-customer.php?id=' . $row["cus_id"] . '" style="text-decoration:none; color: white">Check in</a></button></br>
-                                                                <button type="button" class="btn btn-info"><a href="edit-customer.php?id=' . $row["cus_id"] . '" style="text-decoration:none; color: white">Deposit</a></button></br>
-                                                                <button type="button" class="btn btn-primary"><a href="edit-customer.php?id=' . $row["cus_id"] . '" style="text-decoration:none; color: white">Pay</a></button></br>
-                                                                <button type="button" class="btn btn-warning"><a href="edit-customer.php?id=' . $row["cus_id"] . '" style="text-decoration:none; color: white">Edit</a></button></br>
-                                                                <button type="button" class="btn btn-danger"><a href="delete-customer.php?acc_id=' . $row["acc_id"] . '" style="text-decoration:none; color: white">Delete</a></button>
+                                                            if($row['status'] == 1){
+                                                                echo '
                                                                 </td>
-                                                            </tr>';
+                                                                <td rowspan="' . $num . '">
+                                                                    <button type="button" class="btn btn-success"><a href="edit-customer.php?id=' . $row["cus_id"] . '" style="text-decoration:none; color: white">Check in</a></button></br>
+                                                                    <button type="button" class="btn btn-info"><a href="edit-customer.php?id=' . $row["cus_id"] . '" style="text-decoration:none; color: white">Deposit</a></button></br>
+                                                                    <button type="button" class="btn btn-primary"><a href="edit-customer.php?id=' . $row["cus_id"] . '" style="text-decoration:none; color: white">Pay</a></button></br>
+                                                                    <button type="button" class="btn btn-warning"><a href="edit-reservation.php?re_id=' . $row["re_id"] . '&cus_id='. $row['cus_id'].'" style="text-decoration:none; color: white">Edit</a></button></br>
+                                                                    <button type="button" class="btn btn-danger"><a href="delete-reservation.php?re_id=' . $row["re_id"] . '" style="text-decoration:none; color: white">Delete</a></button>
+                                                                    </td>
+                                                                </tr>';
+                                                            }else{
+                                                                echo '
+                                                                </td>
+                                                                <td rowspan="' . $num . '">
+                                                                    Đã Xoá
+                                                                    </td>
+                                                                </tr>';
+                                                            }
 
                                                         } else {
                                                             echo ' <tr>
