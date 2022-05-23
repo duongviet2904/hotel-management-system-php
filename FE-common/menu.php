@@ -39,10 +39,16 @@
             <div class="gnb">
                 <ul>
 
-                    <li><a href="bbs/login.php">Dăng nhập</a></li>
-                    <li><a href="bbs/register.php">Tham gia</a></li>
+                    <?php 
+                        if(isset($_SESSION['username'])){
+                            echo '<li><a href="logout.php">Đăng Xuất</a></li>';
+                        }else{
+                            echo '<li><a href="login.php">Đăng nhập</a></li>';
+                        }
+                    ?>
+                    <li><a href="./registration.php">Đăng kí</a></li>
                     <!--                    <li><a href="bbs/faq.php">FAQ</a></li>-->
-                    <li><a href="reserve/reservation.php">Xác nhận đặt phòng</a></li>
+                    <li><a href=".//reservation.php">Đặt phòng</a></li>
                     <!--                      <li><a href="bbs/qalist.php">Câu hỏi 1:1</a></li>-->
                     <!--                    <li><a href="bbs/current_connect.php">Lượt truy cập 
 2</a></li>-->
@@ -93,7 +99,7 @@
 							<li class=""><a href="bbs/content.php?co_id=Room7" target="_self" class="">Phòng Royal Suite </a></li> -->
                         <?php
                         include('config.php');
-                        $sql = "SELECT * FROM room_class";
+                        $sql = "SELECT * FROM Room_Class";
                         $query = mysqli_query($conn, $sql);
                         foreach ($query as $item) {
                             echo "<li class=\"\"><a href=\"bbs/content.php?co_id=" . $item['room_class_name'] . "\" target=\"_self\"> " . $item['room_class_name'] .  "</a></li>";
@@ -125,7 +131,7 @@
                     <ul class="depth2">
                     <?php
                         include('config.php');
-                        $sql = "SELECT * FROM service";
+                        $sql = "SELECT * FROM Service";
                         $query = mysqli_query($conn, $sql);
                         foreach ($query as $item) {
                             echo "<li class=\"\"><a href=\"bbs/content.php?co_id=" . $item['service_name'] . "\" target=\"_self\"> " . $item['service_name'] .  "</a></li>";

@@ -64,9 +64,9 @@
                                                     <div class="col-md-6">
                                                         <div class="position-relative form-group"><label for="cus_gender" class="">Giới tính</label>
                                                         <select class="mb-2 form-control" name="cus_gender">
-                                                            <option value="male" <?php if($reid && $result['cus_gender'] == 'male') echo 'checked' ?>>Male</option>
-                                                            <option value="female" <?php if($reid && $result['cus_gender'] == 'female') echo 'checked' ?>>Female</option>
-                                                            <option value="other" <?php if($reid && $result['cus_gender'] == 'other') echo 'checked' ?>>Other</option>
+                                                            <option value="male" <?php if($reid && $result['cus_gender'] == 'male') echo 'selected' ?>>Male</option>
+                                                            <option value="female" <?php if($reid && $result['cus_gender'] == 'female') echo 'selected' ?>>Female</option>
+                                                            <option value="other" <?php if($reid && $result['cus_gender'] == 'other') echo 'selected' ?>>Other</option>
                                                         </select>
                                                     </div>
                                                     </div>
