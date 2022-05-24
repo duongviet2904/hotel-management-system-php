@@ -36,9 +36,9 @@
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header closed-sidebar">
         <?php include('../common/header.php'); ?>
-        <?php include('../common/setting.php'); ?>
+        <?php //include('../common/setting.php'); ?>
         <div class="app-main">
-                <?php $page = 'add-reservation'; include('../common/menu.php'); ?>
+                <?php $page = 'reservation-management'; include('../common/menu.php'); ?>
                 <div class="app-main__outer">
                     <div class="app-main__inner">
                         <div class="row">

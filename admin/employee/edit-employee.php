@@ -40,15 +40,15 @@
 <html lang="en">
 
 <head>
-    <title>Regular Tables - Tables are the backbone of almost all web applications.</title>
+    <title>Admin| Edit employee</title>
     <?php include('../common/head-link.php'); ?>
 </head>
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header closed-sidebar">
         <?php include('../common/header.php'); ?>
-        <?php include('../common/setting.php'); ?>
+        <?php // include('../common/setting.php'); ?>
         <div class="app-main">
-                <?php $page = 'edit-employee'; include('../common/menu.php'); ?>
+                <?php $page = 'employee-management'; include('../common/menu.php'); ?>
                 <div class="app-main__outer">
                     <div class="app-main__inner">
                         <div class="row">

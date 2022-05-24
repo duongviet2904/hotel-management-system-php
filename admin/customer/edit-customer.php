@@ -26,15 +26,15 @@
 <html lang="en">
 
 <head>
-    <title>Regular Tables - Tables are the backbone of almost all web applications.</title>
+    <title>Admin| Edit customer</title>
     <?php include('../common/head-link.php'); ?>
 </head>
 <body>
-    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header closed-sidebar">
         <?php include('../common/header.php'); ?>
-        <?php include('../common/setting.php'); ?>
+        <?php //include('../common/setting.php'); ?>
         <div class="app-main">
-                <?php $page = 'add-customer'; include('../common/menu.php'); ?>
+                <?php $page = 'customer-management'; include('../common/menu.php'); ?>
                 <div class="app-main__outer">
                     <div class="app-main__inner">
                         <div class="row">
@@ -177,5 +177,3 @@
     </div>
 <script type="text/javascript" src="../assets/scripts/main.js"></script></body>
 </html>
-
-<?php ob_end_flush(); ?>
