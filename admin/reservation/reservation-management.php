@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-    <title>Regular Tables - Tables are the backbone of almost all web applications.</title>
+    <title>Admin| Reservation List</title>
     <?php include('../common/head-link.php'); ?>
 </head>
 
@@ -14,7 +14,7 @@
         <?php include('../common/header.php'); ?>
         <?php // include('../common/setting.php'); ?>
         <div class="app-main">
-            <?php $page = 'customer-management';
+            <?php $page = 'reservation-management';
             include('../common/menu.php'); ?>
             <div class="app-main__outer">
                 <div class="app-main__inner">

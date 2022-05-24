@@ -5,13 +5,13 @@
 <html lang="en">
 
 <head>
-    <title>Regular Tables - Tables are the backbone of almost all web applications.</title>
+    <title>Admin| Customer List</title>
     <?php include('../common/head-link.php'); ?>
 </head>
 <body>
-    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header closed-sidebar">
         <?php include('../common/header.php'); ?>
-        <?php include('../common/setting.php'); ?>
+        <?php //include('../common/setting.php'); ?>
         <div class="app-main">
                 <?php $page = 'customer-management'; include('../common/menu.php'); ?>
                 <div class="app-main__outer">
@@ -33,7 +33,7 @@
                                         <span class="btn-icon-wrapper pr-2 opacity-7">
                                                 <i class="fa fa-business-time fa-w-20"></i>
                                             </span>
-                                            Thêm khách hàng
+                                            <a href="add-customer.php" style="text-decoration: none; color: white;">Thêm khách hàng</a>
                                     </button>
                                 </div>
                             </div>
@@ -101,11 +101,5 @@
         </div>
     </div>
 <script type="text/javascript" src="../assets/scripts/main.js"></script>
-<script>
-
-   function myFunction(){
-    window.location.href = "http://localhost:8080/HAUI/GrandPlaza/admin/customer/add-customer.php";
-   } ;
-</script>
 </body>
 </html>

@@ -14,9 +14,9 @@ session_start(); ?>
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header closed-sidebar">
         <?php include('../common/header.php'); ?>
-        <?php include('../common/setting.php'); ?>
+        <?php //include('../common/setting.php'); ?>
         <div class="app-main">
-            <?php $page = 'payment-management';
+            <?php $page = 'transaction-management';
             include('../common/menu.php'); ?>
             <div class="app-main__outer">
                 <div class="app-main__inner">
