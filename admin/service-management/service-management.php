@@ -53,7 +53,7 @@
                                             </thead>
                                             <?php
                                             include('../../config.php');
-                                            $sql = "SELECT * FROM service";
+                                            $sql = "SELECT * FROM Service";
                                             $query = mysqli_query($conn, $sql);
                                             $i = 0;
                                             if($query){
@@ -68,7 +68,7 @@
                                                     echo "<td>". $item['status']."</td>";
                                                     //echo "<td>"."<input id='btnSua' type='button' value='Sửa' '>"."</td>";
                                                     
-                                                    echo " <td style='text-align: center;'> <a href='edit-service.php?id=".$item['service_id']."'><input id='btnSua' type='button' value='Sửa' '>";
+                                                    echo " <td style='text-align: center;'> <a href='edit-service.phpid=?".$item['service_id']."'><input id='btnSua' type='button' value='Sửa' '>";
                                                     echo " <td style='text-align: center;'> <a href='delete-service.php?id=".$item['service_id']."'><input id='btnXoa' type='button' value='Xoá' '>";
                                                     echo "</tr>";
                                                     

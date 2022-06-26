@@ -3,7 +3,7 @@
     ob_start();
     session_start(); 
     if(!isset($_SESSION["username"]))
-        header("location: ../login.php");
+        header("location: ../../login.php");
 ?>
 
 <?php  ?> 
@@ -44,10 +44,10 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="position-relative form-group"><label for="cus_gender" class="">Giới tính</label>
-                                                        <select class="mb-2 form-control" name="cus_gender" value="<?php if(isset($_POST['cus_gender'])){echo $_POST['cus_gender'];} ?>">
-                                                            <option value="male">Male</option>
-                                                            <option value="female">Female</option>
-                                                            <option value="other">Other</option>
+                                                        <select class="mb-2 form-control" name="cus_gender" ?>">
+                                                            <option value="male" <?php if($_POST['cus_gender'] == 'male'){ echo 'selected';} ?>>Male</option>
+                                                            <option value="female" <?php if($_POST['cus_gender'] == 'female'){ echo 'selected';} ?>>Female</option>
+                                                            <option value="other" <?php if($_POST['cus_gender'] == 'other'){ echo 'selected';} ?>>Other</option>
                                                         </select>
                                                     </div>
                                                     </div>
@@ -89,7 +89,7 @@
                                                                 //  $_SESSION['date_out'] = $re_date_out;
                                                                 //  $_SESSION['date_in'] = $re_date_in;
                                                                 $sql2 = "SELECT * FROM Room where Room.room_id not in (select ro.room_id from Room ro inner join Reservation_Room rr on ro.room_id = rr.room_id 
-                                                                inner join Reservation re on rr.re_id = re.re_id where rr.status = 1 and (re_date_in < '$re_date_in' and re_date_in < '$re_date_out') or (re_date_out > '$re_date_in' and re_date_out > '$re_date_out'))
+                                                                inner join Reservation re on rr.re_id = re.re_id where (re.status = 1 and re.re_date_in < '$re_date_in' and re.re_date_out > '$re_date_out') or(re.status = 1 and re.re_date_in > '$re_date_in' and re.re_date_in < '$re_date_out' )or(re.status = 1 and re.re_date_in > '$re_date_in' and re.re_date_out >'$re_date_out'))
                                                                 ";
                                                                 // var_dump($sql2);
                                                                 // die();
@@ -205,8 +205,8 @@
                                                             }
                                                         }
 
-                                                        // var_dump($sql);
-                                                        // die();
+                                                        var_dump($sql);
+                                                        die();
                                                         // mysqli_query($conn, $sql2);
                                                         mysqli_multi_query($conn, $sql);
                                                         // unset($_POST['cust_name']);
