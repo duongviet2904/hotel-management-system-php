@@ -4,7 +4,7 @@
 
     if(isset($_GET['id'])){
         $rc_id = $_GET['id'];
-        $sql = "SELECT * FROM room_class where room_class_id = $rc_id";
+        $sql = "SELECT * FROM Room_Class where room_class_id = $rc_id";
         $query = mysqli_query($conn, $sql);
 
         $result = array();
@@ -113,7 +113,7 @@
                                                         //     $sql3 = "update Account set acc_password = '$pass' where acc_id = ".$result['acc_id'].";";
                                                         // }
                                                         // mysqli_query($conn, $sql);
-                                                        $sql3 .= "update room_class set room_class_name='$rc_name', room_class_image='$rc_image', room_class_description = '$rc_description', 
+                                                        $sql3 .= "update Room_Class set room_class_name='$rc_name', room_class_image='$rc_image', room_class_description = '$rc_description', 
                                                         status = '$rc_status' where room_class_id = ".$rc_id.";";
 
                                                         // var_dump($sql3);

@@ -6,3 +6,4 @@
 <meta name="description" content="This is an example dashboard created using build-in elements and components.">
 <meta name="msapplication-tap-highlight" content="no">
 <link href="../main.css" rel="stylesheet">
+<link rel="icon" href="../../theme/gph/img/common/shorticon.png" type="image/gif" sizes="">

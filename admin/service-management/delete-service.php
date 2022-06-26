@@ -6,7 +6,7 @@ include('../../config.php');
 // if(isset($_SESSION['acc_id'])) {
     
     $ser_id = $_GET['id'];
-    $sql ="delete from service where service_id = '$ser_id';";
+    $sql ="delete from Service where service_id = '$ser_id';";
     // var_dump($sql);
     // die();
     $query = mysqli_query($conn, $sql);

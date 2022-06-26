@@ -118,7 +118,13 @@
                                                                 if(!$row['deposited']){
                                                                     
                                                                     echo '
-                                                                    </td><td rowspan="' . $num . '"><button type="button" class="btn btn-info"><a href="edit-customer.php?id=' . $row["cus_id"] . '" style="text-decoration:none; color: white">Deposit</a></button></br></td>';
+                                                                    </td><td rowspan="' . $num . '">
+                                                                    <form action = "deposit.php?re_id=' . $row["re_id"] .'" method="post">
+                                                                     <input name="deposit"  placeholder="Deposit" class="form-control" type="text">
+                                                                     <button type="submit" class="btn btn-info">Deposit</button>
+                                                                    </form>
+                                                                    
+                                                                    </br></td>';
                                                                 }else{
                                                                     echo '</td><td rowspan="' . $num . '">' .number_format( $row["deposited"] ). '</td>';
                                                                 }

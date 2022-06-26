@@ -92,7 +92,7 @@
                                                         //     $sql3 = "update Account set acc_password = '$pass' where acc_id = ".$result['acc_id'].";";
                                                         // }
                                                         // mysqli_query($conn, $sql);
-                                                        $sql3 = "update service set service_name='$ser_name', service_image='$ser_image', room_description = '$ser_description', 
+                                                        $sql3 = "update Service set service_name='$ser_name', service_image='$ser_image', room_description = '$ser_description', 
                                                         status = '$ser_status', service_price = '$ser_price' where service_id = ".$ser_id.";";
 
                                                         // var_dump($sql3);

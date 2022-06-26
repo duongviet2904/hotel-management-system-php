@@ -64,7 +64,7 @@
                                                         
 
                                                         
-                                                        $sql = "INSERT INTO room_class (
+                                                        $sql = "INSERT INTO Room_Class (
                                                                                         room_class_name,
                                                                                         room_class_description,
                                                                                         room_class_image,

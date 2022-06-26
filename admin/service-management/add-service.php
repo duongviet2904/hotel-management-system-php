@@ -66,7 +66,7 @@
                                                         
 
                                                         
-                                                        $sql = "INSERT INTO service (
+                                                        $sql = "INSERT INTO Service (
                                                                                         service_name,
                                                                                         room_description,
                                                                                         service_image,

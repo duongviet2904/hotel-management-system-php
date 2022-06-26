@@ -4,7 +4,7 @@ ob_start();
 
 if (isset($_GET['id'])) {
     $room_id = $_GET['id'];
-    $sql = "SELECT * FROM room r inner join room_class rc
+    $sql = "SELECT * FROM Room r inner join Room_Class rc
                 on r.room_class_id = rc.room_class_id 
                 where room_id = $room_id";
     $query = mysqli_query($conn, $sql);
@@ -88,7 +88,7 @@ if (isset($_GET['id'])) {
                                                         <label for="room_class_name" class="">Loại phòng</label><br>
                                                         <!-- <div class="position-relative form-group"><input name="room_class_id" id="examplePassword11" placeholder="description placeholder" type="text"> -->
                                                         <?php
-                                                        $sql = "SELECT * FROM room_class";
+                                                        $sql = "SELECT * FROM Room_Class";
                                                         $query = mysqli_query($conn, $sql);
                                                         $i = 0;
                                                         if ($query) {
@@ -135,15 +135,15 @@ if (isset($_GET['id'])) {
                                             //     $sql3 = "update Account set acc_password = '$pass' where acc_id = ".$result['acc_id'].";";
                                             // }
                                             // mysqli_query($conn, $sql);
-                                            $sql = "INSERT INTO room (
+                                            $sql = "INSERT INTO Room (
                                                                         room_name,
                                                                         room_description,
                                                                         room_price,
                                                                         room_class_image,
                                                                         status,
                                                                         room_class_id
-                                                                    ) VALUES ('$room_name','$room_description','$room_price',
-                                                                    '$room_image','$room_status','$room_class_id');";
+                                                                    ) VALUES ('$room_name','$room_description',$room_price,
+                                                                    '$room_image',$room_status,'$room_class_id');";
                                             // var_dump($sql);
                                             // die();
                                             mysqli_query($conn, $sql);

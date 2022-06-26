@@ -34,7 +34,7 @@
                             <ul class="vertical-nav-menu">
                                 <li class="app-sidebar__heading">Dashboard</li>
                                 <li>
-                                    <a href="./index.php" <?php echo ($page == 'dashboard') ? "class='mm-active'" : ""; ?> >
+                                    <a href=".././index.php" <?php echo ($page == 'dashboard') ? "class='mm-active'" : ""; ?> >
                                         <i class="metismenu-icon pe-7s-home"></i>
                                         Admin Dashboard
                                     </a>
@@ -186,12 +186,6 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </li>
-                                <li  >
-                                    <a href="tables-regular.html">
-                                        <i class="metismenu-icon pe-7s-network"></i>
-                                        Phân quyền nhân viên
-                                    </a>
                                 </li>
                             </ul>
                         </div>

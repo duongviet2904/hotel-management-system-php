@@ -6,7 +6,7 @@
     <div class="header_top">
         <div class="inner">
             <h1 class="logo">
-                <a href="h">
+                <a href="./index.php">
                     <img src="theme/gph/img/common/logo.png" alt="grand plaza hanoi hotel">
                     <!--                     <img src="theme/gph/img/common/logo.png" alt="hotel logo">-->
                 </a>
@@ -80,8 +80,8 @@
                 <li class="" style="z-index:999">
                     <a href="goods/goods.php?go_table=basic&gc_id=1" target="_self" class="gnb_1da">Đặt phòng</a>
                     <ul class="depth2">
-                        <li class=""><a href="goods/goods.php?go_table=basic&gc_id=1" target="_self" class="">Đặt phòng</a></li>
-                        <li class=""><a href="reserve/reservation.php" target="_self" class="">Xác nhận đặt phòng</a></li>
+                        <li class=""><a href="goods.php" target="_self" class="">Danh sách phòng</a></li>
+                        <li class=""><a href="reservation.php" target="_self" class="">Đặt phòng</a></li>
                     </ul>
                 </li>
                 <li class="" style="z-index:998">
