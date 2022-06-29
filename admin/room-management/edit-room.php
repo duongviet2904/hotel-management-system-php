@@ -65,6 +65,20 @@ if (isset($_GET['id'])) {
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
+                                                            <label for="cus_lname" class="">Số lượng trẻ em</label>
+                                                            <input name="room_child_num" id="examplePassword11" placeholder="child number placeholder" 
+                                                            type="text" class="form-control" value="<?php if ($room_id) echo $result['room_child_num']; ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="position-relative form-group">
+                                                            <label for="cus_lname" class="">Số lượng người lớn</label>
+                                                            <input name="room_adult_num" id="examplePassword11" placeholder="adult number placeholder" 
+                                                            type="text" class="form-control" value="<?php if ($room_id) echo $result['room_adult_num']; ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="position-relative form-group">
                                                             <label for="cus_lname" class="">Giá phòng</label>
                                                             <input name="room_price" id="examplePassword11" placeholder="place placeholder" 
                                                             type="text" class="form-control" value="<?php if ($room_id) echo $result['room_price']; ?>">
@@ -123,6 +137,8 @@ if (isset($_GET['id'])) {
                                             // die();
                                             $room_image = $_POST['room_image'];
                                             $room_description = $_POST['room_description'];
+                                            $room_child_num = $_POST['room_child_num'];
+                                            $room_adult_num = $_POST['room_adult_num'];
                                             $room_price = $_POST['room_price'];
                                             $room_image = $_POST['room_image'];
                                             $room_class_id = $_POST['room_class'];
@@ -137,6 +153,7 @@ if (isset($_GET['id'])) {
                                             // mysqli_query($conn, $sql);
                                             $sql3 = "update Room set room_name='$room_name', 
                                                         room_class_image='$room_image', room_description = '$room_description', 
+                                                        room_child_num = $room_child_num, room_adult_num = $room_adult_num,
                                                         status = '$room_status', room_price = $room_price, 
                                                         room_class_id = $room_class_id
                                                         where room_id = " . $room_id . ";";
