@@ -76,7 +76,7 @@
                                                         <td>'.$row["em_email"].'</td>
                                                         <td>'.$row["em_address"].'</td>
                                                         <td>'.$row["acc_username"].'</td>
-                                                        <td>'.$row["acc_username"].'</td>
+                                                        <td>'.$row["role_name"].'</td>
                                                         <td>
                                                         <button type="button" class="btn btn-dark"><a href="edit-employee.php?id='.$row["em_id"].'" style="text-decoration:none; color: white">Edit</a></button>
                                                         <button type="button" class="btn btn-dark"><a href="delete-employee.php?acc_id='.$row["acc_id"].'" style="text-decoration:none; color: white">Delete</a></button>

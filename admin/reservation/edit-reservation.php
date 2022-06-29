@@ -106,7 +106,7 @@
                                                                     echo '
                                                                     <div class="col-md-2" style="background-color: #82DBD8; color:white; margin-right: 10px; margin-top: 10px; padding-bottom: 10px;">
                                                                         <label for="'.$row['room_id'].'" class="">'.$row['room_name'].'</label>
-                                                                        <input name="checkList[]" value="'.$row['room_id'].'" id="exampleCity" type="checkbox" class="form-control" checked> 
+                                                                        <input name="checkList[]" value="'.$row['room_id'].'" id="exampleCity myCheck" type="checkbox" class="form-control" checked> 
                                                                         
                                                                     </div>';
                                                                 }
@@ -189,7 +189,7 @@
                                                         // $result = mysqli_query($conn, 'select acc_id from Account where acc_username = "$cus_username"');
                                                         // $sql .= "set @accid = (select acc_id from Account where acc_username = '$cus_username');";
                                                         
-                                                        if(!empty($_POST['checkList'])){
+                                                        
                                                             $sql = "Update Customer set
                                                                 cus_fname = '$fname',
                                                                 cus_lname = '$lname',
@@ -211,7 +211,7 @@
                                                                     $sql .= "insert into Reservation_Service(re_id, service_id, status) values  ($reid, $selected, 1);";
                                                                 }
                                                             }
-                                                        }
+                                                        
 
                                                         // var_dump($sql);
                                                         // die();
