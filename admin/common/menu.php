@@ -82,23 +82,41 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li <?php echo ($page == 'reservation-management' || $page == 'add-reservation') ? "class='mm-active'" : ""; ?>>
+                                <li <?php echo ($page == 'reservation-management' || $page == 'add-reservation' || $page == 'booking-management' || $page == 'paid-reservation' || $page == 'deleted-reservation') ? "class='mm-active'" : ""; ?>>
                                     <a href="#">
                                         <i class="metismenu-icon pe-7s-note"></i>
                                         Quản lí đơn đặt phòng
                                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                     </a>
-                                    <ul <?php echo ($page == 'reservation-management' || $page == 'add-reservation') ? "class='mm-show'" : ""; ?>>
-                                        <li >
-                                            <a href="../reservation/reservation-management.php" <?php echo ($page == 'reservation-management') ? "class='mm-active'" : ""; ?>>
-                                                <i class="metismenu-icon">
-                                                </i>Danh sách đơn đặt phòng
-                                            </a>
-                                        </li>
+                                    <ul <?php echo ($page == 'reservation-management' || $page == 'add-reservation' || $page == 'booking-management' || $page == 'paid-reservation' || $page == 'deleted-reservation') ? "class='mm-show'" : ""; ?>>
                                         <li>
                                             <a href="../reservation/add-reservation.php"  <?php echo ($page == 'add-reservation') ? "class='mm-active'" : ""; ?>>
                                                 <i class="metismenu-icon">
                                                 </i>Thêm đơn đặt phòng
+                                            </a>
+                                        </li>
+                                        <li >
+                                            <a href="../reservation/booking-management.php" <?php echo ($page == 'booking-management') ? "class='mm-active'" : ""; ?>>
+                                                <i class="metismenu-icon">
+                                                </i>DS đơn chưa duyệt
+                                            </a>
+                                        </li>
+                                        <li >
+                                            <a href="../reservation/reservation-management.php" <?php echo ($page == 'reservation-management') ? "class='mm-active'" : ""; ?>>
+                                                <i class="metismenu-icon">
+                                                </i>DS đơn đã duyệt
+                                            </a>
+                                        </li>
+                                        <li >
+                                            <a href="../reservation/paid-reservation.php" <?php echo ($page == 'paid-reservation') ? "class='mm-active'" : ""; ?>>
+                                                <i class="metismenu-icon">
+                                                </i>DS đơn đã thanh toán
+                                            </a>
+                                        </li>
+                                        <li >
+                                            <a href="../reservation/deleted-reservation.php" <?php echo ($page == 'deleted-reservation') ? "class='mm-active'" : ""; ?>>
+                                                <i class="metismenu-icon">
+                                                </i>DS đơn đã xoá
                                             </a>
                                         </li>
                                     </ul>

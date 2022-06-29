@@ -14,7 +14,7 @@
         <?php include('../common/header.php'); ?>
         <?php // include('../common/setting.php'); ?>
         <div class="app-main">
-            <?php $page = 'reservation-management';
+            <?php $page = 'paid-reservation';
             include('../common/menu.php'); ?>
             <div class="app-main__outer">
                 <div class="app-main__inner">
@@ -72,7 +72,7 @@
 
 
                                             $sql = "SELECT re_id, re_date_in, re_date_out, create_date, isPaid, deposited,checkIn, Reservation.status, Customer.cus_id, cus_fname, cus_lname, cus_birthday,
-                                             cus_gender, cus_phone, cus_email, cus_address FROM Reservation inner join Customer on Reservation.cus_id = Customer.cus_id where Reservation.isConfirmed = 1 and Reservation.status = 1 and Reservation.isPaid = 0";
+                                             cus_gender, cus_phone, cus_email, cus_address FROM Reservation inner join Customer on Reservation.cus_id = Customer.cus_id where Reservation.isConfirmed = 1 and Reservation.status = 1 and Reservation.isPaid = 1";
                                             //  var_dump($sql);die();
                                             $result = mysqli_query($conn, $sql);
                                             $index = 1;
@@ -115,19 +115,9 @@
                                                             };
                                                             
                                                             if($row['status'] == 1){
-                                                                if(!$row['deposited']){
-                                                                    
-                                                                    echo '
-                                                                    </td><td rowspan="' . $num . '">
-                                                                    <form action = "deposit.php?re_id=' . $row["re_id"] .'" method="post">
-                                                                     <input name="deposit"  placeholder="Deposit" class="form-control" type="text">
-                                                                     <button type="submit" class="btn btn-info  col-12" style="margin-top: 5px;">Deposit</button>
-                                                                    </form>
-                                                                    
-                                                                    </br></td>';
-                                                                }else{
-                                                                    echo '</td><td rowspan="' . $num . '">' .number_format( $row["deposited"] ). '</td>';
-                                                                }
+                                                                
+                                                                echo '</td><td rowspan="' . $num . '">' .number_format( $row["deposited"] ). '</td>';
+                                                                
                                                                 if($row['isPaid'] == 0){
                                                                     echo '
                                                                     <td rowspan="' . $num . '">

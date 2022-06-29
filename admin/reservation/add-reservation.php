@@ -60,6 +60,14 @@
                                                         <div class="position-relative form-group"><label for="cus_email" class="">Email</label><input value="<?php if(isset($_POST['cus_email'])){echo $_POST['cus_email'];} ?>" name="cus_email" id="exampleState" type="email" class="form-control"></div>
                                                     </div>
                                                 </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-6">
+                                                        <div class="position-relative form-group"><label for="re_child_num" class="">Số trẻ em</label><input value="<?php if(isset($_POST['re_child_num'])){echo $_POST['re_child_num'];} ?>" name="re_child_num" id="exampleCity" type="number" class="form-control"></div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="position-relative form-group"><label for="re_adult_num" class="">Số người lớn</label><input value="<?php if(isset($_POST['re_adult_num'])){echo $_POST['re_adult_num'];} ?>" name="re_adult_num" id="exampleState" type="number" class="form-control"></div>
+                                                    </div>
+                                                </div>
                                                 <div class="position-relative form-group"><label for="exampleAddress" class="">Địa chỉ</label><input value="<?php if(isset($_POST['cus_address'])){echo $_POST['cus_address'];} ?>" name="cus_address" id="exampleAddress" placeholder="1234 Main St" type="text" class="form-control"></div>
                                                 <div class="form-row">
                                                     <div class="col-md-5">
@@ -88,14 +96,15 @@
                                                                  $re_date_out = date('Y-m-d h:i:s', $phpdateout);
                                                                 //  $_SESSION['date_out'] = $re_date_out;
                                                                 //  $_SESSION['date_in'] = $re_date_in;
-                                                                $sql2 = "SELECT * FROM Room where Room.room_id not in (select ro.room_id from Room ro inner join Reservation_Room rr on ro.room_id = rr.room_id 
-                                                                inner join Reservation re on rr.re_id = re.re_id where (re.status = 1 and re.re_date_in < '$re_date_in' and re.re_date_out > '$re_date_out') or(re.status = 1 and re.re_date_in > '$re_date_in' and re.re_date_in < '$re_date_out' )or(re.status = 1 and re.re_date_in > '$re_date_in' and re.re_date_out >'$re_date_out'))
-                                                                ";
+                                                                $sql2 = "SELECT * FROM Room where Room.status = 1 and Room.room_id not in (select ro.room_id from Room ro inner join Reservation_Room rr on ro.room_id = rr.room_id 
+                                                                inner join Reservation re on rr.re_id = re.re_id where (re.status = 1 and re.re_date_in <= '$re_date_in' and re.re_date_out >= '$re_date_out') or(re.status = 1 and re.re_date_in <=  '$re_date_in' and re.re_date_out >= '$re_date_in' and re.re_date_out <= '$re_date_out')or(re.status = 1 and re.re_date_in >= '$re_date_in' 
+                                                                and re.re_date_out >='$re_date_out'))";
                                                                 // var_dump($sql2);
                                                                 // die();
                                                             $result2 = mysqli_query($conn, $sql2);
+                                                            echo '<div class="form-row">';
                                                             if (mysqli_num_rows($result2) > 0) {
-                                                                echo '<div class="form-row">';
+                                                                
                                                             // output data of each row
                                                             while($row = mysqli_fetch_assoc($result2)) {
                                                                 echo '
@@ -106,7 +115,11 @@
                                                                 </div>';
                                                             }
                                                             } else {
-                                                            echo "0 results";
+                                                            echo '
+                                                            <div class="col-md-2" style="color:red; margin-right: 10px; margin-top: 10px; padding-bottom: 10px;">
+                                                                <label>Không có phòng phù hợp!</label>
+                                                                
+                                                            </div>';
                                                             }
                                                             echo '</div>';
                                                             }
@@ -165,6 +178,8 @@
                                                         $phpdateout = strtotime( $_POST['re_date_out']);
                                                         $re_date_out = date('Y-m-d h:i:s', $phpdateout);
 
+                                                        $re_child_num = $_POST['re_child_num'];
+                                                        $re_adult_num = $_POST['re_adult_num'];
                                                         // $cus_username = $_POST['acc_username'];
 
                                                         // $pass = $_POST['cus_password'];
@@ -190,8 +205,8 @@
                                                             ) VALUES ('$fname', '$lname', '$cus_dateOfBirth', '$cus_gender', '$cus_phone', '$cus_email', '$cus_address',1);";
                                                             $sql .= "set @cusid = (select cus_id from Customer where cus_fname = '$fname' and cus_lname='$lname' and cus_birthday = '$cus_dateOfBirth' 
                                                                 and cus_gender='$cus_gender' and cus_phone = '$cus_phone' and cus_email = '$cus_email' and cus_address = '$cus_address');";
-                                                            $sql .= "INSERT INTO Reservation(re_date_in, re_date_out, create_date, status, cus_id) 
-                                                                VALUES ('$re_date_in', '$re_date_out', '$create_date', 1, @cusid);";
+                                                            $sql .= "INSERT INTO Reservation(re_date_in, re_date_out, re_child_num, re_adult_num, create_date, status, cus_id) 
+                                                                VALUES ('$re_date_in', '$re_date_out', '$re_child_num','$re_adult_num','$create_date', 1, @cusid);";
                                                             $sql .= "set @reid = (select re_id from Reservation where cus_id = @cusid);";
                                                                 $checked_count = count($_POST['checkList']);
                                                                 foreach ($_POST['checkList'] as $selected) {
@@ -203,12 +218,7 @@
                                                                     $sql .= "insert into Reservation_Service(re_id, service_id, status) values  (@reid, $selected, 1);";
                                                                 }
                                                             }
-                                                        }
-
-                                                        var_dump($sql);
-                                                        die();
-                                                        // mysqli_query($conn, $sql2);
-                                                        mysqli_multi_query($conn, $sql);
+                                                            mysqli_multi_query($conn, $sql);
                                                         // unset($_POST['cust_name']);
                                                         // unset($_POST['cust_cname']);
                                                         // unset($_POST['cust_email']);
@@ -219,6 +229,12 @@
                                                         // unset($_POST['cust_zip']);
                                                         // $success_message = LANG_VALUE_152;
                                                         header('Location:reservation-management.php');
+                                                        }
+
+                                                        // var_dump($sql);
+                                                        // die();
+                                                        // mysqli_query($conn, $sql2);
+                                                        
                                                     
                                                 }
                                                 ?>

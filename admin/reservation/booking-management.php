@@ -14,7 +14,7 @@
         <?php include('../common/header.php'); ?>
         <?php // include('../common/setting.php'); ?>
         <div class="app-main">
-            <?php $page = 'reservation-management';
+            <?php $page = 'booking-management';
             include('../common/menu.php'); ?>
             <div class="app-main__outer">
                 <div class="app-main__inner">
@@ -72,7 +72,7 @@
 
 
                                             $sql = "SELECT re_id, re_date_in, re_date_out, create_date, isPaid, deposited,checkIn, Reservation.status, Customer.cus_id, cus_fname, cus_lname, cus_birthday,
-                                             cus_gender, cus_phone, cus_email, cus_address FROM Reservation inner join Customer on Reservation.cus_id = Customer.cus_id where Reservation.isConfirmed = 1 and Reservation.status = 1 and Reservation.isPaid = 0";
+                                             cus_gender, cus_phone, cus_email, cus_address FROM Reservation inner join Customer on Reservation.cus_id = Customer.cus_id where Reservation.isConfirmed = 0 and Reservation.status = 1";
                                             //  var_dump($sql);die();
                                             $result = mysqli_query($conn, $sql);
                                             $index = 1;
@@ -107,7 +107,7 @@
                                                             <td rowspan="' . $num . '">
                                                             ';
                                                             $sql2 = "SELECT * FROM Reservation_Service rs inner join Reservation re on rs.re_id = re.re_id 
-                                                                inner join Service s on rs.service_id = s.service_id  where re.re_id = " . $row['re_id'] . "
+                                                                inner join Service s on rs.service_id = s.service_id where re.re_id = " . $row['re_id'] . "
                                                                 ";
                                                             $result2 = mysqli_query($conn, $sql2);
                                                                 while ($row2 = mysqli_fetch_assoc($result2)) {
@@ -121,30 +121,19 @@
                                                                     </td><td rowspan="' . $num . '">
                                                                     <form action = "deposit.php?re_id=' . $row["re_id"] .'" method="post">
                                                                      <input name="deposit"  placeholder="Deposit" class="form-control" type="text">
-                                                                     <button type="submit" class="btn btn-info  col-12" style="margin-top: 5px;">Deposit</button>
+                                                                     <button type="submit" class="btn btn-info col-12" style="margin-top: 5px;">Deposit</button>
                                                                     </form>
                                                                     
                                                                     </br></td>';
                                                                 }else{
                                                                     echo '</td><td rowspan="' . $num . '">' .number_format( $row["deposited"] ). '</td>';
                                                                 }
-                                                                if($row['isPaid'] == 0){
-                                                                    echo '
-                                                                    <td rowspan="' . $num . '">
-                                                                        <button type="button" class="btn btn-success col-12"><a href="edit-customer.php?id=' . $row["cus_id"] . '" style="text-decoration:none; color: white">Check in</a></button></br>
-                                                                        <button type="button" class="btn btn-primary col-12" style="margin-top: 5px;"><a href="pay-reservation.php?re_id=' . $row["re_id"] . '" style="text-decoration:none; color: white">Pay</a></button></br>
-                                                                        <button type="button" class="btn btn-warning col-12" style="margin-top: 5px;"><a href="edit-reservation.php?re_id=' . $row["re_id"] . '&cus_id='. $row['cus_id'].'" style="text-decoration:none; color: white">Edit</a></button></br>
-                                                                        <button type="button" class="btn btn-danger col-12" style="margin-top: 5px;"><a href="delete-reservation.php?re_id=' . $row["re_id"] . '" style="text-decoration:none; color: white">Delete</a></button>
-                                                                        </td>
-                                                                    </tr>';
-                                                                }else{
-                                                                    echo '
+                                                                echo '
+                                                                <td rowspan="' . $num . '">
+                                                                    <button type="button" class="btn btn-success col-12"><a href="confirm-booking.php?id=' . $row["re_id"] . '" style="text-decoration:none; color: white">Confirm</a></button></br>
+                                                                    <button type="button" class="btn btn-danger col-12" style="margin-top: 5px;"><a href="reject-booking.php?re_id=' . $row["re_id"] . '" style="text-decoration:none; color: white">Reject</a></button>
                                                                     </td>
-                                                                    <td rowspan="' . $num . '">
-                                                                        Đã thanh toán
-                                                                        </td>
-                                                                    </tr>';
-                                                                }
+                                                                </tr>';
                                                             }else{
                                                                 echo '
                                                                 </td>

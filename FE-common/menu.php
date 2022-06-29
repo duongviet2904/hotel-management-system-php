@@ -48,7 +48,7 @@
                     ?>
                     <li><a href="./registration.php">Đăng kí</a></li>
                     <!--                    <li><a href="bbs/faq.php">FAQ</a></li>-->
-                    <li><a href=".//reservation.php">Đặt phòng</a></li>
+                    <li><a href="./reservation.php">Đặt phòng</a></li>
                     <!--                      <li><a href="bbs/qalist.php">Câu hỏi 1:1</a></li>-->
                     <!--                    <li><a href="bbs/current_connect.php">Lượt truy cập 
 2</a></li>-->
