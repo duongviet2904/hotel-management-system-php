@@ -71,7 +71,7 @@
                                             <?php
                                                 error_reporting(E_ALL ^ E_NOTICE);  
 
-                                            $sql = "SELECT re_id, re_date_in, re_date_out, create_date, isPaid, deposited,checkIn, Reservation.status, Customer.cus_id, cus_fname, cus_lname, cus_birthday,
+                                            $sql = "SELECT re_id, re_date_in, re_date_out, create_date, isPaid, deposited,checkIn, isConfirmed,  Reservation.status, Customer.cus_id, cus_fname, cus_lname, cus_birthday,
                                              cus_gender, cus_phone, cus_email, cus_address FROM Reservation inner join Customer on Reservation.cus_id = Customer.cus_id where Reservation.status = 0";
                                             //  var_dump($sql);die();
                                             $result = mysqli_query($conn, $sql);
@@ -120,10 +120,7 @@
                                                                 if($row['isPaid'] == 0){
                                                                     echo '
                                                                     <td rowspan="' . $num . '">
-                                                                        <button type="button" class="btn btn-success col-12"><a href="edit-customer.php?id=' . $row["cus_id"] . '" style="text-decoration:none; color: white">Check in</a></button></br>
-                                                                        <button type="button" class="btn btn-primary col-12" style="margin-top: 5px;"><a href="pay-reservation.php?re_id=' . $row["re_id"] . '" style="text-decoration:none; color: white">Pay</a></button></br>
-                                                                        <button type="button" class="btn btn-warning col-12" style="margin-top: 5px;"><a href="edit-reservation.php?re_id=' . $row["re_id"] . '&cus_id='. $row['cus_id'].'" style="text-decoration:none; color: white">Edit</a></button></br>
-                                                                        <button type="button" class="btn btn-danger col-12" style="margin-top: 5px;"><a href="delete-reservation.php?re_id=' . $row["re_id"] . '" style="text-decoration:none; color: white">Delete</a></button>
+                                                                        Đã xoá
                                                                         </td>
                                                                     </tr>';
                                                                 }else{

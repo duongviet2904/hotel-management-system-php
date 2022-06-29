@@ -7,9 +7,12 @@ if(isset($_SESSION['username'])) {
     
     $re_id = $_GET['re_id'];
 
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
+
     $create_date = date('Y-m-d h:i:s');
 
-    $sql ="update Reservation set isPaid = 1 where re_id = $re_id;";
+    // $sql ="update Reservation set isPaid = 0 where re_id = $re_id;";
+    $sql = "";
     // var_dump($sql);
     // die();
     // $sql .="set @acc_id = (select acc_id from Account where acc_username = '".$_SESSION['username']."')";
@@ -20,6 +23,13 @@ if(isset($_SESSION['username'])) {
             inner join Room r on rr.room_id = r.room_id where re.re_id = $re_id);";
     $sql .="set @amount2 = (select sum(@day * s.service_price) from Reservation re inner join Reservation_Service  rs on re.re_id = rs.re_id
             inner join Service s on rs.service_id = s.service_id where re.re_id = $re_id);";
+    $sql .="set @child_arange = (select sum(r.room_child_num) from Reservation re inner join Reservation_Room  rr on re.re_id = rr.re_id
+            inner join Room r on rr.room_id = r.room_id where re.re_id = $re_id);";
+    $sql .="set @adult_range = (select sum(r.room_adult_num) from Reservation re inner join Reservation_Room  rr on re.re_id = rr.re_id
+            inner join Room r on rr.room_id = r.room_id where re.re_id = $re_id);";
+
+    $sql .= "set @child_num = (select re_child_num  from Reservation where re_id =  $re_id);";
+    $sql .= "set @adult_num = (select re_adult_num  from Reservation where re_id =  $re_id);";
     // $sql .= "select * , sum( ) from Reservation re inner join Reservation_Room rr on re.re_id = rr_re_id
     //         inner join Reservation_Service rs on re.re_id = rs.re_id
     //         inner join Room r on r.room_id = rr.room_id
@@ -31,7 +41,7 @@ if(isset($_SESSION['username'])) {
     // var_dump($sql);
     // die();
     $query = mysqli_multi_query($conn, $sql);
-    header('Location: reservation-management.php');
+    header('Location: ../transaction/transaction-management.php');
 }else{
     header('Location: ../../login.php');
 }

@@ -109,7 +109,7 @@ session_start();
                                                                 //  $_SESSION['date_out'] = $re_date_out;
                                                                 //  $_SESSION['date_in'] = $re_date_in;
                                                                 $sql2 = "SELECT * FROM Room where Room.status = 1 and Room.room_id not in (select ro.room_id from Room ro inner join Reservation_Room rr on ro.room_id = rr.room_id 
-                                                                inner join Reservation re on rr.re_id = re.re_id where (re.status = 1 and re.re_date_in <= '$re_date_in' and re.re_date_out >= '$re_date_out') or(re.status = 1 and re.re_date_in <=  '$re_date_in' and re.re_date_out >= '$re_date_in' and re.re_date_out <= '$re_date_out')or(re.status = 1 and re.re_date_in >= '$re_date_in' 
+                                                                inner join Reservation re on rr.re_id = re.re_id where (re.isConfirmed = 1 and re.status = 1 and re.re_date_in <= '$re_date_in' and re.re_date_out >= '$re_date_out') or(re.isConfirmed = 1 and re.status = 1 and re.re_date_in <=  '$re_date_in' and re.re_date_out >= '$re_date_in' and re.re_date_out <= '$re_date_out')or(re.isConfirmed = 1 and re.status = 1 and re.re_date_in >= '$re_date_in' 
                                                                 and re.re_date_out >='$re_date_out'))";
                                                                 // var_dump($sql2);
                                                                 // die();
@@ -173,7 +173,8 @@ session_start();
                                                  if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                                                         // $token = time());
-                                                        $create_date = date('Y-m-d h:i:s');
+                                                        date_default_timezone_set('Asia/Ho_Chi_Minh');
+                                                        $create_date = date('Y-m-d H:i:s');
 
                                                         $fname = $_POST['cus_fname'];
                                                         $lname = $_POST['cus_lname'];

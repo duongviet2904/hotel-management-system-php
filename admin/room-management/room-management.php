@@ -72,8 +72,8 @@
                                                         echo "<td>Ngưng hoạt động</td>";
                                                     }
                                                     echo "<td>".$item['room_class_name']."</td>";
-                                                    echo " <td style='text-align: center;'> <a href='edit-room.php?id=".$item['room_id']."'><input id='btnSua' type='button' value='Sửa' '>";
-                                                    echo " <a href='delete-room.php?id=".$item['room_id']."'><input id='btnXoa' type='button' value='Xoá' '></td>";
+                                                    echo " <td style='text-align: center;'> <a href='edit-room.php?id=".$item['room_id']."'><input id='btnSua' type='button' value='Sửa' class='btn btn-success'>";
+                                                    echo " <a href='delete-room.php?id=".$item['room_id']."'><input id='btnXoa' type='button' value='Xoá' class='btn btn-warning'></td>";
                                                     echo "</tr>";
                                                     
                                                 }

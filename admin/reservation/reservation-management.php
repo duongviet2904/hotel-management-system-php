@@ -129,14 +129,26 @@
                                                                     echo '</td><td rowspan="' . $num . '">' .number_format( $row["deposited"] ). '</td>';
                                                                 }
                                                                 if($row['isPaid'] == 0){
-                                                                    echo '
-                                                                    <td rowspan="' . $num . '">
-                                                                        <button type="button" class="btn btn-success col-12"><a href="edit-customer.php?id=' . $row["cus_id"] . '" style="text-decoration:none; color: white">Check in</a></button></br>
-                                                                        <button type="button" class="btn btn-primary col-12" style="margin-top: 5px;"><a href="pay-reservation.php?re_id=' . $row["re_id"] . '" style="text-decoration:none; color: white">Pay</a></button></br>
-                                                                        <button type="button" class="btn btn-warning col-12" style="margin-top: 5px;"><a href="edit-reservation.php?re_id=' . $row["re_id"] . '&cus_id='. $row['cus_id'].'" style="text-decoration:none; color: white">Edit</a></button></br>
-                                                                        <button type="button" class="btn btn-danger col-12" style="margin-top: 5px;"><a href="delete-reservation.php?re_id=' . $row["re_id"] . '" style="text-decoration:none; color: white">Delete</a></button>
-                                                                        </td>
-                                                                    </tr>';
+                                                                    if($row['checkIn'] == 0){
+                                                                        echo '
+                                                                        <td rowspan="' . $num . '">
+                                                                            <button type="button" class="btn btn-success col-12"><a href="check-in.php?re_id=' . $row["re_id"] . '" style="text-decoration:none; color: white">Check in</a></button></br>
+                                                                            <button type="button" class="btn btn-primary col-12" style="margin-top: 5px;"><a href="pay-reservation.php?re_id=' . $row["re_id"] . '" style="text-decoration:none; color: white">Pay</a></button></br>
+                                                                            <button type="button" class="btn btn-warning col-12" style="margin-top: 5px;"><a href="edit-reservation.php?re_id=' . $row["re_id"] . '&cus_id='. $row['cus_id'].'" style="text-decoration:none; color: white">Edit</a></button></br>
+                                                                            <button type="button" class="btn btn-danger col-12" style="margin-top: 5px;"><a href="delete-reservation.php?re_id=' . $row["re_id"] . '" style="text-decoration:none; color: white">Delete</a></button>
+                                                                            </td>
+                                                                        </tr>';
+                                                                    }
+                                                                    else{
+                                                                        echo '
+                                                                        <td rowspan="' . $num . '">
+                                                                            <button type="button" class="btn btn-success col-12" disabled>Đã nhận phòng</button></br>
+                                                                            <button type="button" class="btn btn-primary col-12" style="margin-top: 5px;"><a href="pay-reservation.php?re_id=' . $row["re_id"] . '" style="text-decoration:none; color: white">Pay</a></button></br>
+                                                                            <button type="button" class="btn btn-warning col-12" style="margin-top: 5px;"><a href="edit-reservation.php?re_id=' . $row["re_id"] . '&cus_id='. $row['cus_id'].'" style="text-decoration:none; color: white">Edit</a></button></br>
+                                                                            <button type="button" class="btn btn-danger col-12" style="margin-top: 5px;"><a href="delete-reservation.php?re_id=' . $row["re_id"] . '" style="text-decoration:none; color: white">Delete</a></button>
+                                                                            </td>
+                                                                        </tr>';
+                                                                    }
                                                                 }else{
                                                                     echo '
                                                                     </td>
