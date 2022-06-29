@@ -45,6 +45,8 @@
                                                 <th>#</th>
                                                 <th>Tên phòng</th>
                                                 <th>Mô tả phòng</th>
+                                                <th>Số lượng trẻ em</th>
+                                                <th>Số lượng người lớn</th>
                                                 <th>Giá phòng</th>
                                                 <th>Hình ảnh</th>
                                                 <th>Trạng thái phòng</th>
@@ -54,7 +56,8 @@
                                             </thead>
                                             <?php
                                             include('../../config.php');
-                                            $sql = "SELECT room_id, room_name, room_description,room_price, Room.room_class_image, Room.status, room_class_name FROM Room INNER JOIN Room_Class ON Room.room_class_id = Room_Class.room_class_id";
+                                            $sql = "SELECT room_id, room_name, room_description, room_child_num, room_adult_num, room_price, Room.room_class_image, Room.status, 
+                                            room_class_name FROM Room INNER JOIN Room_Class ON Room.room_class_id = Room_Class.room_class_id";
                                             $query = mysqli_query($conn, $sql);
                                             $i = 0;
                                             if($query){
@@ -64,6 +67,8 @@
                                                     echo "<td>$i</td>";
                                                     echo "<td>".$item['room_name']."</td>";
                                                     echo "<td>".$item['room_description']."</td>";
+                                                    echo "<td>".$item['room_child_num']."</td>";
+                                                    echo "<td>".$item['room_adult_num']."</td>";
                                                     echo "<td>".$item['room_price']."</td>";
                                                     echo "<td>".$item['room_class_image']."</td>";
                                                     if($item["status"] == 1){
