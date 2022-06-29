@@ -12,3 +12,4 @@ include('../../config.php');
     $query = mysqli_query($conn, $sql);
     header('Location: service-management.php');
 // }
+?>

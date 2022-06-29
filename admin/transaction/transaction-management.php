@@ -74,11 +74,10 @@ session_start(); ?>
 
                                             $sql = "select trans_id, trans_name, trans_date, trans_amount, trans_discount, trans_tax, trans_total_amount, trans_description, trans.status,
                                                     em.em_id, em_fname, em_lname, acc.acc_id, acc_username, re.re_id, re_date_in, re_date_out, deposited, isPaid, cus_id 
-                                                    from Transaction trans inner join Employee em on trans.em_id = em.em_id 
-                                                    inner join Account acc on em.acc_id = acc.acc_id 
-                                                    inner join Reservation re on re.re_id = trans.re_id
-                                            ";
-                                            //  var_dump($sql);die();
+                                                    from transaction trans inner join employee em on trans.em_id = em.em_id 
+                                                    inner join account acc on em.acc_id = acc.acc_id 
+                                                    inner join reservation re on re.re_id = trans.re_id";
+                                            //var_dump($sql);die();
                                             $result = mysqli_query($conn, $sql);
                                             $index = 1;
 
@@ -90,8 +89,8 @@ session_start(); ?>
                                                         <td >' . $row["trans_id"] . '</td>
                                                         <td >' . $row["trans_name"] . '</td>
                                                         <td >' . $row["trans_date"] . '</td>
-                                                        <td >' .number_format($row["trans_amount"] ). '</td>
-                                                        <td >' . number_format($row["trans_discount"]) . ' ' . $row["cus_lname"] . '</td>
+                                                        <td >' . number_format($row["trans_amount"] ). '</td>
+                                                        <td >' . number_format($row["trans_discount"]) .  '</td>
                                                         <td >' . number_format($row["trans_tax"]) . '</td>
                                                         <td >' . number_format($row["deposited"] ). '</td>
                                                         <td >' . $row["trans_description"] . '</td>
@@ -106,9 +105,6 @@ session_start(); ?>
                                                             <button type="button" class="btn btn-dark"><a href="delete-transaction.php?trans_id='.$row["trans_id"].'" style="text-decoration:none; color: white">Delete</a></button>
                                                             </td></tr>';
                                                         }
-                                                        
-                                                        
-                                                    
                                                     $index++;
                                                 }
                                             } else {

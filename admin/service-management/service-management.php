@@ -49,6 +49,7 @@
                                                 <th>Service Price</th>
                                                 <th>Service Image</th>
                                                 <th>Status</th>
+                                                <th style="text-align: center ;">Action</th>
                                             </tr>
                                             </thead>
                                             <?php
@@ -57,7 +58,7 @@
                                             $query = mysqli_query($conn, $sql);
                                             $i = 0;
                                             if($query){
-                                                foreach($query as $item){
+                                                foreach($query as $item){ 
                                                     $i++;
                                                     echo "<tr>";
                                                     echo "<td>$i</td>";
@@ -68,8 +69,8 @@
                                                     echo "<td>". $item['status']."</td>";
                                                     //echo "<td>"."<input id='btnSua' type='button' value='Sửa' '>"."</td>";
                                                     
-                                                    echo " <td style='text-align: center;'> <a href='edit-service.php?id=".$item['service_id']."'><input id='btnSua' type='button' value='Sửa' '>";
-                                                    echo " <td style='text-align: center;'> <a href='delete-service.php?id=".$item['service_id']."'><input id='btnXoa' type='button' value='Xoá' '>";
+                                                    echo " <td style='text-align: center;'> <a href='edit-service.php?id=".$item['service_id']."'><input id='btnSua' class='btn btn-success' type='button' value='Sửa' '>
+                                                    <a href='delete-service.php?id=".$item['service_id']."'><input id='btnXoa'  class='btn btn-warning' type='button' value='Xoá' '>";
                                                     echo "</tr>";
                                                     
                                                 }

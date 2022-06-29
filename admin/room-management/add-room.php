@@ -50,7 +50,7 @@ if (isset($_GET['id'])) {
                                                 <div class="form-row">
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
-                                                            <label for="room-name" class="">Tên phòng</label>
+                                                            <label for="room_name" class="">Tên phòng</label>
                                                             <input name="room_name" id="exampleEmail11" placeholder="name placeholder" 
                                                             type="text" class="form-control">
                                                         </div>
@@ -58,28 +58,43 @@ if (isset($_GET['id'])) {
 
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
-                                                            <label for="cus_lname" class="">Mô tả phòng</label>
+                                                            <label for="room_description" class="">Mô tả phòng</label>
                                                             <input name="room_description" id="examplePassword11" placeholder="description placeholder" 
                                                             type="text" class="form-control" >
                                                         </div>
                                                     </div>
+                                                    <div class="col-md-6">
+                                                        <div class="position-relative form-group">
+                                                            <label for="room_child_num" class="">Số lượng trẻ em cho phép: </label>
+                                                            <input name="room_child_num" id="examplePassword11" placeholder="number of children placeholder" 
+                                                            type="text" class="form-control" >
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="position-relative form-group">
+                                                            <label for="room_adult_num" class="">Số lượng người lớn cho phép: </label>
+                                                            <input name="room_adult_num" id="examplePassword11" placeholder="number of adult placeholder" 
+                                                            type="text" class="form-control" >
+                                                        </div>
+                                                    </div>
+                                                    
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
-                                                            <label for="cus_lname" class="">Giá phòng</label>
+                                                            <label for="room_price" class="">Giá phòng</label>
                                                             <input name="room_price" id="examplePassword11" placeholder="place placeholder" 
                                                             type="text" class="form-control" >
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
-                                                            <label for="cus_lname" class="">Hình ảnh phòng</label>
+                                                            <label for="room_image" class="">Hình ảnh phòng</label>
                                                             <input name="room_image" id="examplePassword11" placeholder="room image placeholder" 
                                                             type="text" class="form-control" >
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
-                                                            <label for="cus_lname" class="">Trạng thái</label>
+                                                            <label for="room_status" class="">Trạng thái</label>
                                                             <input name="room_status" id="examplePassword11" placeholder="status placeholder" 
                                                             type="text" class="form-control" >
                                                         </div>
@@ -111,51 +126,28 @@ if (isset($_GET['id'])) {
                                         </form>
 
                                         <?php
-
                                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-                                            // $token = md5(time());
-                                            // $cust_datetime = date('Y-m-d h:i:s');
-                                            // $cust_timestamp = time();
-
                                             $room_name = $_POST['room_name'];
-                                            // var_dump($rc_name);
-                                            // die();
                                             $room_image = $_POST['room_image'];
                                             $room_description = $_POST['room_description'];
                                             $room_price = $_POST['room_price'];
                                             $room_image = $_POST['room_image'];
                                             $room_class_id = $_POST['room_class'];
                                             $room_status = $_POST['room_status'];
-
-                                            // $pass = $_POST['acc_password'];
-                                            // if($active == 1){
-                                            //     $sql3 = "update Account set acc_password = '$pass', role_name = '".$_POST['role_name']."' where acc_id = ".$result['acc_id'].";";
-                                            // }else{
-                                            //     $sql3 = "update Account set acc_password = '$pass' where acc_id = ".$result['acc_id'].";";
-                                            // }
-                                            // mysqli_query($conn, $sql);
+                                            $room_adult_num = $_POST['room_adult_num'];
+                                            $room_child_num = $_POST['room_child_num'];
                                             $sql = "INSERT INTO room (
                                                                         room_name,
                                                                         room_description,
+                                                                        room_child_num,
+                                                                        room_adult_num,
                                                                         room_price,
                                                                         room_class_image,
                                                                         status,
                                                                         room_class_id
-                                                                    ) VALUES ('$room_name','$room_description','$room_price',
+                                                                    ) VALUES ('$room_name','$room_description','$room_child_num','$room_adult_num','$room_price',
                                                                     '$room_image','$room_status','$room_class_id');";
-                                            // var_dump($sql);
-                                            // die();
                                             mysqli_query($conn, $sql);
-                                            // unset($_POST['cust_name']);
-                                            // unset($_POST['cust_cname']);
-                                            // unset($_POST['cust_email']);
-                                            // unset($_POST['cust_phone']);
-                                            // unset($_POST['cust_address']);
-                                            // unset($_POST['cust_city']);
-                                            // unset($_POST['cust_state']);
-                                            // unset($_POST['cust_zip']);
-                                            // $success_message = LANG_VALUE_152;
                                             header('Location: room-management.php');
                                         }
                                         ?>
