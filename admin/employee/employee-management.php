@@ -54,7 +54,7 @@
                                                 <th>Địa chỉ</th>
                                                 <th>Tên đăng nhập</th>
                                                 <th>Vai trò</th>
-                                                <th>Action</th>
+                                                <th style="text-align: center ;">Action</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -63,25 +63,26 @@
                                                 $sql = "SELECT * FROM Employee inner join Account on Employee.acc_id = Account.acc_id";
                                                 $result = mysqli_query($conn, $sql);
                                                 $index = 1;
-                                                if (mysqli_num_rows($result) > 0) {
+                                                if ($result) {
                                                 // output data of each row
-                                                while($row = mysqli_fetch_assoc($result)) {
-                                                    echo ' <tr>
-                                                        <th scope="row">'.$index.'</th>
-                                                        <td>'.$row["em_fname"].'</td>
-                                                        <td>'.$row["em_lname"].'</td>
-                                                        <td>'.$row["em_birthday"].'</td>
-                                                        <td>'.$row["em_gender"].'</td>
-                                                        <td>'.$row["em_phone"].'</td>
-                                                        <td>'.$row["em_email"].'</td>
-                                                        <td>'.$row["em_address"].'</td>
-                                                        <td>'.$row["acc_username"].'</td>
-                                                        <td>'.$row["role_name"].'</td>
-                                                        <td>
-                                                        <button type="button" class="btn btn-dark"><a href="edit-employee.php?id='.$row["em_id"].'" style="text-decoration:none; color: white">Edit</a></button>
-                                                        <button type="button" class="btn btn-dark"><a href="delete-employee.php?acc_id='.$row["acc_id"].'" style="text-decoration:none; color: white">Delete</a></button>
-                                                        </td>
-                                                    </tr>';
+                                                foreach($result as $item) {
+                                                    $i++;
+                                                    echo "<tr>";
+                                                    echo "<td>$i</td>";
+                                                    echo "<td>". $item['em_fname']."</td>";
+                                                    echo "<td>". $item['em_lname']."</td>";
+                                                    echo "<td>". $item['em_birthday']."</td>";
+                                                    echo "<td>". $item['em_gender']."</td>";
+                                                    echo "<td>". $item['em_phone']."</td>";
+                                                    echo "<td>". $item['em_email']."</td>";
+                                                    echo "<td>". $item['em_address']."</td>";
+                                                    echo "<td>". $item['acc_username']."</td>";
+                                                    echo "<td>". $item['role_name']."</td>";
+                                                    //echo "<td>"."<input id='btnSua' type='button' value='Sửa' '>"."</td>";
+                                                    
+                                                    echo " <td style='text-align: center;'> <a href='edit-employee.phpid=?".$item['em_id']."'><input id='btnSua' class='btn btn-success' type='button' value='Sửa' '>
+                                                    <a href='delete-employee.php?id=".$item['em_id']."'><input id='btnXoa' class='btn btn-warning' type='button' value='Xoá' '>";
+                                                    echo "</tr>";
                                                     $index++;
                                                 }
                                                 } else {
