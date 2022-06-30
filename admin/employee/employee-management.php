@@ -80,10 +80,10 @@
                                                     echo "<td>". $item['role_name']."</td>";
                                                     //echo "<td>"."<input id='btnSua' type='button' value='Sửa' '>"."</td>";
                                                     
-                                                    echo " <td style='text-align: center;'> <a href='edit-employee.phpid=?".$item['em_id']."'><input id='btnSua' class='btn btn-success' type='button' value='Sửa' '>
+                                                    echo " <td style='text-align: center;'> <a href='edit-employee.php?id=".$item['em_id']."'><input id='btnSua' class='btn btn-success' type='button' value='Sửa' '>
                                                     <a href='delete-employee.php?id=".$item['em_id']."'><input id='btnXoa' class='btn btn-warning' type='button' value='Xoá' '>";
                                                     echo "</tr>";
-                                                    $index++;
+                                                    
                                                 }
                                                 } else {
                                                 echo "0 results";

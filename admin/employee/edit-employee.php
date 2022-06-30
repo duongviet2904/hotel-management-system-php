@@ -56,7 +56,7 @@
                                 <div class="tab-content">
                                 <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
                                     <div class="main-card mb-3 card">
-                                        <div class="card-body"><h5 class="card-title">Chỉnh sửa thông tin khách hàng</h5>
+                                        <div class="card-body"><h5 class="card-title">Chỉnh sửa thông tin nhân viên</h5>
                                             <form class="" action="" method="POST">
                                                 <div class="form-row">
                                                     <div class="col-md-6">
