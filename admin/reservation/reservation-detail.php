@@ -342,12 +342,12 @@ if (isset($_GET['re_id'])) {
                                                                         <tr>
                                                                             <td class="left"><strong>Tổng tiền phải trả</strong></td>
                                                                             <td class="right"><?php 
-                                                                                $mount = ($room_total + $service_total + $surcharge) * 1.1;
-                                                                            if($mount < $result['deposited']){
+                                                                                $amount = ($room_total + $service_total + $surcharge) * 1.1;
+                                                                            if($amount < $result['deposited']){
                                                                                 $total_amount = 0; 
                                                                             echo 0;}
                                                                             else{
-                                                                                $total_amount = $mount -  $result['deposited'];
+                                                                                $total_amount = $amount -  $result['deposited'];
                                                                                 echo currency_format($total_amount);}
                                                     
                                                                             ?></td>
@@ -355,8 +355,8 @@ if (isset($_GET['re_id'])) {
                                                                         <tr>
                                                                             <td class="left"><strong>Tiền thừa</strong></td>
                                                                             <td class="right"><?php 
-                                                                            if($mount < $result['deposited']){
-                                                                                $change = $result['deposited'] - $mount;
+                                                                            if($amount < $result['deposited']){
+                                                                                $change = $result['deposited'] - $amount;
                                                                                 echo currency_format($change);}
                                                                             else{
                                                                                 $change = 0;
@@ -368,7 +368,7 @@ if (isset($_GET['re_id'])) {
                                                                 </table>
 
                                                                 <div class="pull-right">
-                                                                    <a class="btn btn-sm btn-success" href="pay-reservation.php?re_id=$re_id" data-abc="true"><i class="fa fa-paper-plane mr-1"></i>Proceed to Payment</a>
+                                                                    <a class="btn btn-sm btn-success" href="pay-reservation.php?re_id=<?php echo $reid;?>" data-abc="true"><i class="fa fa-paper-plane mr-1"></i>Proceed to Payment</a>
 
                                                                 </div>
 

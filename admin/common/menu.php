@@ -184,13 +184,13 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li <?php echo ($page == 'transaction-management' || $page == 'add-transaction') ? "class = 'mm-active'" : ""; ?>>
+                                <li <?php echo ($page == 'transaction-management' || $page == 'deleted-transaction') ? "class = 'mm-active'" : ""; ?>>
                                     <a href="#">
                                         <i class="metismenu-icon pe-7s-cash"></i>
                                         Quản lí giao dịch
                                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                     </a>
-                                    <ul <?php echo ($page == 'transaction-management' || $page == 'add-transaction') ? "class = 'mm-show'" : ""; ?>>
+                                    <ul <?php echo ($page == 'transaction-management' || $page == 'deleted-transaction') ? "class = 'mm-show'" : ""; ?>>
                                         <li>
                                             <a href="../transaction/transaction-management.php" <?php echo ($page == 'transaction-management') ? "class = 'mm-active'" : ""; ?>>
                                                 <i class="metismenu-icon">
@@ -198,9 +198,9 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="../transaction/add-management" <?php echo ($page == 'add-transaction') ? "class = 'mm-active'" : ""; ?>>
+                                            <a href="../transaction/deleted-transaction.php" <?php echo ($page == 'deleted-transaction') ? "class = 'mm-active'" : ""; ?>>
                                                 <i class="metismenu-icon" >
-                                                </i>Thêm giao dịch
+                                                </i>DS giao dịch đã xoá
                                             </a>
                                         </li>
                                     </ul>

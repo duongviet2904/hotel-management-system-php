@@ -16,7 +16,7 @@ session_start(); ?>
         <?php include('../common/header.php'); ?>
         <?php //include('../common/setting.php'); ?>
         <div class="app-main">
-            <?php $page = 'transaction-management';
+            <?php $page = 'deleted-transaction';
             include('../common/menu.php'); ?>
             <div class="app-main__outer">
                 <div class="app-main__inner">
@@ -76,7 +76,7 @@ session_start(); ?>
                                                     em.em_id, em_fname, em_lname, acc.acc_id, acc_username, re.re_id, re_date_in, re_date_out, deposited, isPaid, cus_id 
                                                     from Transaction trans inner join Employee em on trans.em_id = em.em_id 
                                                     inner join Account acc on em.acc_id = acc.acc_id 
-                                                    inner join Reservation re on re.re_id = trans.re_id where trans.status = 1;
+                                                    inner join Reservation re on re.re_id = trans.re_id where trans.status = 0;
                                             ";
                                             //  var_dump($sql);die();
                                             $result = mysqli_query($conn, $sql);
@@ -106,7 +106,6 @@ session_start(); ?>
                                                             echo 'Đã xoá </td></tr>';
                                                         }else{
                                                             echo '<button type="button" class="btn btn-success col-12"><a href="../reservation/reservation-detail.php?re_id='.$row["re_id"].'" style="text-decoration:none; color: white">Detail</a></button>
-                                                            <button type="button" class="btn btn-danger col-12" style="margin-top: 5px;"><a href="delete-transaction.php?trans_id='.$row["trans_id"].'" style="text-decoration:none; color: white">Delete</a></button>
                                                             </td></tr>';
                                                         }
                                                         

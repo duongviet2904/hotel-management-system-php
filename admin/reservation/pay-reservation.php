@@ -11,8 +11,8 @@ if(isset($_SESSION['username'])) {
 
     $create_date = date('Y-m-d H:i:s');
 
-//     $sql ="update Reservation set isPaid = 1 where re_id = $re_id;";
-    $sql = "";
+    $sql ="update Reservation set isPaid = 1 where re_id = $re_id;";
+//     $sql = "";
     // var_dump($sql);
     // die();
     // $sql .="set @acc_id = (select acc_id from Account where acc_username = '".$_SESSION['username']."')";
@@ -32,7 +32,7 @@ if(isset($_SESSION['username'])) {
     $sql .= "set @adult_num = (select re_adult_num  from Reservation where re_id =  $re_id);";
     $sql .= "set @deposite = (select deposited from Reservation where re_id =  $re_id);";
     
-    $sql .="set @over_child = (select if(@child_num > @child_range, @child_num - @child_rangge, 0));";
+    $sql .="set @over_child = (select if(@child_num > @child_range, @child_num - @child_range, 0));";
     $sql .="set @over_adult = (select if(@adult_num > @adult_range, @adult_num - @adult_range, 0));";
 
     $sql .="set @maxprice = (select max(r.room_price) from Reservation re inner join Reservation_Room  rr on re.re_id = rr.re_id
@@ -40,7 +40,7 @@ if(isset($_SESSION['username'])) {
     $sql .="set @surcharge = @maxprice * 0.2 * @over_child * @day +  @maxprice * 0.3 * @over_adult * @day;";
     $sql .="set @amount = @amount1 + @amount2 +@surcharge;";
     $sql .="set @tax = @amount * 0.1;";
-    $sql .="set @change = (select if(@deposite > @amount, @deposite - @amount, 0));";
+    $sql .="set @change = (select if(@deposite > @amount, @deposite - @amount - @tax, 0));";
     $sql .="set @total = (select if(@deposite > @amount, 0, @amount - @deposite + @tax));";
     // $sql .= "select * , sum( ) from Reservation re inner join Reservation_Room rr on re.re_id = rr_re_id
     //         inner join Reservation_Service rs on re.re_id = rs.re_id
@@ -48,10 +48,10 @@ if(isset($_SESSION['username'])) {
     //         inner join Service s on s.service_id = rs.service_id
     //         where re.re_id = $re_id";
     // $sql .="set @total = (@amount1 + @amount2);";
-//     $sql .= "insert into Transaction(trans_name, trans_date, trans_amount, trans_discount,trans_surcharge, trans_tax, trans_total_amount,trans_change, trans_description, status, em_id, re_id)
-//     values ('Thanh toan', '$create_date', @amount, 0, @surcharge, @tax, @total, @change, 'Thanh toán tiền phòng', 1, @em_id, $re_id);";
-    var_dump($sql);
-    die();
+    $sql .= "insert into Transaction(trans_name, trans_date, trans_room_amount, trans_service_amount, trans_discount,trans_deposite, trans_surcharge, trans_tax, trans_total_amount,trans_change, trans_description, em_id, re_id)
+    values ('Thanh toan', '$create_date', @amount1 * @day,  @amount2 * @day, 0,@deposite,  @surcharge, @tax, @amount + @tax, @change, 'Thanh toán tiền phòng', @em_id, $re_id);";
+//     var_dump($sql);
+//     die();
     $query = mysqli_multi_query($conn, $sql);
     header('Location: ../transaction/transaction-management.php');
 }else{

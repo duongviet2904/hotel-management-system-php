@@ -131,7 +131,7 @@
                                                                     echo '
                                                                     </td>
                                                                     <td rowspan="' . $num . '">
-                                                                        Đã thanh toán
+                                                                        <button type="button" class="btn btn-success col-12"><a href="reservation-detail.php?re_id=' . $row["re_id"] . '" style="text-decoration:none; color: white">Chi tiết</a></button></br>
                                                                         </td>
                                                                     </tr>';
                                                                 }
