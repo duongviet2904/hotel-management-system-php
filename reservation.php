@@ -38,8 +38,8 @@ session_start();
                                 <div class="col-lg-12">
                                 <div class="tab-content">
                                 <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
-                                    <div class="main-card mb-3 card">
-                                        <div class="card-body">
+                                <div class="main-card mb-3 card">
+                                        <div class="card-body"><h5 class="card-title">Thêm đơn đặt phòng</h5>
                                             <form class="" action="" method="POST">
                                                 <div class="form-row">
                                                     <div class="col-md-6">
@@ -120,16 +120,21 @@ session_start();
                                                             // output data of each row
                                                             while($row = mysqli_fetch_assoc($result2)) {
                                                                 echo '
-                                                                <div class="col-md-2" style="background-color: #82DBD8; color:white; margin-right: 10px; margin-top: 10px; padding-bottom: 10px;">
-                                                                    <label for="'.$row['room_id'].'" class="">'.$row['room_name'].'</label>
-                                                                    <input name="checkList[]" value="'.$row['room_id'].'" id="exampleCity" type="checkbox" class="form-control"> 
-                                                                    
+                                                                <div class="col-md-2" style="background-color: #82DBD8; color:white; margin-right: 10px; margin-top: 10px; display:flex; align-content: center; justify-content: space-around;">
+                                                                   
+                                                                    <div style="display: flex;flex-direction: column; justify-content: space-around;"><input name="checkList[]" value="'.$row['room_id'].'" id="exampleCity" type="checkbox" class="form-control" style="width: 30px;align-self:center;" > </div>
+                                                                    <div >
+                                                                        <label for="'.$row['room_id'].'" class="" style="font-size: 18px;">'.$row['room_name'].'</label></br>
+                                                                        <label for="'.$row['room_id'].'" class="">Child: '.$row['room_child_num'].'</label>
+                                                                        <label for="'.$row['room_id'].'" class="">Adult: '.$row['room_adult_num'].'</label>
+                                                                    </div>
                                                                 </div>';
                                                             }
                                                             } else {
                                                             echo '
-                                                            <div class="col-12" style="color:red; margin-right: 10px; margin-top: 10px; padding-bottom: 10px;">
-                                                                <label>Không có phòng phù hợp</label>
+                                                            <div class="col-md-2" style="color:red; margin-right: 10px; margin-top: 10px; padding-bottom: 10px;">
+                                                                <label>Không có phòng phù hợp!</label>
+                                                                
                                                             </div>';
                                                             }
                                                             echo '</div>';
@@ -143,7 +148,7 @@ session_start();
                                                         <div class="position-relative form-group"><label for="room_list" class="">Dịch vụ</label>
                                                         <?php
 
-                                                            $sql1 = "SELECT * FROM Service where status = 1;";
+                                                            $sql1 = "SELECT * FROM Service ";
                                                             $result1 = mysqli_query($conn, $sql1);
                                                             if (mysqli_num_rows($result1) > 0) {
                                                                 echo '<div class="form-row">';
@@ -151,7 +156,7 @@ session_start();
                                                             while($row = mysqli_fetch_assoc($result1)) {
                                                                 echo '
                                                                 <div class="col-md-2">
-                                                                    <label for="'.$row['service_id'].'" class="">'.$row['service_name'].' Price: '.$row['service_price'].'</label>
+                                                                    <label for="'.$row['service_id'].'" class="">'.$row['service_name'].' </br>Price: '.$row['service_price'].'</label>
                                                                     <input name="checkList2[]" value="'.$row['service_id'].'" id="exampleCity" type="checkbox" class="form-control"> 
                                                                     
                                                                 </div>';
@@ -230,24 +235,23 @@ session_start();
                                                                     $sql .= "insert into Reservation_Service(re_id, service_id, status) values  (@reid, $selected, 1);";
                                                                 }
                                                             }
-
                                                             mysqli_multi_query($conn, $sql);
-                                                            // unset($_POST['cust_name']);
-                                                            // unset($_POST['cust_cname']);
-                                                            // unset($_POST['cust_email']);
-                                                            // unset($_POST['cust_phone']);
-                                                            // unset($_POST['cust_address']);
-                                                            // unset($_POST['cust_city']);
-                                                            // unset($_POST['cust_state']);
-                                                            // unset($_POST['cust_zip']);
-                                                            // $success_message = LANG_VALUE_152;
-                                                            header('Location:index.php');
+                                                        // unset($_POST['cust_name']);
+                                                        // unset($_POST['cust_cname']);
+                                                        // unset($_POST['cust_email']);
+                                                        // unset($_POST['cust_phone']);
+                                                        // unset($_POST['cust_address']);
+                                                        // unset($_POST['cust_city']);
+                                                        // unset($_POST['cust_state']);
+                                                        // unset($_POST['cust_zip']);
+                                                        // $success_message = LANG_VALUE_152;
+                                                        header('Location:index.php');
                                                         }
 
                                                         // var_dump($sql);
                                                         // die();
                                                         // mysqli_query($conn, $sql2);
-                                                       
+                                                        
                                                     
                                                 }
                                                 ?>

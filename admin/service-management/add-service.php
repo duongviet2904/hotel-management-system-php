@@ -44,10 +44,6 @@
                                                                                                                                                         class="form-control" ></div>
                                             </div>
                                             
-                                            <div class="col-md-12">
-                                                <div class="position-relative form-group"><label for="cus_lname" class="">Trạng thái</label><input name="ser_status" id="examplePassword11" placeholder="status placeholder" type="text"
-                                                                                                                                                        class="form-control" ></div>
-                                            </div>
                                                 <button class="mt-2 btn btn-primary" type="submit">Add</button>
                                             </form>
 
@@ -62,7 +58,6 @@
                                                         $ser_desciption = $_POST['ser_description'];
                                                         $ser_price = $_POST['ser_price'];
                                                         $ser_image = $_POST['ser_image'];
-                                                        $ser_status = $_POST['ser_status'];
                                                         
 
                                                         
@@ -72,7 +67,7 @@
                                                                                         service_image,
                                                                                         service_price,
                                                                                         status
-                                                                                    ) VALUES ('$ser_name', '$ser_desciption','$ser_image',$ser_price, $ser_status);";
+                                                                                    ) VALUES ('$ser_name', '$ser_desciption','$ser_image',$ser_price, 1);";
 
                                                         // mysqli_query($conn, $sql);
                                                         // $result = mysqli_query($conn, 'select acc_id from Account where acc_username = "$cus_username"');

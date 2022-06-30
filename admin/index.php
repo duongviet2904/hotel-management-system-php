@@ -59,7 +59,7 @@
                             <ul class="vertical-nav-menu">
                                 <li class="app-sidebar__heading">Dashboard</li>
                                 <li>
-                                    <a href="./index.php" <?php echo ($page == 'dashboard') ? "class='mm-active'" : ""; ?> >
+                                    <a href="index.php" <?php echo ($page == 'dashboard') ? "class='mm-active'" : ""; ?> >
                                         <i class="metismenu-icon pe-7s-home"></i>
                                         Admin Dashboard
                                     </a>
@@ -107,23 +107,41 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li <?php echo ($page == 'reservation-management' || $page == 'add-reservation') ? "class='mm-active'" : ""; ?>>
+                                <li <?php echo ($page == 'reservation-management' || $page == 'add-reservation' || $page == 'booking-management' || $page == 'paid-reservation' || $page == 'deleted-reservation') ? "class='mm-active'" : ""; ?>>
                                     <a href="#">
                                         <i class="metismenu-icon pe-7s-note"></i>
                                         Quản lí đơn đặt phòng
                                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                     </a>
-                                    <ul <?php echo ($page == 'reservation-management' || $page == 'add-reservation') ? "class='mm-show'" : ""; ?>>
-                                        <li >
-                                            <a href="./reservation/reservation-management.php" <?php echo ($page == 'reservation-management') ? "class='mm-active'" : ""; ?>>
-                                                <i class="metismenu-icon">
-                                                </i>Danh sách đơn đặt phòng
-                                            </a>
-                                        </li>
+                                    <ul <?php echo ($page == 'reservation-management' || $page == 'add-reservation' || $page == 'booking-management' || $page == 'paid-reservation' || $page == 'deleted-reservation') ? "class='mm-show'" : ""; ?>>
                                         <li>
                                             <a href="./reservation/add-reservation.php"  <?php echo ($page == 'add-reservation') ? "class='mm-active'" : ""; ?>>
                                                 <i class="metismenu-icon">
                                                 </i>Thêm đơn đặt phòng
+                                            </a>
+                                        </li>
+                                        <li >
+                                            <a href="./reservation/booking-management.php" <?php echo ($page == 'booking-management') ? "class='mm-active'" : ""; ?>>
+                                                <i class="metismenu-icon">
+                                                </i>DS đơn chưa duyệt
+                                            </a>
+                                        </li>
+                                        <li >
+                                            <a href="./reservation/reservation-management.php" <?php echo ($page == 'reservation-management') ? "class='mm-active'" : ""; ?>>
+                                                <i class="metismenu-icon">
+                                                </i>DS đơn đã duyệt
+                                            </a>
+                                        </li>
+                                        <li >
+                                            <a href="./reservation/paid-reservation.php" <?php echo ($page == 'paid-reservation') ? "class='mm-active'" : ""; ?>>
+                                                <i class="metismenu-icon">
+                                                </i>DS đơn đã thanh toán
+                                            </a>
+                                        </li>
+                                        <li >
+                                            <a href="./reservation/deleted-reservation.php" <?php echo ($page == 'deleted-reservation') ? "class='mm-active'" : ""; ?>>
+                                                <i class="metismenu-icon">
+                                                </i>DS đơn đã xoá
                                             </a>
                                         </li>
                                     </ul>
@@ -191,13 +209,13 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li <?php echo ($page == 'transaction-management' || $page == 'add-transaction') ? "class = 'mm-active'" : ""; ?>>
+                                <li <?php echo ($page == 'transaction-management' || $page == 'deleted-transaction') ? "class = 'mm-active'" : ""; ?>>
                                     <a href="#">
                                         <i class="metismenu-icon pe-7s-cash"></i>
                                         Quản lí giao dịch
                                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                     </a>
-                                    <ul <?php echo ($page == 'transaction-management' || $page == 'add-transaction') ? "class = 'mm-show'" : ""; ?>>
+                                    <ul <?php echo ($page == 'transaction-management' || $page == 'deleted-transaction') ? "class = 'mm-show'" : ""; ?>>
                                         <li>
                                             <a href="./transaction/transaction-management.php" <?php echo ($page == 'transaction-management') ? "class = 'mm-active'" : ""; ?>>
                                                 <i class="metismenu-icon">
@@ -205,18 +223,12 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="./transaction/add-management" <?php echo ($page == 'add-transaction') ? "class = 'mm-active'" : ""; ?>>
+                                            <a href="./transaction/deleted-transaction.php" <?php echo ($page == 'deleted-transaction') ? "class = 'mm-active'" : ""; ?>>
                                                 <i class="metismenu-icon" >
-                                                </i>Thêm giao dịch
+                                                </i>DS giao dịch đã xoá
                                             </a>
                                         </li>
                                     </ul>
-                                </li>
-                                <li  >
-                                    <a href="tables-regular.html">
-                                        <i class="metismenu-icon pe-7s-network"></i>
-                                        Phân quyền nhân viên
-                                    </a>
                                 </li>
                             </ul>
                         </div>

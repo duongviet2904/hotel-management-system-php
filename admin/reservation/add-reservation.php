@@ -108,10 +108,14 @@
                                                             // output data of each row
                                                             while($row = mysqli_fetch_assoc($result2)) {
                                                                 echo '
-                                                                <div class="col-md-2" style="background-color: #82DBD8; color:white; margin-right: 10px; margin-top: 10px; padding-bottom: 10px;">
-                                                                    <label for="'.$row['room_id'].'" class="">'.$row['room_name'].'</label>
-                                                                    <input name="checkList[]" value="'.$row['room_id'].'" id="exampleCity" type="checkbox" class="form-control"> 
-                                                                    
+                                                                <div class="col-md-2" style="background-color: #82DBD8; color:white; margin-right: 10px; margin-top: 10px; display:flex; align-content: center; justify-content: space-around;">
+                                                                   
+                                                                    <div style="display: flex;flex-direction: column; justify-content: space-around;"><input name="checkList[]" value="'.$row['room_id'].'" id="exampleCity" type="checkbox" class="form-control" style="width: 30px;align-self:center;" > </div>
+                                                                    <div >
+                                                                        <label for="'.$row['room_id'].'" class="" style="font-size: 18px;">'.$row['room_name'].'</label></br>
+                                                                        <label for="'.$row['room_id'].'" class="">Child: '.$row['room_child_num'].'</label>
+                                                                        <label for="'.$row['room_id'].'" class="">Adult: '.$row['room_adult_num'].'</label>
+                                                                    </div>
                                                                 </div>';
                                                             }
                                                             } else {
@@ -140,7 +144,7 @@
                                                             while($row = mysqli_fetch_assoc($result1)) {
                                                                 echo '
                                                                 <div class="col-md-2">
-                                                                    <label for="'.$row['service_id'].'" class="">'.$row['service_name'].' Price: '.$row['service_price'].'</label>
+                                                                    <label for="'.$row['service_id'].'" class="">'.$row['service_name'].' </br>Price: '.$row['service_price'].'</label>
                                                                     <input name="checkList2[]" value="'.$row['service_id'].'" id="exampleCity" type="checkbox" class="form-control"> 
                                                                     
                                                                 </div>';

@@ -84,21 +84,14 @@ if (isset($_GET['id'])) {
                                                             type="text" class="form-control" >
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-6">
                                                         <div class="position-relative form-group">
                                                             <label for="room_image" class="">Hình ảnh phòng</label>
                                                             <input name="room_image" id="examplePassword11" placeholder="room image placeholder" 
                                                             type="text" class="form-control" >
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-12">
-                                                        <div class="position-relative form-group">
-                                                            <label for="room_status" class="">Trạng thái</label>
-                                                            <input name="room_status" id="examplePassword11" placeholder="status placeholder" 
-                                                            type="text" class="form-control" >
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-6">
                                                         <label for="room_class_name" class="">Loại phòng</label><br>
                                                         <!-- <div class="position-relative form-group"><input name="room_class_id" id="examplePassword11" placeholder="description placeholder" type="text"> -->
                                                         <?php
@@ -106,7 +99,7 @@ if (isset($_GET['id'])) {
                                                         $query = mysqli_query($conn, $sql);
                                                         $i = 0;
                                                         if ($query) {
-                                                            echo "<select class=\"col-md-6\" name = \"room_class\">";
+                                                            echo '<select class="form-control" name = "room_class">';
                                                             foreach ($query as $item) {
                                                                 $i++;
                                                                 $rc_name = $item['room_class_name'];
@@ -144,7 +137,6 @@ if (isset($_GET['id'])) {
                                             $room_price = $_POST['room_price'];
                                             $room_image = $_POST['room_image'];
                                             $room_class_id = $_POST['room_class'];
-                                            $room_status = $_POST['room_status'];
 
                                             // $pass = $_POST['acc_password'];
                                             // if($active == 1){
@@ -163,7 +155,7 @@ if (isset($_GET['id'])) {
                                                                         status,
                                                                         room_class_id
                                                                     ) VALUES ('$room_name','$room_description',$room_child_num,$room_adult_num,
-                                                                    $room_price,'$room_image',$room_status,$room_class_id);";
+                                                                    $room_price,'$room_image',1,$room_class_id);";
                                             // var_dump($sql);
                                             // die();
                                             mysqli_query($conn, $sql);

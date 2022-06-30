@@ -20,7 +20,7 @@ if (isset($_GET['re_id'])) {
     $surcharge = 0; $total_amount = 0;
     $day = 0;
     $sql3 = "SELECT re_id, re_date_in, re_date_out, re_child_num, re_adult_num, create_date, deposited, Reservation.status, Customer.cus_id, cus_fname, cus_lname, cus_birthday,
-        cus_gender, cus_phone, cus_email, cus_address FROM Reservation inner join Customer on Reservation.cus_id = Customer.cus_id where Reservation.re_id = '$reid';";
+        cus_gender, cus_phone, cus_email, cus_address, isPaid FROM Reservation inner join Customer on Reservation.cus_id = Customer.cus_id where Reservation.re_id = '$reid';";
     //  var_dump($sql);die();
     $query3 = mysqli_query($conn, $sql3);
     $result = array();
@@ -245,14 +245,14 @@ if (isset($_GET['re_id'])) {
                                                                         $sql = "SELECT * FROM Service  s inner join Reservation_Service rs on s.service_id = rs.service_id inner join 
                                                                                 Reservation re on re.re_id = rs.re_id where rs.re_id = $reid";
                                                                         $result5 = mysqli_query($conn, $sql);
-                                                                        $index = 0;
+                                                                        $index2 = 0;
                                                                         if ($result5) {
                                                                         // output data of each row
                                                                         foreach($result5 as $item) {
-                                                                            $index++;
+                                                                            $index2++;
                                                                             $service_total += $item['service_price']  * $day;
                                                                             echo "<tr>";
-                                                                            echo "<td>$index</td>";
+                                                                            echo "<td>$index2</td>";
                                                                             echo "<td>". $item['service_id']."</td>";
                                                                             echo "<td>". $item['service_name']."</td>";
                                                                             echo "<td>". $item['service_description']."</td>";
@@ -267,7 +267,7 @@ if (isset($_GET['re_id'])) {
                                                                         echo '
                                                                                     <div class="row mb-4">
                                                                         <div class="col-sm-4">
-                                                                            <div><strong>Số dịch vụ sử dụng: </strong>'. ($index + 1).'</div>
+                                                                            <div><strong>Số dịch vụ sử dụng: </strong>'. ($index2).'</div>
                                                                         </div>
 
                                                                         <div class="col-sm-4">
@@ -325,19 +325,19 @@ if (isset($_GET['re_id'])) {
                                                                             <td class="right"><?php echo currency_format(($room_total + $service_total + $surcharge) * 0.1);?></td>
                                                                         </tr>
                                                                         <tr>
+                                                                            <td class="left"><strong>Tổng tiền(Chưa VAT)</strong></td>
+                                                                            <td class="right"><?php 
+                                                                                echo currency_format($room_total + $service_total + $surcharge);
+                                                    
+                                                                            ?></td>
+                                                                        </tr>
+                                                                        <tr>
                                                                             <td class="left"><strong>Tổng tiền</strong></td>
                                                                             <td class="right"><?php echo currency_format(($room_total + $service_total + $surcharge)* 1.1);?></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td class="left"><strong>Tiền cọc</strong></td>
                                                                             <td class="right"><?php echo currency_format($result['deposited']);?></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="left"><strong>Tổng tiền(Chưa VAT)</strong></td>
-                                                                            <td class="right"><?php 
-                                                                                echo currency_format($room_total + $service_total + $surcharge);
-                                                    
-                                                                            ?></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td class="left"><strong>Tổng tiền phải trả</strong></td>
@@ -367,10 +367,14 @@ if (isset($_GET['re_id'])) {
                                                                     </tbody>
                                                                 </table>
 
-                                                                <div class="pull-right">
-                                                                    <a class="btn btn-sm btn-success" href="pay-reservation.php?re_id=<?php echo $reid;?>" data-abc="true"><i class="fa fa-paper-plane mr-1"></i>Proceed to Payment</a>
+                                                               <?php 
+                                                                if($result['isPaid'] == 0){
+                                                                    echo ' <div class="pull-right">
+                                                                    <a class="btn btn-sm btn-success" href="pay-reservation.php?re_id='.$reid.'" data-abc="true"><i class="fa fa-paper-plane mr-1"></i>Proceed to Payment</a>
 
-                                                                </div>
+                                                                </div>';
+                                                                }
+                                                               ?>
 
                                                             </div>
                                                         </div>

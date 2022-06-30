@@ -40,10 +40,6 @@
                                                         <div class="position-relative form-group"><label for="cus_lname" class="">Hình ảnh </label><input name="rc_image" id="examplePassword11" placeholder="image placeholder" type="text"
                                                                                                                                                                 class="form-control" ></div>
                                                     </div>
-                                                    <div class="col-md-12">
-                                                        <div class="position-relative form-group"><label for="cus_lname" class="">Trạng thái</label><input name="rc_status" id="examplePassword11" placeholder="status placeholder" type="text"
-                                                                                                                                                                class="form-control" ></div>
-                                                    </div>
                                                 </div>
                                                 
                                                 
@@ -60,7 +56,6 @@
                                                         $rc_name = $_POST['rc_name'];
                                                         $rc_desciption = $_POST['rc_description'];
                                                         $rc_image = $_POST['rc_image'];
-                                                        $rc_status = $_POST['rc_status'];
                                                         
 
                                                         
@@ -69,7 +64,7 @@
                                                                                         room_class_description,
                                                                                         room_class_image,
                                                                                         status
-                                                                                    ) VALUES ('$rc_name', '$rc_desciption','$rc_image', '$rc_status');";
+                                                                                    ) VALUES ('$rc_name', '$rc_desciption','$rc_image', 1);";
 
                                                         // mysqli_query($conn, $sql);
                                                         // $result = mysqli_query($conn, 'select acc_id from Account where acc_username = "$cus_username"');
