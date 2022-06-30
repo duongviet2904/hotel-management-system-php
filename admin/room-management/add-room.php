@@ -58,42 +58,42 @@ if (isset($_GET['id'])) {
 
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
-                                                            <label for="cus_lname" class="">Mô tả phòng</label>
+                                                            <label for="room_description" class="">Mô tả phòng</label>
                                                             <input name="room_description" id="examplePassword11" placeholder="description placeholder" 
                                                             type="text" class="form-control" >
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-6">
                                                         <div class="position-relative form-group">
-                                                            <label for="cus_lname" class="">Số lượng trẻ em</label>
+                                                            <label for="room_child_num" class="">Số lượng trẻ em</label>
                                                             <input name="room_child_num" id="examplePassword11" placeholder="child number placeholder" 
                                                             type="text" class="form-control" >
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-6">
                                                         <div class="position-relative form-group">
-                                                            <label for="cus_lname" class="">Số lượng người lớn</label>
+                                                            <label for="room_adult_num" class="">Số lượng người lớn</label>
                                                             <input name="room_adult_num" id="examplePassword11" placeholder="adult number placeholder" 
                                                             type="text" class="form-control" >
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
-                                                            <label for="cus_lname" class="">Giá phòng</label>
+                                                            <label for="room_price" class="">Giá phòng</label>
                                                             <input name="room_price" id="examplePassword11" placeholder="place placeholder" 
                                                             type="text" class="form-control" >
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
-                                                            <label for="cus_lname" class="">Hình ảnh phòng</label>
+                                                            <label for="room_image" class="">Hình ảnh phòng</label>
                                                             <input name="room_image" id="examplePassword11" placeholder="room image placeholder" 
                                                             type="text" class="form-control" >
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
-                                                            <label for="cus_lname" class="">Trạng thái</label>
+                                                            <label for="room_status" class="">Trạng thái</label>
                                                             <input name="room_status" id="examplePassword11" placeholder="status placeholder" 
                                                             type="text" class="form-control" >
                                                         </div>
@@ -111,7 +111,9 @@ if (isset($_GET['id'])) {
                                                                 $i++;
                                                                 $rc_name = $item['room_class_name'];
                                                                 $rc_id = $item['room_class_id'];
-                                                                echo "<option value =\"$rc_id\">" . $rc_name . "</option>";
+                                                                if($item['status'] != 0){
+                                                                    echo "<option value =\"$rc_id\">" . $rc_name . "</option>";
+                                                                }
                                                             }
                                                             echo '</select>';
                                                         }
