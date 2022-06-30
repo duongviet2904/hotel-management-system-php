@@ -106,13 +106,15 @@ if (isset($_GET['id'])) {
                                                         if ($query) {
                                                             echo "<select class=\"col-md-6\" name = \"room_class\">";
                                                             foreach ($query as $item) {
-                                                                $i++;
-                                                                $rc_name = $item['room_class_name'];
-                                                                $rc_id = $item['room_class_id'];
-                                                                if ($rc_id == $rcc_id) {
-                                                                    echo "<option value =\"$rc_id\" selected>" . $rc_name . "</option>";
-                                                                } else {
-                                                                    echo "<option value =\"$rc_id\">" . $rc_name . "</option>";
+                                                                if ($item['status'] != 0) {
+                                                                    $i++;
+                                                                    $rc_name = $item['room_class_name'];
+                                                                    $rc_id = $item['room_class_id'];
+                                                                    if ($rc_id == $rcc_id) {
+                                                                        echo "<option value =\"$rc_id\" selected>" . $rc_name . "</option>";
+                                                                    } else {
+                                                                        echo "<option value =\"$rc_id\">" . $rc_name . "</option>";
+                                                                    }
                                                                 }
                                                             }
                                                             echo '</select>';

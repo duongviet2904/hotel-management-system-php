@@ -102,7 +102,9 @@
                         $sql = "SELECT * FROM Room_Class";
                         $query = mysqli_query($conn, $sql);
                         foreach ($query as $item) {
-                            echo "<li class=\"\"><a href=\"bbs/content.php?co_id=" . $item['room_class_name'] . "\" target=\"_self\"> " . $item['room_class_name'] .  "</a></li>";
+                            if($item['status'] != 0 ){
+                                echo "<li class=\"\"><a href=\"bbs/content.php?co_id=" . $item['room_class_name'] . "\" target=\"_self\"> " . $item['room_class_name'] .  "</a></li>";
+                            }
                         }
 
                         ?>
