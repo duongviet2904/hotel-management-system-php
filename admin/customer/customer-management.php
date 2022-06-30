@@ -54,7 +54,7 @@
                                                 <th>Email</th>
                                                 <th>Địa chỉ</th>
                                                 <th>Tên đăng nhập</th>
-                                                <th>Action</th>
+                                                <th style="text-align: center ;">Action</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -62,26 +62,26 @@
 
                                                 $sql = "SELECT * FROM Customer inner join Account on Customer.acc_id = Account.acc_id";
                                                 $result = mysqli_query($conn, $sql);
-                                                $index = 1;
-                                                if (mysqli_num_rows($result) > 0) {
+                                                $index = 0;
+                                                if ($result) {
                                                 // output data of each row
-                                                while($row = mysqli_fetch_assoc($result)) {
-                                                    echo ' <tr>
-                                                        <th scope="row">'.$index.'</th>
-                                                        <td>'.$row["cus_fname"].'</td>
-                                                        <td>'.$row["cus_lname"].'</td>
-                                                        <td>'.$row["cus_birthday"].'</td>
-                                                        <td>'.$row["cus_gender"].'</td>
-                                                        <td>'.$row["cus_phone"].'</td>
-                                                        <td>'.$row["cus_email"].'</td>
-                                                        <td>'.$row["cus_address"].'</td>
-                                                        <td>'.$row["acc_username"].'</td>
-                                                        <td>
-                                                        <button type="button" class="btn btn-dark"><a href="edit-customer.php?id='.$row["cus_id"].'" style="text-decoration:none; color: white">Edit</a></button>
-                                                        <button type="button" class="btn btn-dark"><a href="delete-customer.php?acc_id='.$row["acc_id"].'" style="text-decoration:none; color: white">Delete</a></button>
-                                                        </td>
-                                                    </tr>';
+                                                foreach($result as $item) {
                                                     $index++;
+                                                    echo "<tr>";
+                                                    echo "<td>$index</td>";
+                                                    echo "<td>". $item['cus_fname']."</td>";
+                                                    echo "<td>". $item['cus_lname']."</td>";
+                                                    echo "<td>". $item['cus_birthday']."</td>";
+                                                    echo "<td>". $item['cus_gender']."</td>";
+                                                    echo "<td>". $item['cus_phone']."</td>";
+                                                    echo "<td>". $item['cus_email']."</td>";
+                                                    echo "<td>". $item['cus_address']."</td>";
+                                                    echo "<td>". $item['acc_username']."</td>";
+                                                    //echo "<td>"."<input id='btnSua' type='button' value='Sửa' '>"."</td>";
+                                                    
+                                                    echo " <td style='text-align: center;'> <a href='edit-customer.phpid=?".$item['service_id']."'><input id='btnSua' class='btn btn-success' type='button' value='Sửa' '>
+                                                    <a href='delete-customer.php?id=".$item['service_id']."'><input id='btnXoa' class='btn btn-warning' type='button' value='Xoá' '>";
+                                                    echo "</tr>";
                                                 }
                                                 } else {
                                                 echo "0 results";

@@ -43,8 +43,8 @@
 
 	<!-- phần đầu { -->
 
-	<?php 
-		include('FE-common/menu.php');	
+	<?php
+	include('FE-common/menu.php');
 	?>
 
 
@@ -87,7 +87,7 @@
 										<a href="bbs/content.php?co_id=Room" target="_self" class="">Các loại phòng</a>
 									</li>
 									<li class="">
-										<a href="bbs/board.php?bo_table=room_pm" target="_self" class="">Quảng cáo<< /a>
+										<a href="bbs/board.php?bo_table=room_pm" target="_self" class="">Quảng cáo</a>
 									</li>
 									<li class="">
 										<a href="bbs/content.php?co_id=Dining" target="_self" class="">Ẩm thực</a>
@@ -203,16 +203,40 @@
 														<input type="text" class=" form-control calendar chk-date readonly" name="inDate_end" id="inDate_end" value="2022-04-22">
 													</span>
 												</div>
-												<div class="person_list">
+												<div class="date_list">
 													<span class="input-form border">
 														<strong class="inptitle">Phòng</strong>
 														<!-- <input type="text" class="chk-person readonly" name="g_name"> -->
-														<select name="g_room_num" id="g_room_num">
+														
+														<?php
+                                                        //$rcc_id = $result['room_class_id'];
+                                                        $sql = "SELECT * FROM Room_Class";
+                                                        $query = mysqli_query($conn, $sql);
+                                                        $i = 0;
+                                                        if ($query) {
+                                                            echo "<select class=\"col-md-12\" name = \"room_class\">";
+                                                            foreach ($query as $item) {
+                                                                if ($item['status'] != 0) {
+                                                                    $i++;
+                                                                    $rc_name = $item['room_class_name'];
+                                                                    $rc_id = $item['room_class_id'];
+                                                                    // if ($rc_id == $rcc_id) {
+                                                                    //     echo "<option value =\"$rc_id\" selected>" . $rc_name . "</option>";
+                                                                    // } 
+																	
+                                                                        echo "<option value =\"$rc_id\">" . $rc_name . "</option>";
+                                                                    
+                                                                }
+                                                            }
+                                                            echo '</select>';
+                                                        }
+                                                        ?>
+														<!-- <select name="g_room_num" id="g_room_num">
 															<option value="1">1</option>
 															<option value="2">2</option>
 															<option value="3">3</option>
 
-														</select>
+														</select> -->
 													</span>
 													<span class="input-form">
 														<strong class="inptitle">Người lớn</strong>
@@ -221,7 +245,7 @@
 															<option value="1">1</option>
 															<option value="2">2</option>
 															<option value="3">3</option>
-
+															<option value="4">4</option>
 														</select>
 													</span>
 													<span class="input-form">
@@ -231,7 +255,7 @@
 															<option value="0" selected="selected">0</option>
 															<option value="1">1</option>
 															<option value="2">2</option>
-
+															<option value="3">3</option>
 														</select>
 													</span>
 												</div>
@@ -270,32 +294,48 @@
 									</form>
 									<ul class="room_select">
 										<input type="hidden" name="g_price_total" id="g_price_total" value="0">
-										<?php 
+										<?php
 										include('config.php');
-										$sql2 = "SELECT * FROM Room";
+										// Định dạng giá tiền
+										if (!function_exists('currency_format')) {
+											function currency_format($number, $suffix = 'đ')
+											{
+												if (!empty($number)) {
+													return number_format($number, 0, ',', '.') . "{$suffix}";
+												}
+											}
+										}
+										$sql2 = "SELECT * FROM Room r inner join Room_Class rc on r.room_class_id = rc.room_class_id where r.status = 1";
 										$query = mysqli_query($conn, $sql2);
-										foreach($query as $room) {
-											echo "
-											<li>
-											<div class=\"thumb-list-img\">
-											<img src=\"data/goods/middle/1.jpeg\" alt=\"\" />
-										</div>
-										<div class=\"thumb-list-content\">
-											<h3 class=\"\">" . $room['room_name'] . "</h3>
-											<div class=\"info_res\">
-												" . $room['room_description'] . "
-											</div>
-											<p>Tổng giá phòng<span>$0</span></p>
-										</div>
-										<div class=\"thumb-list-btn btn-area\">
-											<!-- <a href=\"bbs/write.php?bo_table=reservation\" class=\"btn gray\">Chọn</a> -->
-											<a href=\"bbs/write.php?bo_table=reservation\" class=\"btn brown\" onclick=\"form_submit(1,0); return false;\">Chọn</a>
-											<a href=\"#\" class=\"btn black\" onclick=\"return false;\">Thoát</a>
-										</div>
-											</li>
-											";
-
-										}	
+										foreach ($query as $room) {
+											if ($room['status'] != 0) {
+												echo "
+													<li>
+														<div class=\"thumb-list-img\">
+														<img src=\"data/goods/middle/1.jpeg\" alt=\"\" />
+														</div>
+														<div class=\"thumb-list-content\">
+														<h3 class=\"\">" . $room['room_name'] . "</h3>
+														<p class=\"info_res\">
+															" . "Số người lớn: " . $room['room_adult_num'] . "
+														</p>
+														<p>
+															" . "Số trẻ em: " . $room['room_child_num'] . "
+														</p>
+														<p>
+															" . "Loại phòng: " . $room['room_class_name'] . "
+														</p>
+														<p>Tổng giá phòng<span>" . currency_format($room['room_price']) . "</span></p>
+														</div>
+														<div class=\"thumb-list-btn btn-area\">
+														<!-- <a href=\"bbs/write.php?bo_table=reservation\" class=\"btn gray\">Chọn</a> -->
+														<a href=\"bbs/write.php?bo_table=reservation\" class=\"btn brown\" onclick=\"form_submit(1,0); return false;\">Chọn</a>
+														<a href=\"#\" class=\"btn black\" onclick=\"return false;\">Thoát</a>
+														</div>
+													</li>
+												";
+											}
+										}
 										?>
 									</ul>
 

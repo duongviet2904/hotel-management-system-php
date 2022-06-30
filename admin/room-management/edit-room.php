@@ -9,6 +9,9 @@ if (isset($_GET['id'])) {
                 where room_id = $room_id";
     $query = mysqli_query($conn, $sql);
 
+    // var_dump($sql);
+    // die();
+
     $result = array();
 
     if (mysqli_num_rows($query) > 0) {
@@ -33,7 +36,8 @@ if (isset($_GET['id'])) {
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header closed-sidebar">
         <?php include('../common/header.php'); ?>
-        <?php //include('../common/setting.php'); ?>
+        <?php //include('../common/setting.php'); 
+        ?>
         <div class="app-main">
             <?php $page = 'room-management';
             include('../common/menu.php'); ?>
@@ -51,67 +55,67 @@ if (isset($_GET['id'])) {
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
                                                             <label for="cus_fname" class="">Tên phòng</label>
-                                                            <input name="room_name" id="exampleEmail11" placeholder="name placeholder" 
-                                                            type="text" class="form-control" value="<?php if ($room_id) echo $result['room_name']; ?>">
+                                                            <input name="room_name" id="exampleEmail11" placeholder="name placeholder" type="text" class="form-control" value="<?php if ($room_id) echo $result['room_name']; ?>">
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
                                                             <label for="cus_lname" class="">Mô tả phòng</label>
-                                                            <input name="room_description" id="examplePassword11" placeholder="description placeholder" 
-                                                            type="text" class="form-control" value="<?php if ($room_id) echo $result['room_description']; ?>">
+                                                            <input name="room_description" id="examplePassword11" placeholder="description placeholder" type="text" class="form-control" value="<?php if ($room_id) echo $result['room_description']; ?>">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
                                                             <label for="cus_lname" class="">Số lượng trẻ em</label>
-                                                            <input name="room_child_num" id="examplePassword11" placeholder="child number placeholder" 
-                                                            type="text" class="form-control" value="<?php if ($room_id) echo $result['room_child_num']; ?>">
+                                                            <input name="room_child_num" id="examplePassword11" placeholder="child number placeholder" type="text" class="form-control" value="<?php if ($room_id) echo $result['room_child_num']; ?>">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
                                                             <label for="cus_lname" class="">Số lượng người lớn</label>
-                                                            <input name="room_adult_num" id="examplePassword11" placeholder="adult number placeholder" 
-                                                            type="text" class="form-control" value="<?php if ($room_id) echo $result['room_adult_num']; ?>">
+                                                            <input name="room_adult_num" id="examplePassword11" placeholder="adult number placeholder" type="text" class="form-control" value="<?php if ($room_id) echo $result['room_adult_num']; ?>">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
                                                             <label for="cus_lname" class="">Giá phòng</label>
-                                                            <input name="room_price" id="examplePassword11" placeholder="place placeholder" 
-                                                            type="text" class="form-control" value="<?php if ($room_id) echo $result['room_price']; ?>">
+                                                            <input name="room_price" id="examplePassword11" placeholder="place placeholder" type="text" class="form-control" value="<?php if ($room_id) echo $result['room_price']; ?>">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
                                                             <label for="cus_lname" class="">Hình ảnh phòng</label>
-                                                            <input name="room_image" id="examplePassword11" placeholder="room image placeholder" 
-                                                            type="text" class="form-control" value="<?php if ($room_id) echo $result['room_class_image']; ?>">
+                                                            <input name="room_image" id="examplePassword11" placeholder="room image placeholder" type="text" class="form-control" value="<?php if ($room_id) echo $result['room_class_image']; ?>">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="position-relative form-group">
                                                             <label for="cus_lname" class="">Trạng thái</label>
-                                                            <input name="room_status" id="examplePassword11" placeholder="status placeholder" 
-                                                            type="text" class="form-control" value="<?php if ($room_id) echo $result['status']; ?>">
+                                                            <input name="room_status" id="examplePassword11" placeholder="status placeholder" type="text" class="form-control" value="<?php if ($room_id) echo $result['status']; ?>">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <label for="room_class_name" class="">Loại phòng</label><br>
                                                         <!-- <div class="position-relative form-group"><input name="room_class_id" id="examplePassword11" placeholder="description placeholder" type="text"> -->
                                                         <?php
+                                                        $rcc_id = $result['room_class_id'];
                                                         $sql = "SELECT * FROM Room_Class";
                                                         $query = mysqli_query($conn, $sql);
                                                         $i = 0;
                                                         if ($query) {
                                                             echo "<select class=\"col-md-6\" name = \"room_class\">";
                                                             foreach ($query as $item) {
-                                                                $i++;
-                                                                $rc_name = $item['room_class_name'];
-                                                                $rc_id = $item['room_class_id'];
-                                                                echo "<option value =\"$rc_id\">" . $rc_name . "</option>";
+                                                                if ($item['status'] != 0) {
+                                                                    $i++;
+                                                                    $rc_name = $item['room_class_name'];
+                                                                    $rc_id = $item['room_class_id'];
+                                                                    if ($rc_id == $rcc_id) {
+                                                                        echo "<option value =\"$rc_id\" selected>" . $rc_name . "</option>";
+                                                                    } else {
+                                                                        echo "<option value =\"$rc_id\">" . $rc_name . "</option>";
+                                                                    }
+                                                                }
                                                             }
                                                             echo '</select>';
                                                         }
@@ -120,7 +124,7 @@ if (isset($_GET['id'])) {
                                                     </div>
                                                 </div>
                                         </div>
-                                        
+
                                         <button class="mt-2 btn btn-primary" type="submit">Update</button>
                                         </form>
 
